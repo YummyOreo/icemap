@@ -332,6 +332,30 @@ var features = [{
 	"type": "marker",
 	"color": "red",
 },
+{
+	"latlng": [41.691266259617095, -88.06825088913459],
+	"title": "ICE Sighting & Arrest 2025-10-09 - 7:58am",
+	"type": "marker",
+	"color": "red",
+},
+{
+	"latlng": [41.77399485047074, -87.6653443083754],
+	"title": "ICE Sighting 2025-10-09 - 11:00am",
+	"type": "marker",
+	"color": "red",
+},
+{
+	"latlng": [41.794068104901946, -87.87144319596008],
+	"title": "ICE Sighting 2025-10-09 - 12:50pm",
+	"type": "marker",
+	"color": "red",
+},
+{
+	"latlng": [41.80670145346693, -87.672214399632],
+	"title": "ICE Sighting & Arrest 2025-10-09 - 1pm",
+	"type": "marker",
+	"color": "red",
+},
 ]
 
 function icon(color) {
