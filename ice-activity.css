@@ -1,0 +1,29 @@
+main {
+    width: 70%;
+}
+
+#map {
+    height: 40rem;
+    border-radius: 0.5rem;
+    border: 4px var(--fg) solid;
+}
+
+
+@media only screen and (max-width: 992px) {
+    main {
+        width: 95%;
+    }
+}
+
+img {
+    border-radius: 0;
+    margin: 0 0;
+}
+
+.key {
+    font-size: 1.3em;
+}
+
+.key img {
+    height: 1em;
+}

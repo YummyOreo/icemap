@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!--Meta tags-->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="ICE Map" />
+	<meta name="robots" content="index, follow" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+	<link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+	<!--Open Graph Tags-->
+	<meta property="og:site_name" content="ICE Activity" />
+	<meta property="og:url" content="https://ice-activity.a-good.dev" />
+	<meta property="og:type" content="website" />
+	<!-- Style Tags -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="./style.css" />
+	<link rel="stylesheet" href="./ice-activity.css" />
+	<!-- Other -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<script src="./ice-activity.js" defer></script>
+	<meta property="og:title" content="ICE Activity Chicago" />
+	<meta property="og:description" content="ICE Activity Chicago" />
+	<title>ICE Activity Chicago</title>
+</head>
+
+<body class="homepage">
+	<main>
+		<section id="top">
+			<br>
+			<br>
+			<br>
+			<h1>ICE Activity - Chicago</h1>
+			<aside>
+				<p>
+					Last updated 2025-10-09
+				</p>
+				<p><i>I will try to keep this as up to date as possible, but it will be
+						incomplete. Markers will go up as soon as I know about the sighting, but
+						that
+						may be hours after they have left. <b>Do not use this as a resource to
+							know
+							where ICE currently is.</b></i></p>
+				<p><i>ICE is used to refer to all federal agents engaged in immigration activity.</i>
+				</p>
+			</aside>
+		</section>
+		<section id="main">
+			<h2>Map</h2>
+			<div id="map"></div>
+			<br>
+			<h3>Key</h3>
+			<p class="key"><img
+					src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png"
+					alt="Blue marker">: Protest</p>
+			<p class="key"><img
+					src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png"
+					alt="red marker">: ICE sighting and/or arrest <i>today</i></p>
+			<p class="key"><img
+					src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png"
+					style="opacity: 0.5;" alt="Small red marker">: ICE sighting and/or arrest
+				<i>not today</i>
+			</p>
+			<p class="key"><img
+					src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png"
+					alt="orange marker">: National Gaurd related</p>
+			<br>
+			<h2>List</h2>
+			<h3>2025-10-09</h3>
+			<ol>
+				<li class="larger"><b>7:30am: </b> 44th & Hermitage. One detained. Agents heading north
+					on Ashland. (<a href="https://www.instagram.com/p/DPlsHGoDvek/"
+						target="_blank">Source</a>)</li>
+				<li class="larger"><b>8am: </b> Yards Plaza in the Back of the Yards. (<a
+						href="https://www.instagram.com/p/DPlvDFDDizM/">Source</a>)</li>
+				<li class="larger"><b>8am: </b> Sheffer Road & Farnsworth, Aurora. (<a
+						href="https://www.instagram.com/p/DPl0oCkEqGZ/"
+						target="_blank">Source</a>)</li>
+				<li class="larger"><b>8-9am: </b> Orchard & Indian Trail @ Home Depot, Aurora. (<a
+						href="https://www.instagram.com/p/DPl0oCkEqGZ/"
+						target="_blank">Source</a>)</li>
+				<li class="larger"><b>8:20am: </b> 33rd & Cicero, Cicero IL. (<a
+						href="https://www.instagram.com/p/DPl4leEjupA/"
+						target="_blank">Source</a>)</li>
+				<li class="larger"><b>8:30am: </b> Lincoln & McCormick at Home Depot in West Ridge. One
+					detained. (<a
+						href="https://bsky.app/profile/unraveledpress.com/post/3m2rf2x74cs24"
+						target="_blank">Source</a>)</li>
+				<li class="larger"><b>9:00am: </b> 53rd & Loomis. One
+					detained. (<a href="https://www.instagram.com/p/DPl6tssDjIZ/"
+						target="_blank">Source</a>)</li>
+			</ol>
+		</section>
+		<br>
+	</main>
+	<footer>
+		<div class="footer-wrapper">
+			<a href="https://github.com/yummyoreo" target="_blank">Github</a>
+			<a href="https://bsky.app/profile/quinn-is.a-good.dev" target="_blank" rel="me">Blue Sky</a>
+			<a href="https://hachyderm.io/@YummyOreo" target="_blank" rel="me">Mastodon</a>
+			<a href="https://x.com/YummyOreo3" target="_blank" rel="me">Twitter</a>
+			<span>Get in touch: <a href="mailto:quinnyatesv1@gmail.com">quinnyatesv1@gmail.com</a></span>
+		</div>
+	</footer>
+</body>
+
+</html>
