@@ -32,6 +32,8 @@ googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}'
 // 	// 	.openOn(map);
 //
 // }
+//
+// map.on('click', onMapClick);
 
 var features = [{
 	"latlng": [
@@ -120,268 +122,11 @@ var features = [{
 	"color": "blue"
 },
 {
-
-	"latlng": [41.91732182146367, -87.71675614487668],
-	"title": "ICE Sighting 2025-10-06 12:10pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-
-	"latlng": [41.87828233024169, -87.78684051696536],
-	"title": "ICE Sighting 2025-10-06 11:15am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.615864649059525, -87.85958772097479],
-	"title": "ICE Sighting 2025-10-06 1pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.84715380569649, -87.77854204125124],
-	"title": "ICE Sighting & Possible Arrests 2025-10-07",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.84705227446955, -87.78344689785419],
-	"title": "ICE Sighting & Possible Arrests 2025-10-07",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.837078341531395, -87.7145724745194],
-	"title": "ICE Sighting & Possible Arrests 2025-10-07",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.75822759448448, -87.7323247580811],
-	"title": "ICE Sighting & Possible Arrests 2025-10-07",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.7209536910353, -87.70217760345575],
-	"title": "ICE Sighting & Possible Arrests 2025-10-07",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.744909612220994, -87.76814014174018],
-	"title": "ICE Sighting & Possible Arrests 2025-10-07",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.70585523110536, -87.77937403414694],
-	"title": "ICE Sighting & Possible Arrests 2025-10-07",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
 	"latlng": [41.430142111832346, -88.10926291534555],
 	"title": "National Gaurd Stationed Here",
 	"type": "marker",
 	"color": "orange",
 },
-{
-	"latlng": [41.808527258531285, -87.68441628769672],
-	"title": "ICE Sighting & Arrests 2025-10-07 - 4pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.793163983733024, -87.72807346874357],
-	"title": "ICE Sighting 2025-10-07 - 4pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-//
-{
-	"latlng": [41.67925609755027, -87.5025741449531],
-	"title": "ICE Sighting & Arrest 2025-10-08 - 8:15am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.83689216248008, -87.72435505029904],
-	"title": "ICE Sighting 2025-10-08 - 9:40am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.93917797624229, -87.72385731338971],
-	"title": "ICE Sighting and Arrests 2025-10-08 - 8:45am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.67797903781519, -87.48791891635453],
-	"title": "ICE Sighting & Arrests 2025-10-08 - 8:40am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.60933270110274, -88.14010884830824],
-	"title": "ICE Sighting and Arrest 2025-10-08 - 8:02am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.84795261420471, -87.72220789153262],
-	"title": "ICE Sighting 2025-10-08 - 10:55am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.78142132619188, -87.7203868996591],
-	"title": "ICE Sighting 2025-10-08 - 1:30pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.83018108220738, -87.69130437954416],
-	"title": "ICE Sighting 2025-10-08 - 1:30pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.86548854877734, -87.78373115832092],
-	"title": "ICE Sighting & Arrests 2025-10-08 - 1pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.865550661608474, -87.76924232159232],
-	"title": "ICE Sighting 2025-10-08 - 12:30pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.77605829496208, -87.71533176108983],
-	"title": "ICE Sighting, Home Invasion, & Arrest 2025-10-08 - 7:30pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-//
-{
-	"latlng": [41.81401933514338, -87.66877008098797],
-	"title": "ICE Sighting & Arrest 2025-10-09 - 7:30am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.81091752406796, -87.67614011672423],
-	"title": "ICE Sighting 2025-10-09 - 8am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.83091411182272, -87.74626856097042],
-	"title": "ICE Sighting 2025-10-09 - 8:20am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.99632743709588, -87.71357975002236],
-	"title": "ICE Sighting & Arrest 2025-10-09 - ~8:30am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.79774908088916, -87.65983227589265],
-	"title": "ICE Sighting & Arrest 2025-10-09 - 9am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.77779709847897, -88.2817605371943],
-	"title": "ICE Sighting 2025-10-09 - 8am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.78219307026216, -88.3773389736608],
-	"title": "ICE Sighting 2025-10-09 - 8–9am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.691266259617095, -88.06825088913459],
-	"title": "ICE Sighting & Arrest 2025-10-09 - 7:58am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.77399485047074, -87.6653443083754],
-	"title": "ICE Sighting 2025-10-09 - 11:00am",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.794068104901946, -87.87144319596008],
-	"title": "ICE Sighting 2025-10-09 - 12:50pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.80670145346693, -87.672214399632],
-	"title": "ICE Sighting & Arrest 2025-10-09 - 1pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.917650357420264, -87.73879894972228],
-	"title": "ICE Sighting & Arrest 2025-10-09 - 12:30pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-{
-	"latlng": [41.71196492931465, -87.5365018683888],
-	"title": "ICE Sighting 2025-10-09 - 4:45pm",
-	"type": "marker",
-	"color": "red",
-	"size": "small"
-},
-	///
 ]
 
 function icon(color) {
@@ -406,24 +151,72 @@ function smallIcon(color) {
 	});
 }
 
-for (let i = 0; i < features.length; i++) {
-	let feature = features[i];
-	let type = feature["type"];
-	let title = feature["title"];
-	let latlng = feature["latlng"]
-	if (type == "poly") {
-		let f = L.polygon(latlng, { "color": feature["color"] }).addTo(map);
-		f.bindPopup(title)
-	}
-	if (type == "marker") {
-		if (feature["size"] == "small") {
-			let f = L.marker(latlng, { "icon": smallIcon(feature["color"]), "opacity": 0.75 }).addTo(map);
+function renderDefaultFeatures() {
+	for (let i = 0; i < features.length; i++) {
+		let feature = features[i];
+		let type = feature["type"];
+		let title = feature["title"];
+		let latlng = feature["latlng"]
+		if (type == "poly") {
+			let f = L.polygon(latlng, { "color": feature["color"] }).addTo(map);
 			f.bindPopup(title)
-		} else {
-			let f = L.marker(latlng, { "icon": icon(feature["color"]) }).addTo(map);
-			f.bindPopup(title)
+		}
+		if (type == "marker") {
+			if (feature["size"] == "small") {
+				let f = L.marker(latlng, { "icon": smallIcon(feature["color"]), "opacity": 0.75 }).addTo(map);
+				f.bindPopup(title)
+			} else {
+				let f = L.marker(latlng, { "icon": icon(feature["color"]) }).addTo(map);
+				f.bindPopup(title)
+			}
 		}
 	}
 }
 
-map.on('click', onMapClick);
+function renderSightings(data) {
+	for (let sighting in data) {
+		sighting = data[sighting]
+		let date = new Date(sighting.date + "T12:00:00");
+		let today = new Date();
+		console.log(today)
+		console.log(date)
+
+		if (today.getDay() == date.getDay()) {
+			let f = L.marker(sighting.latlng, { "icon": icon("red") }).addTo(map);
+			f.bindPopup(sighting.title)
+		} else {
+			let f = L.marker(sighting.latlng, { "icon": smallIcon("red"), "opacity": 0.75 }).addTo(map);
+			f.bindPopup(sighting.title)
+		}
+	}
+}
+
+var heat = L.heatLayer([], { radius: 30, blur: 25, maxZoom: 13 }).addTo(map);
+function renderHeatmap(data) {
+	for (let sighting in data) {
+		sighting = data[sighting]
+		let date = new Date(sighting.date);
+		let today = new Date();
+
+		let diff = today - date;
+		total_seconds = parseInt(Math.floor(diff / 1000));
+		total_minutes = parseInt(Math.floor(total_seconds / 60));
+		total_hours = parseInt(Math.floor(total_minutes / 60));
+		days = parseInt(Math.floor(total_hours / 24));
+		heat.addLatLng([sighting.latlng[0], sighting.latlng[1], 1])
+	}
+}
+
+function resetHeatmap() {
+	heat.setLatLngs([])
+}
+
+renderDefaultFeatures();
+
+fetch('sightings.json')
+	.then(response => response.json()) // Parse JSON
+	.then(data => {
+		renderSightings(data)
+		// renderHeatmap(data)
+	}) // Work with JSON data
+	.catch(error => console.error('Error fetching JSON:', error));
