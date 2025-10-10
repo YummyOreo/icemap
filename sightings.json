@@ -215,5 +215,15 @@
     "latlng": [41.960915352426156, -87.67091809662519],
     "title": "ICE Sighting (outside of an elementary school) & attempted arrest 2025-10-10 - 9:40am",
     "date": "2025-10-10"
+},
+{
+    "latlng": [41.981124303579854, -87.65445235525536],
+    "title": "ICE Detention 2025-10-10 - 9:25am",
+    "date": "2025-10-10"
+},
+{
+    "latlng": [41.967166316851085, -87.66111624494097],
+    "title": "ICE Attempted Detention 2025-10-10 - 10:56am",
+    "date": "2025-10-10"
 }
 ]
