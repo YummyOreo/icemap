@@ -295,73 +295,93 @@ var features = [{
 	"title": "ICE Sighting & Arrest 2025-10-09 - 7:30am",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.81091752406796, -87.67614011672423],
 	"title": "ICE Sighting 2025-10-09 - 8am",
 	"type": "marker",
-	"color": "red"
+	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.83091411182272, -87.74626856097042],
 	"title": "ICE Sighting 2025-10-09 - 8:20am",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.99632743709588, -87.71357975002236],
 	"title": "ICE Sighting & Arrest 2025-10-09 - ~8:30am",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.79774908088916, -87.65983227589265],
 	"title": "ICE Sighting & Arrest 2025-10-09 - 9am",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.77779709847897, -88.2817605371943],
 	"title": "ICE Sighting 2025-10-09 - 8am",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.78219307026216, -88.3773389736608],
 	"title": "ICE Sighting 2025-10-09 - 8–9am",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.691266259617095, -88.06825088913459],
 	"title": "ICE Sighting & Arrest 2025-10-09 - 7:58am",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.77399485047074, -87.6653443083754],
 	"title": "ICE Sighting 2025-10-09 - 11:00am",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.794068104901946, -87.87144319596008],
 	"title": "ICE Sighting 2025-10-09 - 12:50pm",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.80670145346693, -87.672214399632],
 	"title": "ICE Sighting & Arrest 2025-10-09 - 1pm",
 	"type": "marker",
 	"color": "red",
+	"size": "small"
 },
 {
 	"latlng": [41.917650357420264, -87.73879894972228],
 	"title": "ICE Sighting & Arrest 2025-10-09 - 12:30pm",
 	"type": "marker",
 	"color": "red",
-}
+	"size": "small"
+},
+{
+	"latlng": [41.71196492931465, -87.5365018683888],
+	"title": "ICE Sighting 2025-10-09 - 4:45pm",
+	"type": "marker",
+	"color": "red",
+	"size": "small"
+},
+	///
 ]
 
 function icon(color) {
