@@ -9,6 +9,11 @@ main {
 }
 
 
+#map:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 @media only screen and (max-width: 992px) {
     main {
         width: 95%;
