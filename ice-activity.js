@@ -217,6 +217,16 @@ fetch('sightings.json')
 	.then(response => response.json()) // Parse JSON
 	.then(data => {
 		renderSightings(data)
+		let heatmapButton = document.getElementById("heatmap");
+		heatmapButton.onclick = () => {
+			if (heatmapButton.classList.contains("button-subtle")) {
+				heatmapButton.classList.remove("button-subtle");
+				renderHeatmap(data)
+			} else {
+				heatmapButton.classList.add("button-subtle");
+				resetHeatmap()
+			}
+		}
 		// renderHeatmap(data)
 	}) // Work with JSON data
 	.catch(error => console.error('Error fetching JSON:', error));
