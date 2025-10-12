@@ -173,36 +173,68 @@ function renderDefaultFeatures() {
 	}
 }
 
-function renderSightings(data) {
-	for (let sighting in data) {
-		sighting = data[sighting]
-		let date = new Date(sighting.date + "T12:00:00");
-		let today = new Date();
-		console.log(today)
-		console.log(date)
+let dateSelector = document.getElementById("date");
+let filterDate = new Date(dateSelector.value + "T12:00:00");
+dateSelector.setAttribute("max", new Date().toISOString().split("T")[0]);
+dateSelector.setAttribute("min", "2025-10-06");
+if (filterDate.toString() == "Invalid Date") {
+	filterDate = null;
+}
 
-		if (today.getDay() == date.getDay()) {
+var sightingsLayer = L.layerGroup().addTo(map);
+
+var markers = [];
+
+function isSameDay(a, b) {
+	return (
+		a.getFullYear() === b.getFullYear() &&
+		a.getMonth() === b.getMonth() &&
+		a.getDate() === b.getDate()
+	);
+}
+
+function renderSightings(data) {
+	for (let i = 0; i < data.length; i++) {
+		sighting = data[i]
+		let date = new Date(sighting.date + "T12:00:00");
+
+		if (filterDate != null) {
+			if (!isSameDay(date, filterDate)) {
+				continue;
+			}
+		}
+
+		if (isSameDay(date, new Date())) {
 			let f = L.marker(sighting.latlng, { "icon": icon("red") }).addTo(map);
 			f.bindPopup(sighting.title)
+			markers.push(f)
 		} else {
 			let f = L.marker(sighting.latlng, { "icon": smallIcon("red"), "opacity": 0.75 }).addTo(map);
 			f.bindPopup(sighting.title)
+			markers.push(f)
 		}
 	}
 }
 
+function resetSightings() {
+	for (let i = 0; i < markers.length; i++) {
+		map.removeLayer(markers[i]);
+	}
+	markers = []
+}
+
 var heat = L.heatLayer([], { radius: 30, blur: 25, maxZoom: 13 }).addTo(map);
 function renderHeatmap(data) {
-	for (let sighting in data) {
-		sighting = data[sighting]
-		let date = new Date(sighting.date);
-		let today = new Date();
+	for (let i = 0; i < data.length; i++) {
+		sighting = data[i]
+		let date = new Date(sighting.date + "T12:00:00");
 
-		let diff = today - date;
-		total_seconds = parseInt(Math.floor(diff / 1000));
-		total_minutes = parseInt(Math.floor(total_seconds / 60));
-		total_hours = parseInt(Math.floor(total_minutes / 60));
-		days = parseInt(Math.floor(total_hours / 24));
+		if (filterDate != null) {
+			if (!isSameDay(date, filterDate)) {
+				continue;
+			}
+		}
+
 		heat.addLatLng([sighting.latlng[0], sighting.latlng[1], 1])
 	}
 }
@@ -212,6 +244,7 @@ function resetHeatmap() {
 }
 
 renderDefaultFeatures();
+
 
 fetch('sightings.json')
 	.then(response => response.json()) // Parse JSON
@@ -227,6 +260,20 @@ fetch('sightings.json')
 				resetHeatmap()
 			}
 		}
+
+		dateSelector.addEventListener("change", () => {
+			filterDate = new Date(dateSelector.value + "T12:00:00");
+
+			if (filterDate.toString() == "Invalid Date") {
+				filterDate = null;
+			}
+			resetSightings()
+			renderSightings(data)
+			if (!heatmapButton.classList.contains("button-subtle")) {
+				resetHeatmap()
+				renderHeatmap(data)
+			}
+		})
 		// renderHeatmap(data)
 	}) // Work with JSON data
 	.catch(error => console.error('Error fetching JSON:', error));
