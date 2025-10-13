@@ -204,12 +204,17 @@ function renderSightings(data) {
 			}
 		}
 
+		let color = "red"
+		if (sighting.type == "protest") {
+			color = "blue"
+		}
+
 		if (isSameDay(date, new Date())) {
-			let f = L.marker(sighting.latlng, { "icon": icon("red") }).addTo(map);
+			let f = L.marker(sighting.latlng, { "icon": icon(color) }).addTo(map);
 			f.bindPopup(sighting.title)
 			markers.push(f)
 		} else {
-			let f = L.marker(sighting.latlng, { "icon": smallIcon("red"), "opacity": 0.75 }).addTo(map);
+			let f = L.marker(sighting.latlng, { "icon": smallIcon(color), "opacity": 0.75 }).addTo(map);
 			f.bindPopup(sighting.title)
 			markers.push(f)
 		}
@@ -233,6 +238,11 @@ function renderHeatmap(data) {
 			if (!isSameDay(date, filterDate)) {
 				continue;
 			}
+		}
+
+		if (sighting.type == "protest") {
+			console.log(sighting)
+			continue;
 		}
 
 		heat.addLatLng([sighting.latlng[0], sighting.latlng[1], 1])
