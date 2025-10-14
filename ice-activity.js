@@ -209,6 +209,13 @@ function renderSightings(data) {
 			color = "blue"
 		}
 
+		if (sighting.type == "poly") {
+			color = "blue"
+			let f = L.polygon(sighting.latlng, { "color": color }).addTo(map);
+			f.bindPopup(sighting.title)
+			continue;
+		}
+
 		if (isSameDay(date, new Date())) {
 			let f = L.marker(sighting.latlng, { "icon": icon(color) }).addTo(map);
 			f.bindPopup(sighting.title)
@@ -240,8 +247,7 @@ function renderHeatmap(data) {
 			}
 		}
 
-		if (sighting.type == "protest") {
-			console.log(sighting)
+		if (sighting.type == "protest" || sighting.type == "poly") {
 			continue;
 		}
 
