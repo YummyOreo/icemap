@@ -343,6 +343,12 @@
 	"date": "2025-10-12"
 },
 {
+	"latlng": [41.96460199135894, -87.70955927284457],
+	"title": "30 agents throw tear gas at peaceful protesters 2025-10-12 - 12:30pm",
+	"date": "2025-10-12",
+	"type": "protest"
+},
+{
 	"latlng": [41.96467784208033, -87.70840676734662],
 	"title": "ICE Sighting 2025-10-12 - 12:30pm",
 	"date": "2025-10-12"
@@ -444,7 +450,7 @@
 },
 {
 	"latlng": [41.704487540031046, -87.53891683139268],
-	"title": "Protests against ICE detention where ICE crashed into a red car. Tear gas was deployed",
+	"title": "ICE detention where ICE crashed into a red car. Peaceful protests followed. Tear gas was deployed",
 	"date": "2025-10-14",
 	"type": "protest"
 },
