@@ -254,7 +254,6 @@ function resetHeatmap() {
 
 renderDefaultFeatures();
 
-
 fetch('sightings.json')
     .then(response => response.json()) // Parse JSON
     .then(data => {
