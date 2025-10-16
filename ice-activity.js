@@ -120,6 +120,12 @@ var features = [{
     "type": "marker",
     "color": "orange",
 },
+{
+    "latlng": [42.31200456338277, -87.83465556782477],
+    "title": "ICE Using Naval Facility",
+    "type": "marker",
+    "color": "yellow"
+}
 ]
 
 function icon(color) {
