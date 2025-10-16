@@ -861,7 +861,31 @@
             42.117679066700944,
             -88.2654433289079
         ],
-        "title": "Multiple iCE Detentions 2025-10-15 - 12:45am",
+        "title": "Multiple ICE Detentions 2025-10-15 - 12:45am",
+        "date": "2025-10-15"
+    },
+    {
+        "latlng": [
+            41.7676101130884,
+            -88.20813068473558
+        ],
+        "title": "At least one ICE Arrest 2025-10-15 - 11:15am",
+        "date": "2025-10-15"
+    },
+    {
+        "latlng": [
+            41.741109153170285,
+            -87.54419588267945
+        ],
+        "title": "4 ICE agents in military gear detained one US citizen, they were later released 2025-10-15 - 1:30pm",
+        "date": "2025-10-15"
+    },
+    {
+        "latlng": [
+            41.73807675084878,
+            -87.5308974479007
+        ],
+        "title": "ICE Staging Ground for the day 2025-10-15 - 1:30pm",
         "date": "2025-10-15"
     }
 ]
