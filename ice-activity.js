@@ -268,6 +268,7 @@ let timelineTimeout = null;
 
 function playTimelineFrom(date, data) {
     let today = new Date();
+    today.setHours(12);
     if (date > today) {
         timelineButton.classList.add("button-subtle");
         timelineButton.innerText = "▶️";
