@@ -260,11 +260,44 @@ function resetHeatmap() {
 
 renderDefaultFeatures();
 
+let timelineButton = document.getElementById("timeline-play")
+let timelineCurrentDay = document.getElementById("timeline-day")
+let heatmapButton = document.getElementById("heatmap");
+
+let timelineTimeout = null;
+
+function playTimelineFrom(date, data) {
+    let today = new Date();
+    if (date > today) {
+        timelineButton.classList.add("button-subtle");
+        timelineButton.innerText = "▶️";
+        filterDate = null;
+        if (!heatmapButton.classList.contains("button-subtle")) {
+            renderHeatmap(data)
+        }
+        renderSightings(data)
+        timelineCurrentDay.innerHTML = "";
+        dateSelector.value = null;
+        return;
+    }
+    filterDate = date;
+    resetHeatmap();
+    resetSightings()
+    renderSightings(data)
+    timelineCurrentDay.innerHTML = date.toISOString().split("T")[0];
+    if (!heatmapButton.classList.contains("button-subtle")) {
+        renderHeatmap(data)
+    }
+    timelineTimeout = setTimeout(() => {
+        date.setDate(date.getDate() + 1);
+        playTimelineFrom(date, data)
+    }, "1000")
+}
+
 fetch('sightings.json')
     .then(response => response.json()) // Parse JSON
     .then(data => {
         renderSightings(data)
-        let heatmapButton = document.getElementById("heatmap");
         heatmapButton.onclick = () => {
             if (heatmapButton.classList.contains("button-subtle")) {
                 heatmapButton.classList.remove("button-subtle");
@@ -286,6 +319,22 @@ fetch('sightings.json')
             if (!heatmapButton.classList.contains("button-subtle")) {
                 resetHeatmap()
                 renderHeatmap(data)
+            }
+        })
+
+        timelineButton.addEventListener("click", (_) => {
+            if (timelineButton.classList.contains("button-subtle")) {
+                timelineButton.classList.remove("button-subtle");
+                timelineButton.innerText = "⏸️";
+                let date = new Date("2025-10-06T12:00:00");
+                if (filterDate != null) {
+                    date = filterDate
+                }
+                playTimelineFrom(new Date(date), data)
+            } else {
+                timelineButton.innerText = "▶️";
+                timelineButton.classList.add("button-subtle");
+                clearTimeout(timelineTimeout);
             }
         })
         // renderHeatmap(data)
