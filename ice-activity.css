@@ -8,7 +8,6 @@ main {
     border: 4px var(--fg) solid;
 }
 
-
 #map:focus {
     outline: none;
     box-shadow: none;
