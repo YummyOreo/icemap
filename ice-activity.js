@@ -261,6 +261,7 @@ function resetHeatmap() {
 renderDefaultFeatures();
 
 let timelineButton = document.getElementById("timeline-play")
+let timelineButtonImage = document.querySelector("#timeline-play img")
 let timelineCurrentDay = document.getElementById("timeline-day")
 let heatmapButton = document.getElementById("heatmap");
 
@@ -271,7 +272,7 @@ function playTimelineFrom(date, data) {
     today.setHours(12);
     if (date > today) {
         timelineButton.classList.add("button-subtle");
-        timelineButton.innerText = "▶️";
+        timelineButtonImage.src = "./assets/play.svg";
         filterDate = null;
         if (!heatmapButton.classList.contains("button-subtle")) {
             renderHeatmap(data)
@@ -326,14 +327,14 @@ fetch('sightings.json')
         timelineButton.addEventListener("click", (_) => {
             if (timelineButton.classList.contains("button-subtle")) {
                 timelineButton.classList.remove("button-subtle");
-                timelineButton.innerText = "⏸️";
+                timelineButtonImage.src = "./assets/pause.svg";
                 let date = new Date("2025-10-06T12:00:00");
                 if (filterDate != null) {
                     date = filterDate
                 }
                 playTimelineFrom(new Date(date), data)
             } else {
-                timelineButton.innerText = "▶️";
+                timelineButtonImage.src = "./assets/play.svg";
                 timelineButton.classList.add("button-subtle");
                 clearTimeout(timelineTimeout);
             }
@@ -341,3 +342,11 @@ fetch('sightings.json')
         // renderHeatmap(data)
     }) // Work with JSON data
     .catch(error => console.error('Error fetching JSON:', error));
+
+// other shit
+let headers = document.getElementsByTagName("h3");
+
+for (index in headers) {
+    let header = headers[index];
+    header.id = header.innerText.toLocaleLowerCase()
+}

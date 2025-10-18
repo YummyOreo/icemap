@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    font-family: 'Atkinson Hyperlegible';
+    font-family: 'Atkinson Hyperlegible Next';
 
     /* https://coolors.co/ee8f1b-d17b0f-3e3e33-70715c-d9dac9-fcfced */
     --bg: #f7f6ed;
@@ -36,8 +36,8 @@ a:hover {
 
 button,
 .button {
-    background: var(--accent);
-    border: 4px solid var(--accent);
+    background: var(--accent2);
+    border: 4px solid var(--accent2);
     padding: 0.3em 0.6em;
     font-weight: 700;
     font-size: 1em;
@@ -50,6 +50,7 @@ button,
 
 .button.button-subtle {
     background: var(--bg);
+    border: 4px solid var(--accent);
     color: var(--accent)
 }
 

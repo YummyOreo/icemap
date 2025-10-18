@@ -62,4 +62,13 @@ img {
 
 #timeline-day {
     padding-left: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+#timeline-play img {
+    vertical-align: middle;
+    padding-bottom: 3px;
+    height: 1em;
+    width: auto;
 }
