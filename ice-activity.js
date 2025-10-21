@@ -206,6 +206,8 @@ function renderSightings(data) {
         let color = "red"
         if (sighting.type == "protest") {
             color = "blue"
+        } else if (sighting.type == "unconfirmend") {
+            color = "grey";
         }
 
         if (sighting.type == "poly") {

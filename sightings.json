@@ -1215,5 +1215,38 @@
         ],
         "title": "ICE Activity 2025-10-20",
         "date": "2025-10-20"
+    },
+    {
+        "latlng": [
+            41.69799460926597,
+            -88.08752101176533
+        ],
+        "title": "ICE Activity 2025-10-20 - 11am–12pm",
+        "date": "2025-10-20"
+    },
+    {
+        "latlng": [
+            41.97593049646962,
+            -87.88773577642972
+        ],
+        "title": "ICE Activity targeting ride share drivers 2025-10-20",
+        "date": "2025-10-20"
+    },
+    {
+        "latlng": [
+            41.8680233708535,
+            -87.79524252549528
+        ],
+        "title": "ICE Detention of US Citizen 2025-10-20 (UNCONFIRMEND)",
+        "date": "2025-10-20",
+        "type": "unconfirmend"
+    },
+    {
+        "latlng": [
+            41.844228900985456,
+            -87.72452191610479
+        ],
+        "title": "ICE Sighting 2025-10-20 - 2:10pm",
+        "date": "2025-10-20"
     }
 ]
