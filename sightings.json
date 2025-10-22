@@ -1473,5 +1473,29 @@
         "title": "Small protests against ICE agents after crash 2025-10-22 - ~12pm",
         "date": "2025-10-22",
         "type": "protest"
+    },
+    {
+        "latlng": [
+            42.06475243844047,
+            -88.26436227515026
+        ],
+        "title": "ICE Activity 2025-10-22 - 8:20am",
+        "date": "2025-10-22"
+    },
+    {
+        "latlng": [
+            41.69067105631621,
+            -88.06573820964857
+        ],
+        "title": "ICE Attempted (but failed!) Detention 2025-10-22 - 9:52am",
+        "date": "2025-10-22"
+    },
+    {
+        "latlng": [
+            41.83663576684381,
+            -87.7245860930709
+        ],
+        "title": "ICE Activity 2025-10-22 - 10am",
+        "date": "2025-10-22"
     }
 ]
