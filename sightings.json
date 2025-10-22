@@ -1440,5 +1440,38 @@
         ],
         "title": "ICE Activity 2025-10-22 - 9:35am",
         "date": "2025-10-22"
+    },
+    {
+        "latlng": [
+            41.91048384835275,
+            -87.69828588372108
+        ],
+        "title": "Multiple ICE detentions 2025-10-22 - 9am",
+        "date": "2025-10-22"
+    },
+    {
+        "latlng": [
+            41.90090903366877,
+            -87.71893751806905
+        ],
+        "title": "ICE detention and later release 2025-10-22 - 10:10am",
+        "date": "2025-10-22"
+    },
+    {
+        "latlng": [
+            41.84434524511268,
+            -87.74165268299532
+        ],
+        "title": "ICE Standoff between protesters 2025-10-22 - ~12pm",
+        "date": "2025-10-22"
+    },
+    {
+        "latlng": [
+            41.844163504624966,
+            -87.74153319250036
+        ],
+        "title": "Small protests against ICE agents after crash 2025-10-22 - ~12pm",
+        "date": "2025-10-22",
+        "type": "protest"
     }
 ]
