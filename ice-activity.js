@@ -211,9 +211,11 @@ function renderSightings(data) {
         }
 
         if (sighting.type == "poly") {
+            console.log(date)
             color = "blue"
             let f = L.polygon(sighting.latlng, { "color": color }).addTo(map);
             f.bindPopup(sighting.title)
+            markers.push(f)
             continue;
         }
 
