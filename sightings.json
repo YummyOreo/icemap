@@ -1577,5 +1577,29 @@
         "title": "Standoff between protesters & ICE. ICE deployed tear gas against protesters. 2025-10-23 - 10–11am",
         "date": "2025-10-23",
         "type": "poly"
+    },
+    {
+        "latlng": [
+            41.83640755974135,
+            -87.64782418886942
+        ],
+        "title": "ICE Active in Bridgeport 2025-10-23 - 12pm",
+        "date": "2025-10-23"
+    },
+    {
+        "latlng": [
+            41.831764496544686,
+            -87.67427111205932
+        ],
+        "title": "ICE Active in Mckinley Park 2025-10-23 - 12pm",
+        "date": "2025-10-23"
+    },
+    {
+        "latlng": [
+            41.84413109351219,
+            -87.73185443145533
+        ],
+        "title": "ICE Detention 2025-10-23 - 9:30am",
+        "date": "2025-10-23"
     }
 ]
