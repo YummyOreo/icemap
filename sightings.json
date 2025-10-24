@@ -1601,5 +1601,37 @@
         ],
         "title": "ICE Detention 2025-10-23 - 9:30am",
         "date": "2025-10-23"
+    },
+    {
+        "latlng": [
+            41.97875520450775,
+            -87.90458066796769
+        ],
+        "title": "ICE Activity 2025-10-23 - 1pm",
+        "date": "2025-10-23"
+    },
+    {
+        "latlng": [
+            42.0290035977076,
+            -88.08703254067801
+        ],
+        "title": "ICE Staging 2025-10-23 - 10:27",
+        "date": "2025-10-23"
+    },
+    {
+        "latlng": [
+            41.84433815767274,
+            -87.70135887123024
+        ],
+        "title": "Two ICE Detenations of teenage boys during protests 2025-10-23 - 10–11am",
+        "date": "2025-10-23"
+    },
+    {
+        "latlng": [
+            41.84453862401162,
+            -87.70135302129059
+        ],
+        "title": "Three ICE Detentions during protests 2025-10-23 - 10–11am",
+        "date": "2025-10-23"
     }
 ]
