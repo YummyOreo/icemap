@@ -1689,5 +1689,109 @@
         ],
         "title": "Two ICE Detentions 2025-10-24 - 9:45am",
         "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            42.12552029337146,
+            -88.26263763578517
+        ],
+        "title": "ICE Sighting 2025-10-24 - 10:25am",
+        "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.96469056118183,
+            -87.70959542913236
+        ],
+        "title": "Three ICE Detentions 2025-10-24 - 10:10–10:30am",
+        "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.91918182642004,
+            -87.71192429258431
+        ],
+        "title": "Attempted ICE Detention 2025-10-24 - 11am",
+        "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.92908055319531,
+            -87.65008997377893
+        ],
+        "title": "ICE Activity 2025-10-24 - 11:28am",
+        "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.932767116686655,
+            -87.64661577920118
+        ],
+        "title": "Attempted ICE Detention 2025-10-24 - 11:40am",
+        "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.93274355072909,
+            -87.64076796666208
+        ],
+        "title": "Two ICE Detentions 2025-10-24 - 11:45am",
+        "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.97528311073919,
+            -87.65498921378476
+        ],
+        "title": "ICE Detention 2025-10-24 - 12:05pm",
+        "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.94298788183725,
+            -87.66151903116524
+        ],
+        "title": "ICE Detention 2025-10-24 - 12:15pm",
+        "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.94273251433872,
+            -87.66148952686517
+        ],
+        "title": "Small protests against ICE during a detention. ICE deployed tear gas against ~50 peaceful protesters. ICE was driving the wrong way on a one way. 2025-10-24 - 12:15pm",
+        "date": "2025-10-24",
+        "type": "protest"
+    },
+    {
+        "latlng": [
+            [
+                41.94335789470316,
+                -87.6616180213721
+            ],
+            [
+                41.94335390461694,
+                -87.66138204110601
+            ],
+            [
+                41.942595783704135,
+                -87.6613659515424
+            ],
+            [
+                41.94259977383779,
+                -87.66158047905704
+            ]
+        ],
+        "title": "Small protests against ICE during a detention. ICE deployed tear gas against ~50 peaceful protesters. ICE was driving the wrong way on a one way. 2025-10-24 - 12:15pm",
+        "date": "2025-10-24",
+        "type": "poly"
+    },
+    {
+        "latlng": [
+            41.976328771231096,
+            -87.65981953144974
+        ],
+        "title": "ICE Detention 2025-10-24 - 12:10pm",
+        "date": "2025-10-24"
     }
 ]
