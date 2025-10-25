@@ -1793,5 +1793,71 @@
         ],
         "title": "ICE Detention 2025-10-24 - 12:10pm",
         "date": "2025-10-24"
+    },
+    {
+        "latlng": [
+            41.939123670043394,
+            -87.72390232584675
+        ],
+        "title": "ICE Activity 2025-10-25 - 9am",
+        "date": "2025-10-25"
+    },
+    {
+        "latlng": [
+            41.94458851165136,
+            -87.72365201076894
+        ],
+        "title": "ICE Activity 2025-10-25 - 9am",
+        "date": "2025-10-25"
+    },
+    {
+        "latlng": [
+            41.930985447458795,
+            -87.7247918238397
+        ],
+        "title": "ICE Activity (around the park) 2025-10-25 - 9am",
+        "date": "2025-10-25"
+    },
+    {
+        "latlng": [
+            41.9482269052544,
+            -87.73565846578315
+        ],
+        "title": "Two ICE Detentions, including one US citizen. ICE also deployed tear gas against rapid responders. 2025-10-25 - 9:50am",
+        "date": "2025-10-25"
+    },
+    {
+        "latlng": [
+            41.94804346968926,
+            -87.7356664978439
+        ],
+        "title": "ICE also deployed tear gas against rapid responders (responding to an active detention). 2025-10-25 - 9:50am",
+        "date": "2025-10-25",
+        "type": "protest"
+    },
+    {
+        "latlng": [
+            41.94316342623702,
+            -87.72731842009897
+        ],
+        "title": "Another deployment of tear gas against rapid responders. 2025-10-25 - 10–10:30am",
+        "date": "2025-10-25"
+    },
+    {
+        "latlng": [
+            41.94306033772335,
+            -87.72731364094614
+        ],
+        "title": "Another deployment of tear gas against rapid responders. 2025-10-25 - 10–10:30am",
+        "date": "2025-10-25",
+        "type": "protest"
+    },
+    {
+        "latlng": [
+            41.741539985274756,
+            -88.28104292291512
+        ],
+        "title": "ICE Detention. One hospitalization according to rapid responders. 2025-10-25 - 10:45am",
+        "date": -25
     }
 ]
