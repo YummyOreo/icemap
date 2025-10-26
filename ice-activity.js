@@ -193,6 +193,7 @@ function isSameDay(a, b) {
 }
 
 function renderSightings(data) {
+    let count = 0;
     for (let i = 0; i < data.length; i++) {
         sighting = data[i]
         let date = new Date(sighting.date + "T12:00:00");
@@ -219,6 +220,10 @@ function renderSightings(data) {
             continue;
         }
 
+        if (color == "red" || color == "grey") {
+            count++;
+        }
+
         if (isSameDay(date, new Date())) {
             let f = L.marker(sighting.latlng, { "icon": icon(color) }).addTo(map);
             f.bindPopup(sighting.title)
@@ -229,6 +234,7 @@ function renderSightings(data) {
             markers.push(f)
         }
     }
+    console.log(count)
 }
 
 function resetSightings() {

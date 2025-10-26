@@ -1858,6 +1858,14 @@
             -88.28104292291512
         ],
         "title": "ICE Detention. One hospitalization according to rapid responders. 2025-10-25 - 10:45am",
-        "date": -25
+        "date": "2025-10-25"
+    },
+    {
+        "latlng": [
+            41.80255676902128,
+            -88.1199860737843
+        ],
+        "title": "ICE Activity 2025-10-26 - 10:15am",
+        "date": "2025-10-26"
     }
 ]
