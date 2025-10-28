@@ -1914,5 +1914,30 @@
         ],
         "title": "ICE Detention 2025-10-28 - 8–9am",
         "date": "2025-10-28"
+    },
+    {
+        "latlng": [
+            41.821310612805824,
+            -87.70450126029301
+        ],
+        "title": "October 4th protests. Tear gas deployed",
+        "type": "protest",
+        "date": "2025-10-04"
+    },
+    {
+        "latlng": [
+            41.90272431713725,
+            -87.72140182967433
+        ],
+        "title": "ICE Activity 2025-10-28 - 1pm",
+        "date": "2025-10-28"
+    },
+    {
+        "latlng": [
+            41.90238979846751,
+            -87.72177445370555
+        ],
+        "title": "ICE Detention 2025-10-28 - 1pm",
+        "date": "2025-10-28"
     }
 ]
