@@ -2081,7 +2081,80 @@
             41.92452849951156,
             -87.72187380744356
         ],
-        "title": "ICER Activity 2025-10-29 - 9:20am",
+        "title": "ICE Activity 2025-10-29 - 9:20am",
+        "date": "2025-10-29"
+    },
+    {
+        "latlng": [
+            41.97600546784335,
+            -87.67941159049685
+        ],
+        "title": "CPB Helicopter sighting heading west 2025-10-29 - 10:35am",
+        "date": "2025-10-29",
+        "type": "heli"
+    },
+    {
+        "latlng": [
+            41.983812529939,
+            -87.66306198052172
+        ],
+        "title": "CPB Helicopter over Edgewater 2025-10-29 - 11am""date": "2025-10-29",
+        "type": "heli"
+    },
+    {
+        "latlng": [
+            42.0128567067521,
+            -87.67552693921604
+        ],
+        "title": "CPB Helicopter over Ridgers Park 2025-10-29 - 11am""date": "2025-10-29",
+        "type": "heli"
+    },
+    {
+        "latlng": [
+            41.96820052713917,
+            -87.72902065315374
+        ],
+        "title": "CPB Helicopter over Albany Park 2025-10-29 - 11am""date": "2025-10-29",
+        "type": "heli"
+    },
+    {
+        "latlng": [
+            41.985557839101766,
+            -87.66019853610221
+        ],
+        "title": "Heli sighting heading north east 2025-10-29 - 11:30am""date": "2025-10-29",
+        "type": "heli"
+    },
+    {
+        "latlng": [
+            41.70178739893513,
+            -88.06844038727935
+        ],
+        "title": "ICE Sighting 2025-10-29 - 9:15am",
+        "date": "2025-10-29"
+    },
+    {
+        "latlng": [
+            41.71801471916004,
+            -88.03133557999354
+        ],
+        "title": "ICE Sighting 2025-10-29 - 9:30am",
+        "date": "2025-10-29"
+    },
+    {
+        "latlng": [
+            41.96825284007015,
+            -87.72804251981403
+        ],
+        "title": "One Detained 2025-10-29 - 10:30am",
+        "date": "2025-10-29"
+    },
+    {
+        "latlng": [
+            41.98304785877294,
+            -87.69653516865358
+        ],
+        "title": "Three landscapers taken 2025-10-29 - 10:30am",
         "date": "2025-10-29"
     }
 ]

@@ -211,11 +211,16 @@ var features = [
     },
 ];
 
-function icon(color) {
+function icon(color, type) {
+    let url = `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`;
+    let shadow = `https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png`;
+    if (type == "heli") {
+        url = "./assets/heli.svg";
+        shadow = "./assets/heli-shadow.svg"
+    }
     return new L.Icon({
-        iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
-        shadowUrl:
-            "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+        iconUrl: url,
+        shadowUrl: shadow,
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -223,11 +228,16 @@ function icon(color) {
     });
 }
 
-function smallIcon(color) {
+function smallIcon(color, type) {
+    let url = `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${color}.png`;
+    let shadow = `https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png`;
+    if (type == "heli") {
+        url = "./assets/heli.svg";
+        shadow = "./assets/heli-shadow.svg"
+    }
     return new L.Icon({
-        iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${color}.png`,
-        shadowUrl:
-            "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+        iconUrl: url,
+        shadowUrl: shadow,
         iconSize: [18.75, 30.75],
         iconAnchor: [12, 30.75],
         popupAnchor: [1, -34],
@@ -328,12 +338,12 @@ function renderSightings(data) {
         }
 
         if (isSameDay(date, new Date()) || filterDate != null) {
-            let f = L.marker(sighting.latlng, { icon: icon(color) }).addTo(map);
+            let f = L.marker(sighting.latlng, { icon: icon(color, sighting.type) }).addTo(map);
             f.bindPopup(sighting.title);
             markers.push(f);
         } else {
             let f = L.marker(sighting.latlng, {
-                icon: smallIcon(color),
+                icon: smallIcon(color, sighting.type),
                 opacity: 0.5,
             }).addTo(map);
             f.bindPopup(sighting.title);
@@ -362,7 +372,7 @@ function renderHeatmap(data) {
             }
         }
 
-        if (sighting.type == "protest" || sighting.type == "poly") {
+        if (sighting.type == "protest" || sighting.type == "poly" || sight.type == "heli") {
             continue;
         }
 
