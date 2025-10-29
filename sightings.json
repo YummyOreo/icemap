@@ -2192,5 +2192,14 @@
         ],
         "title": "One landscaper detained 2025-10-29 - 12:30pm",
         "date": "2025-10-29"
+    },
+    {
+        "latlng": [
+            41.90868148418084,
+            -88.25946745290071
+        ],
+        "title": "CPB Heli landing 2025-10-29 - 12:24pm",
+        "date": "2025-10-29",
+        "type": "heli"
     }
 ]

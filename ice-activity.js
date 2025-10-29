@@ -276,6 +276,19 @@ function isSameDay(a, b) {
     );
 }
 
+function filterSighting(sighting) {
+    if (activeFilter == "sightings" && (sighting.type != null && sighting.type != "unconfirmend")) {
+        return true;
+    }
+    if (activeFilter == "protests" && (sighting.type != "protest" && sighting.type != "poly")) {
+        return true;
+    }
+    if (activeFilter == "helicopters" && (sighting.type != "heli")) {
+        return true;
+    }
+    return false;
+}
+
 function renderSightings(data) {
     let count = 0;
     for (let i = 0; i < data.length; i++) {
@@ -288,16 +301,7 @@ function renderSightings(data) {
             }
         }
 
-        if (
-            (sighting.type == "protest" || sighting.type == "poly") &&
-            activeFilter == "sightings"
-        ) {
-            continue;
-        }
-        if (
-            !(sighting.type == "protest" || sighting.type == "poly") &&
-            activeFilter == "protests"
-        ) {
+        if (filterSighting(sighting)) {
             continue;
         }
 
@@ -348,6 +352,10 @@ var heat = L.heatLayer([], { radius: 30, blur: 25, maxZoom: 13 }).addTo(map);
 function renderHeatmap(data) {
     for (let i = 0; i < data.length; i++) {
         sighting = data[i];
+        if (sighting.type == "poly") {
+            continue;
+        }
+
         let date = new Date(sighting.date + "T12:00:00");
 
         if (filterDate != null) {
@@ -356,8 +364,14 @@ function renderHeatmap(data) {
             }
         }
 
-        if (sighting.type == "protest" || sighting.type == "poly" || sight.type == "heli") {
-            continue;
+        if (activeFilter != "all") {
+            if (filterSighting(sighting)) {
+                continue;
+            }
+        } else {
+            if (sighting.type == "protest" || sight.type == "heli") {
+                continue;
+            }
         }
 
         heat.addLatLng([sighting.latlng[0], sighting.latlng[1], 1]);
