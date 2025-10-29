@@ -305,7 +305,7 @@ function renderSightings(data) {
             f.bindPopup(sighting.title)
             markers.push(f)
         } else {
-            let f = L.marker(sighting.latlng, { "icon": smallIcon(color), "opacity": 0.75 }).addTo(map);
+            let f = L.marker(sighting.latlng, { "icon": smallIcon(color), "opacity": 0.5 }).addTo(map);
             f.bindPopup(sighting.title)
             markers.push(f)
         }
