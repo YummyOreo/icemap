@@ -1,5 +1,7 @@
 let mobile = window.screen.width <= 992;
 
+/* filters */
+
 let activateButton = document.getElementById("filter-activate");
 let activeButtonInner = document.querySelector("#filter-activate span");
 
@@ -14,7 +16,6 @@ let menuActive = false;
 let activeFilter = "all";
 
 function toggleMenu() {
-    console.log("test");
     filter.classList.toggle("active");
     activateButton.classList.toggle("active");
     if (!menuActive) {
@@ -73,6 +74,21 @@ window.addEventListener("click", (event) => {
         toggleMenu();
     }
 });
+
+function filterSighting(sighting) {
+    if (activeFilter == "sightings" && (sighting.type != null && sighting.type != "unconfirmend")) {
+        return true;
+    }
+    if (activeFilter == "protests" && (sighting.type != "protest" && sighting.type != "poly")) {
+        return true;
+    }
+    if (activeFilter == "helicopters" && (sighting.type != "heli")) {
+        return true;
+    }
+    return false;
+}
+
+/* map */
 
 let y = 11;
 
@@ -146,41 +162,6 @@ var features = [
         type: "poly",
         color: "blue",
     },
-    // {
-    //     "latlng": [
-    //         [41.82207417176527, -87.70439913091305],
-    //         [41.82205018575847, -87.70460293205197],
-    //         [41.82081889200704, -87.70455466336117],
-    //         [41.82080689876964, -87.7043776781616],
-    //     ],
-    //     "title": "September 4th protests - Feds",
-    //     "type": "poly",
-    //     "color": "yellow"
-    // },
-    // {
-    //     "latlng": [
-    //         [41.82081489426148, -87.70455740707838],
-    //         [41.82069496177907, -87.70455204389052],
-    //         [41.82068696627224, -87.70435896912736],
-    //         [41.82079890327681, -87.7043696955031],
-    //     ],
-    //     "title": "September 4th protests - Protesters",
-    //     "type": "poly",
-    //     "color": "blue"
-    // },
-    // {
-    //     "latlng": [
-    //         [41.82205618226101, -87.70459497461181],
-    //         [41.8220821670989, -87.70440994463043],
-    //         [41.822274054805895, -87.7044474869455],
-    //         [41.82246794075915, -87.70438849187899],
-    //         [41.822469939580344, -87.70457620345427],
-    //         [41.82231603016513, -87.70461106417538],
-    //     ],
-    //     "title": "September 4th protests - Protesters",
-    //     "type": "poly",
-    //     "color": "blue"
-    // },
     {
         latlng: [41.430142111832346, -88.10926291534555],
         title: "National Gaurd Stationed Here",
@@ -195,12 +176,26 @@ var features = [
     },
 ];
 
-function icon(color, type) {
+function icon(color, type, size) {
     let url = `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`;
+    if (size == "small") {
+        url = `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${color}.png`;
+    }
     let shadow = `https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png`;
     if (type == "heli") {
         url = "./assets/heli.svg";
         shadow = "./assets/heli-shadow.svg"
+    }
+
+    if (size == "small") {
+        return new L.Icon({
+            iconUrl: url,
+            shadowUrl: shadow,
+            iconSize: [18.75, 30.75],
+            iconAnchor: [12, 30.75],
+            popupAnchor: [1, -34],
+            shadowSize: [30.75, 30.75],
+        });
     }
     return new L.Icon({
         iconUrl: url,
@@ -209,23 +204,6 @@ function icon(color, type) {
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
         shadowSize: [41, 41],
-    });
-}
-
-function smallIcon(color, type) {
-    let url = `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${color}.png`;
-    let shadow = `https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png`;
-    if (type == "heli") {
-        url = "./assets/heli.svg";
-        shadow = "./assets/heli-shadow.svg"
-    }
-    return new L.Icon({
-        iconUrl: url,
-        shadowUrl: shadow,
-        iconSize: [18.75, 30.75],
-        iconAnchor: [12, 30.75],
-        popupAnchor: [1, -34],
-        shadowSize: [30.75, 30.75],
     });
 }
 
@@ -242,13 +220,13 @@ function renderDefaultFeatures() {
         if (type == "marker") {
             if (feature["size"] == "small") {
                 let f = L.marker(latlng, {
-                    icon: smallIcon(feature["color"]),
+                    icon: icon(feature["color"], null, "small"),
                     opacity: 0.75,
                 }).addTo(map);
                 f.bindPopup(title);
             } else {
                 let f = L.marker(latlng, {
-                    icon: icon(feature["color"]),
+                    icon: icon(feature["color"], null, "large"),
                 }).addTo(map);
                 f.bindPopup(title);
             }
@@ -276,21 +254,34 @@ function isSameDay(a, b) {
     );
 }
 
-function filterSighting(sighting) {
-    if (activeFilter == "sightings" && (sighting.type != null && sighting.type != "unconfirmend")) {
-        return true;
+function renderSighting(sighting, size) {
+    let color = "red";
+    if (sighting.type == "protest") {
+        color = "blue";
+    } else if (sighting.type == "unconfirmend") {
+        color = "grey";
     }
-    if (activeFilter == "protests" && (sighting.type != "protest" && sighting.type != "poly")) {
-        return true;
+
+    if (sighting.type == "poly") {
+        console.log(date);
+        color = "blue";
+        let f = L.polygon(sighting.latlng, { color: color }).addTo(map);
+        f.bindPopup(sighting.title);
+        markers.push(f);
+        return;
     }
-    if (activeFilter == "helicopters" && (sighting.type != "heli")) {
-        return true;
+
+    let opacity = 1;
+    if (size == "small") {
+        opacity = 0.6;
     }
-    return false;
+
+    let f = L.marker(sighting.latlng, { icon: icon(color, sighting.type, size), opacity }).addTo(map);
+    f.bindPopup(sighting.title);
+    markers.push(f);
 }
 
 function renderSightings(data) {
-    let count = 0;
     for (let i = 0; i < data.length; i++) {
         sighting = data[i];
         let date = new Date(sighting.date + "T12:00:00");
@@ -305,40 +296,12 @@ function renderSightings(data) {
             continue;
         }
 
-        let color = "red";
-        if (sighting.type == "protest") {
-            color = "blue";
-        } else if (sighting.type == "unconfirmend") {
-            color = "grey";
-        }
-
-        if (sighting.type == "poly") {
-            console.log(date);
-            color = "blue";
-            let f = L.polygon(sighting.latlng, { color: color }).addTo(map);
-            f.bindPopup(sighting.title);
-            markers.push(f);
-            continue;
-        }
-
-        if (color == "red" || color == "grey") {
-            count++;
-        }
-
         if (isSameDay(date, new Date()) || filterDate != null) {
-            let f = L.marker(sighting.latlng, { icon: icon(color, sighting.type) }).addTo(map);
-            f.bindPopup(sighting.title);
-            markers.push(f);
+            renderSighting(sighting, "large")
         } else {
-            let f = L.marker(sighting.latlng, {
-                icon: smallIcon(color, sighting.type),
-                opacity: 0.6,
-            }).addTo(map);
-            f.bindPopup(sighting.title);
-            markers.push(f);
+            renderSighting(sighting, "small")
         }
     }
-    console.log(count);
 }
 
 function resetSightings() {
@@ -384,45 +347,106 @@ function resetHeatmap() {
 
 renderDefaultFeatures();
 
-let timelineButton = document.getElementById("timeline-play");
-let timelineButtonImage = document.querySelector("#timeline-play img");
-let timelineCurrentDay = document.getElementById("timeline-day");
 let heatmapButton = document.getElementById("heatmap");
 
-let timelineTimeout = null;
+function buildData(data) {
+    let builtData = { "sightings": [], "protests": [], helis: [], other: [] };
+    for (let i = 0; i < data.length; i++) {
+        let entry = data[i];
+        let entryBuilt = {}
+        if (entry.type == null || entry.type == "unconfirmend") {
+            entryBuilt.latlng = entry.latlng;
+            entryBuilt.title = entry.title;
+            let date = new Date(entry.date);
+            if (entry.time != null) {
+                date = new Date(`${entry.date}, ${entry.time}`)
+                entryBuilt.date = date;
+                entryBuilt.time = true;
+            } else {
+                entryBuilt.date = date;
+                entryBuilt.time = false;
+            }
 
-function playTimelineFrom(date, data) {
-    let today = new Date();
-    today.setHours(12);
-    if (date > today) {
-        timelineButton.classList.add("button-subtle");
-        timelineButtonImage.src = "./assets/play.svg";
-        filterDate = null;
-        if (!heatmapButton.classList.contains("button-subtle")) {
-            renderHeatmap(data);
+            if (entry.type == null) {
+                entryBuilt.type = "sighting"
+            } else {
+                entryBuilt.type = entry.type
+            }
+
+            if (builtData.sightings[entry.date] == null) {
+                builtData.sightings[entry.date] = [entryBuilt]
+            } else {
+                builtData.sightings[entry.date].push(entryBuilt)
+            }
+        } else if (entry.type == "protest" || entry.type == "poly") {
+            entryBuilt.latlng = entry.latlng;
+            entryBuilt.title = entry.title;
+            let date = new Date(entry.date);
+            if (entry.time != null) {
+                date = new Date(`${entry.date}, ${entry.time}`)
+                entryBuilt.date = date;
+                entryBuilt.time = true;
+            } else {
+                entryBuilt.date = date;
+                entryBuilt.time = false;
+            }
+
+            entryBuilt.type = entry.type
+
+            if (builtData.protests[entry.date] == null) {
+                builtData.protests[entry.date] = [entryBuilt]
+            } else {
+                builtData.protests[entry.date].push(entryBuilt)
+            }
+        } else if (entry.type == "heli") {
+            entryBuilt.latlng = entry.latlng;
+            entryBuilt.title = entry.title;
+            let date = new Date(entry.date);
+            if (entry.time != null) {
+                date = new Date(`${entry.date}, ${entry.time}`)
+                entryBuilt.date = date;
+                entryBuilt.time = true;
+            } else {
+                entryBuilt.date = date;
+                entryBuilt.time = false;
+            }
+
+            entryBuilt.type = entry.type
+
+            if (builtData.helis[entry.date] == null) {
+                builtData.helis[entry.date] = [entryBuilt]
+            } else {
+                builtData.helis[entry.date].push(entryBuilt)
+            }
+        } else {
+            entryBuilt.latlng = entry.latlng;
+            entryBuilt.title = entry.title;
+            let date = new Date(entry.date);
+            if (entry.time != null) {
+                date = new Date(`${entry.date}, ${entry.time}`)
+                entryBuilt.date = date;
+                entryBuilt.time = true;
+            } else {
+                entryBuilt.date = date;
+                entryBuilt.time = false;
+            }
+
+            entryBuilt.type = entry.type
+
+            if (builtData.other[entry.date] == null) {
+                builtData.other[entry.date] = [entryBuilt]
+            } else {
+                builtData.other[entry.date].push(entryBuilt)
+            }
         }
-        renderSightings(data);
-        timelineCurrentDay.innerHTML = "";
-        dateSelector.value = null;
-        return;
     }
-    filterDate = date;
-    resetHeatmap();
-    resetSightings();
-    renderSightings(data);
-    timelineCurrentDay.innerHTML = date.toISOString().split("T")[0];
-    if (!heatmapButton.classList.contains("button-subtle")) {
-        renderHeatmap(data);
-    }
-    timelineTimeout = setTimeout(() => {
-        date.setDate(date.getDate() + 1);
-        playTimelineFrom(date, data);
-    }, "1000");
+    console.log(builtData)
 }
 
 fetch("sightings.json")
     .then((response) => response.json()) // Parse JSON
     .then((data) => {
+        buildData(data)
         renderSightings(data);
         heatmapButton.onclick = () => {
             if (heatmapButton.classList.contains("button-subtle")) {
@@ -448,24 +472,7 @@ fetch("sightings.json")
             }
         });
 
-        timelineButton.addEventListener("click", (_) => {
-            if (timelineButton.classList.contains("button-subtle")) {
-                timelineButton.classList.remove("button-subtle");
-                timelineButtonImage.src = "./assets/pause.svg";
-                let date = new Date("2025-10-06T12:00:00");
-                if (filterDate != null) {
-                    date = filterDate;
-                }
-                playTimelineFrom(new Date(date), data);
-            } else {
-                timelineButtonImage.src = "./assets/play.svg";
-                timelineButton.classList.add("button-subtle");
-                clearTimeout(timelineTimeout);
-            }
-        });
-
-        console.log(buttons);
-        for (i in buttons) {
+        for (let i = 0; i < buttons.length; i++) {
             let button = buttons[i];
             button.addEventListener("click", (e) => {
                 if (activeFilter != "all") {
@@ -499,14 +506,49 @@ fetch("sightings.json")
                 }
             });
         }
-        // renderHeatmap(data)
     }) // Work with JSON data
     .catch((error) => console.error("Error fetching JSON:", error));
 
 // other shit
 let headers = document.getElementsByTagName("h3");
-
-for (index in headers) {
-    let header = headers[index];
+for (let i = 0; i < headers.length; i++) {
+    let header = headers[i];
     header.id = header.innerText.toLocaleLowerCase();
 }
+
+
+// /* timeline */
+
+// let markerEl = document.querySelectorAll(".marker")
+// for (let i = 0; i < markerEl.length; i++) {
+//     let marker = markerEl[i];
+//     console.log(marker)
+//     let x = marker.offsetWidth / 2;
+//     console.log(x)
+//     marker.style.setProperty("--halfWidth", `${x}px`);
+// }
+
+// let cursor = document.getElementById('cursor')
+// let inc = 1;
+// let timelineBottomTimeout = null
+// let timelineActive = true
+// let x = 0
+// function moveCursor() {
+//     x = x + inc;
+//     cursor.style.transform = `translate(${x}px, -5px)`;
+//     timelineBottomTimeout = setTimeout(() => { moveCursor() }, 10)
+// }
+
+// window.addEventListener("keydown", (e) => {
+//     if (e.key === " ") {
+//         if (timelineActive) {
+//             timelineActive = false;
+//             clearTimeout(timelineBottomTimeout);
+//         } else {
+//             timelineActive = true;
+//             moveCursor();
+//         }
+//         e.preventDefault();
+//     }
+// })
+// moveCursor()

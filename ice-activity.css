@@ -60,6 +60,10 @@ img {
     border: 4px solid var(--accent);
 }
 
+.heli {
+    color: var(--fg2)
+}
+
 #timeline-day {
     padding-left: 0.5rem;
     font-weight: 600;
@@ -173,4 +177,51 @@ img {
 
 .wrapper-filter menu li {
     margin: 0 0 !important;
+}
+
+/* timeline */
+
+.timeline-wrapper {
+    width: 100%;
+    border: 4px solid var(--fg2);
+    border-radius: 0.5em;
+    padding: 1rem 0;
+}
+
+.timeline-inner {
+    padding: 0 1rem;
+}
+
+#cursor {
+    position: absolute;
+    height: 3rem;
+    width: 10px;
+    background: var(--accent2);
+    border-radius: 0.5em;
+    transition: all ease-in 0.01s;
+    transform: translate(0, -5px);
+}
+
+.markers {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.markers .marker::before {
+    width: 5px;
+    height: 20px;
+    background-color: var(--fg2);
+    content: "";
+    display: block;
+    position: absolute;
+    transform: translate(var(--halfWidth), -1rem)
+}
+
+.timeline-wrapper #line {
+    width: 100%;
+    height: 5px;
+    margin-top: 1rem;
+    background-color: var(--fg2);
 }

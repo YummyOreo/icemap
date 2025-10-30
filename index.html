@@ -52,6 +52,7 @@
         ></script>
 
         <script src="./leaflet-heat.js"></script>
+        <script src="./moment.js"></script>
         <script src="./ice-activity.js" defer></script>
         <meta property="og:title" content="ICE Activity Chicago" />
         <meta property="og:description" content="ICE Activity Chicago" />
@@ -104,13 +105,26 @@
 					</menu>
 				</div>
                     <input type="date" id="date" />
-                    <button id="timeline-play" class="button button-subtle">
-                        <img src="./assets/play.svg" alt="Play" />
-                    </button>
-                    <span id="timeline-day"></span>
                 </div>
                 <div id="map"></div>
-                <br />
+                <!--<br>
+                <div class="timeline-wrapper">
+                    <div id="cursor"></div>
+                    <div id="line"></div>
+                    <div class="timeline-inner">
+                        <div class="markers">
+                            <span class="marker" id="7">2025-10-22</span>
+                            <span class="marker" id="6">2025-10-23</span>
+                            <span class="marker" id="5">2025-10-24</span>
+                            <span class="marker" id="4">2025-10-25</span>
+                            <span class="marker" id="3">2025-10-26</span>
+                            <span class="marker" id="2">2025-10-27</span>
+                            <span class="marker" id="1">2025-10-28</span>
+                            <span class="marker" id="0">2025-10-29</span>
+                        </div>
+                    </div>
+                </div>-->
+                <br>
                 <h3>Key</h3>
                 <p class="key">
                     <img
@@ -184,13 +198,13 @@
                     <li class="larger">
                         <span><b>10:30am: </b> 5553 N Washtenaw Ave. Three landscapers detained. (<a href="https://www.instagram.com/p/DQZmp8_kYRP/" target="_blank">Source</a>)</span>
                     </li>
-                    <li class="larger">
+                    <li class="larger heli">
                         <span><b>10:35am: </b> Heli: Foster and Damen. (Eyes on the Skies)</span>
                     </li>
-                    <li class="larger">
+                    <li class="larger heli">
                         <span><b>11am: </b> Heli: over Edgewater, Rodgers Park & Albany Park. (Eyes on the Skies)</span>
                     </li>
-                    <li class="larger">
+                    <li class="larger heli">
                         <span><b>11:30am: </b> Heli: Broadway + Hollywood heading North East. (Eyes on the Skies)</span>
                     </li>
                     <li class="larger">
@@ -202,7 +216,7 @@
                     <li class="larger">
                         <span><b>12:15pm: </b> 5901 w fullerton. Three detained. (<a href="https://www.instagram.com/p/DQZsaKuEUrq/?img_index=2" target="_blank">Source</a>)</span>
                     </li>
-                    <li class="larger">
+                    <li class="larger heli">
                         <span><b>12:24pm: </b> Heli: Landing. (Eyes on the Skies)</span>
                     </li>
                     <li class="larger">
