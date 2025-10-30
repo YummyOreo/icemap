@@ -2458,7 +2458,8 @@
         ],
         "title": "CPB Heli activity over Belmont Craigin 2025-10-30 - 10am",
         "date": "2025-10-30",
-        "time": "10am"
+        "time": "10am",
+        "type": "heli"
     },
     {
         "latlng": [
@@ -2467,7 +2468,8 @@
         ],
         "title": "CPB Heli activity over Hermosa 2025-10-30 - 10am",
         "date": "2025-10-30",
-        "time": "10am"
+        "time": "10am",
+        "type": "heli"
     },
     {
         "latlng": [
