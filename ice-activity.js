@@ -406,109 +406,90 @@ renderDefaultFeatures();
 
 let heatmapButton = document.getElementById("heatmap");
 
+Array.prototype.insert = function (index, ...items) {
+    this.splice(index, 0, ...items);
+};
+
+function buildPiece(entry, builtData) {
+    let entryBuilt = {}
+    entryBuilt.latlng = entry.latlng;
+    entryBuilt.title = entry.title;
+    let date = new Date(entry.date);
+    if (entry.time != null) {
+        if (!entry.time.includes(":")) {
+            if (entry.time.endsWith("pm")) {
+                let halfs = entry.time.split("p");
+                entry.time = `${halfs[0]}:00pm`;
+            } else {
+                let halfs = entry.time.split("a");
+                entry.time = `${halfs[0]}:00am`;
+            }
+        }
+        date = new Date(`${entry.date}, ${entry.time}`)
+        entryBuilt.date = date;
+        entryBuilt.time = true;
+    } else {
+        entryBuilt.date = date;
+        entryBuilt.time = false;
+    }
+
+    let section = ""
+    if (entry.type == null || entry.type == "unconfirmend") {
+        section = "sightings"
+        if (entry.type == null) {
+            entryBuilt.type = "sighting"
+        } else {
+            entryBuilt.type = entry.type
+        }
+    } else if (entry.type == "protest" || entry.type == "poly") {
+        section = "protests"
+        entryBuilt.type = entry.type
+    }
+    else if (entry.type == "heli") {
+        section = "helis"
+        entryBuilt.type = entry.type
+    } else {
+        section = "other"
+        entryBuilt.type = entry.type
+    }
+
+    if (builtData[section][entry.date] == null) {
+        builtData[section][entry.date] = [entryBuilt]
+    } else {
+        let inserted = false;
+        for (let x = 0; x < builtData[section][entry.date].length; x++) {
+            let e = builtData[section][entry.date][x];
+            if (!e.time || (entryBuilt.time && e.date > entryBuilt.date)) {
+                builtData[section][entry.date].insert(x, entryBuilt);
+                inserted = true;
+                break;
+            }
+        }
+        if (!inserted) {
+            builtData[section][entry.date].push(entryBuilt)
+        }
+    }
+}
+
 function buildData(data) {
     let builtData = { "sightings": {}, "protests": {}, helis: {}, other: {} };
     for (let i = 0; i < data.length; i++) {
         let entry = data[i];
-        let entryBuilt = {}
-        if (entry.type == null || entry.type == "unconfirmend") {
-            entryBuilt.latlng = entry.latlng;
-            entryBuilt.title = entry.title;
-            let date = new Date(entry.date);
-            if (entry.time != null) {
-                date = new Date(`${entry.date}, ${entry.time}`)
-                entryBuilt.date = date;
-                entryBuilt.time = true;
-            } else {
-                entryBuilt.date = date;
-                entryBuilt.time = false;
-            }
-
-            if (entry.type == null) {
-                entryBuilt.type = "sighting"
-            } else {
-                entryBuilt.type = entry.type
-            }
-
-            if (builtData.sightings[entry.date] == null) {
-                builtData.sightings[entry.date] = [entryBuilt]
-            } else {
-                builtData.sightings[entry.date].push(entryBuilt)
-            }
-        } else if (entry.type == "protest" || entry.type == "poly") {
-            entryBuilt.latlng = entry.latlng;
-            entryBuilt.title = entry.title;
-            let date = new Date(entry.date);
-            if (entry.time != null) {
-                date = new Date(`${entry.date}, ${entry.time}`)
-                entryBuilt.date = date;
-                entryBuilt.time = true;
-            } else {
-                entryBuilt.date = date;
-                entryBuilt.time = false;
-            }
-
-            entryBuilt.type = entry.type
-
-            if (builtData.protests[entry.date] == null) {
-                builtData.protests[entry.date] = [entryBuilt]
-            } else {
-                builtData.protests[entry.date].push(entryBuilt)
-            }
-        } else if (entry.type == "heli") {
-            entryBuilt.latlng = entry.latlng;
-            entryBuilt.title = entry.title;
-            let date = new Date(entry.date);
-            if (entry.time != null) {
-                date = new Date(`${entry.date}, ${entry.time}`)
-                entryBuilt.date = date;
-                entryBuilt.time = true;
-            } else {
-                entryBuilt.date = date;
-                entryBuilt.time = false;
-            }
-
-            entryBuilt.type = entry.type
-
-            if (builtData.helis[entry.date] == null) {
-                builtData.helis[entry.date] = [entryBuilt]
-            } else {
-                builtData.helis[entry.date].push(entryBuilt)
-            }
-        } else {
-            entryBuilt.latlng = entry.latlng;
-            entryBuilt.title = entry.title;
-            let date = new Date(entry.date);
-            if (entry.time != null) {
-                date = new Date(`${entry.date}, ${entry.time}`)
-                entryBuilt.date = date;
-                entryBuilt.time = true;
-            } else {
-                entryBuilt.date = date;
-                entryBuilt.time = false;
-            }
-
-            entryBuilt.type = entry.type
-
-            if (builtData.other[entry.date] == null) {
-                builtData.other[entry.date] = [entryBuilt]
-            } else {
-                builtData.other[entry.date].push(entryBuilt)
-            }
-        }
+        buildPiece(entry, builtData)
     }
+    console.log(builtData)
     return builtData;
 }
 
 fetch("sightings.json")
     .then((response) => response.json()) // Parse JSON
     .then((data) => {
-        let dataBuilt = buildData(data)
-        renderFeatures(dataBuilt);
+        let builtData = buildData(data)
+        renderFeatures(builtData);
         heatmapButton.onclick = () => {
             if (heatmapButton.classList.contains("button-subtle")) {
                 heatmapButton.classList.remove("button-subtle");
-                renderHeatmap(dataBuilt);
+                renderHeatmap(builtData);
             } else {
                 heatmapButton.classList.add("button-subtle");
                 resetHeatmap();
@@ -522,10 +503,10 @@ fetch("sightings.json")
                 filterDate = null;
             }
             resetSightings();
-            renderFeatures(dataBuilt);
+            renderFeatures(builtData);
             if (!heatmapButton.classList.contains("button-subtle")) {
                 resetHeatmap();
-                renderHeatmap(dataBuilt);
+                renderHeatmap(builtData);
             }
         });
 
@@ -553,12 +534,12 @@ fetch("sightings.json")
                 activeButtonInner.innerText = capitalizeFirst;
 
                 resetSightings();
-                renderFeatures(dataBuilt);
+                renderFeatures(builtData);
                 resetHeatmap();
                 if (
                     !heatmapButton.classList.contains("button-subtle")
                 ) {
-                    renderHeatmap(dataBuilt);
+                    renderHeatmap(builtData);
                 }
             });
         }
