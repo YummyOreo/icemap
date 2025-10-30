@@ -69,24 +69,10 @@ window.addEventListener("click", (event) => {
     if (!menuActive) {
         return;
     }
-    console.log("stuff");
     if (!event.target.matches(".wrapper-filter *")) {
         toggleMenu();
     }
 });
-
-function filterSighting(sighting) {
-    if (activeFilter == "sightings" && (sighting.type != null && sighting.type != "unconfirmend")) {
-        return true;
-    }
-    if (activeFilter == "protests" && (sighting.type != "protest" && sighting.type != "poly")) {
-        return true;
-    }
-    if (activeFilter == "helicopters" && (sighting.type != "heli")) {
-        return true;
-    }
-    return false;
-}
 
 /* map */
 
@@ -254,7 +240,7 @@ function isSameDay(a, b) {
     );
 }
 
-function renderSighting(sighting, size) {
+function renderFeature(sighting, size) {
     let color = "red";
     if (sighting.type == "protest") {
         color = "blue";
@@ -263,7 +249,6 @@ function renderSighting(sighting, size) {
     }
 
     if (sighting.type == "poly") {
-        console.log(date);
         color = "blue";
         let f = L.polygon(sighting.latlng, { color: color }).addTo(map);
         f.bindPopup(sighting.title);
@@ -281,25 +266,62 @@ function renderSighting(sighting, size) {
     markers.push(f);
 }
 
-function renderSightings(data) {
-    for (let i = 0; i < data.length; i++) {
-        sighting = data[i];
-        let date = new Date(sighting.date + "T12:00:00");
+function renderFeaturesDay(data, day, feature) {
+    day = day.toISOString().split("T")[0]
+    let features = data[feature][day];
+    if (features == undefined) {
+        return
+    }
+    for (let i = 0; i < features.length; i++) {
+        let feature = features[i]
+        renderFeature(feature, "large")
+    }
+}
 
-        if (filterDate != null) {
-            if (!isSameDay(date, filterDate)) {
-                continue;
-            }
+function renderFeaturesAll(data, feature) {
+    let features = data[feature];
+    let today = new Date();
+    for (let d = 0; d < Object.keys(features).length; d++) {
+        let key = Object.keys(features)[d];
+        let day = new Date(key + "T12:00:00");
+
+        let size = "small";
+        if (isSameDay(day, today)) {
+            size = "large"
         }
-
-        if (filterSighting(sighting)) {
-            continue;
+        for (let i = 0; i < features[key].length; i++) {
+            let feature = features[key][i]
+            renderFeature(feature, size)
         }
+    }
+}
 
-        if (isSameDay(date, new Date()) || filterDate != null) {
-            renderSighting(sighting, "large")
-        } else {
-            renderSighting(sighting, "small")
+function renderFeatures(data) {
+    if (filterDate != null) {
+        if (activeFilter == "all" || activeFilter == "sightings") {
+            renderFeaturesDay(data, filterDate, "sightings");
+        }
+        if (activeFilter == "all" || activeFilter == "protests") {
+            renderFeaturesDay(data, filterDate, "protests");
+        }
+        if (activeFilter == "all" || activeFilter == "helicopters") {
+            renderFeaturesDay(data, filterDate, "helis");
+        }
+        if (activeFilter == "all") {
+            renderFeaturesDay(data, filterDate, "other");
+        }
+    } else {
+        if (activeFilter == "all" || activeFilter == "sightings") {
+            renderFeaturesAll(data, "sightings");
+        }
+        if (activeFilter == "all" || activeFilter == "protests") {
+            renderFeaturesAll(data, "protests");
+        }
+        if (activeFilter == "all" || activeFilter == "helicopters") {
+            renderFeaturesAll(data, "helis");
+        }
+        if (activeFilter == "all") {
+            renderFeaturesAll(data, "other");
         }
     }
 }
@@ -312,33 +334,68 @@ function resetSightings() {
 }
 
 var heat = L.heatLayer([], { radius: 30, blur: 25, maxZoom: 13 }).addTo(map);
-function renderHeatmap(data) {
-    for (let i = 0; i < data.length; i++) {
-        sighting = data[i];
-        if (sighting.type == "poly") {
+
+function renderHeatmapDay(data, day, feature) {
+    day = day.toISOString().split("T")[0]
+    let features = data[feature][day];
+    if (features == undefined) {
+        return
+    }
+    for (let i = 0; i < features.length; i++) {
+        let feature = features[i]
+        if (feature.type == "poly") {
             continue;
         }
-
-        let date = new Date(sighting.date + "T12:00:00");
-
-        if (filterDate != null) {
-            if (!isSameDay(date, filterDate)) {
-                continue;
-            }
-        }
-
-        if (activeFilter != "all") {
-            if (filterSighting(sighting)) {
-                continue;
-            }
-        } else {
-            if (sighting.type == "protest" || sight.type == "heli") {
-                continue;
-            }
-        }
-
-        heat.addLatLng([sighting.latlng[0], sighting.latlng[1], 1]);
+        heat.addLatLng([feature.latlng[0], feature.latlng[1], 1]);
     }
+}
+
+function renderHeatmapAll(data, feature) {
+    let features = data[feature];
+    for (let d = 0; d < Object.keys(features).length; d++) {
+        let key = Object.keys(features)[d];
+
+        for (let i = 0; i < features[key].length; i++) {
+            let feature = features[key][i]
+            if (feature.type == "poly") {
+                continue;
+            }
+            heat.addLatLng([feature.latlng[0], feature.latlng[1], 1]);
+        }
+    }
+}
+
+function renderHeatmap(data) {
+    if (filterDate != null) {
+        if (activeFilter == "all") {
+            renderHeatmapDay(data, filterDate, "sightings");
+        } else {
+            if (activeFilter == "sightings") {
+                renderHeatmapDay(data, filterDate, "sightings");
+            }
+            if (activeFilter == "protests") {
+                renderHeatmapDay(data, filterDate, "protests");
+            }
+            if (activeFilter == "helicopters") {
+                renderHeatmapDay(data, filterDate, "helis");
+            }
+        }
+    } else {
+        if (activeFilter == "all") {
+            renderHeatmapAll(data, "sightings");
+        } else {
+            if (activeFilter == "sightings") {
+                renderHeatmapAll(data, "sightings");
+            }
+            if (activeFilter == "protests") {
+                renderHeatmapAll(data, "protests");
+            }
+            if (activeFilter == "helicopters") {
+                renderHeatmapAll(data, "helis");
+            }
+        }
+    }
+
 }
 
 function resetHeatmap() {
@@ -350,7 +407,7 @@ renderDefaultFeatures();
 let heatmapButton = document.getElementById("heatmap");
 
 function buildData(data) {
-    let builtData = { "sightings": [], "protests": [], helis: [], other: [] };
+    let builtData = { "sightings": {}, "protests": {}, helis: {}, other: {} };
     for (let i = 0; i < data.length; i++) {
         let entry = data[i];
         let entryBuilt = {}
@@ -440,18 +497,18 @@ function buildData(data) {
             }
         }
     }
-    console.log(builtData)
+    return builtData;
 }
 
 fetch("sightings.json")
     .then((response) => response.json()) // Parse JSON
     .then((data) => {
-        buildData(data)
-        renderSightings(data);
+        let dataBuilt = buildData(data)
+        renderFeatures(dataBuilt);
         heatmapButton.onclick = () => {
             if (heatmapButton.classList.contains("button-subtle")) {
                 heatmapButton.classList.remove("button-subtle");
-                renderHeatmap(data);
+                renderHeatmap(dataBuilt);
             } else {
                 heatmapButton.classList.add("button-subtle");
                 resetHeatmap();
@@ -465,10 +522,10 @@ fetch("sightings.json")
                 filterDate = null;
             }
             resetSightings();
-            renderSightings(data);
+            renderFeatures(dataBuilt);
             if (!heatmapButton.classList.contains("button-subtle")) {
                 resetHeatmap();
-                renderHeatmap(data);
+                renderHeatmap(dataBuilt);
             }
         });
 
@@ -496,13 +553,12 @@ fetch("sightings.json")
                 activeButtonInner.innerText = capitalizeFirst;
 
                 resetSightings();
-                renderSightings(data);
+                renderFeatures(dataBuilt);
                 resetHeatmap();
                 if (
-                    !heatmapButton.classList.contains("button-subtle") &&
-                    activeFilter != "protests"
+                    !heatmapButton.classList.contains("button-subtle")
                 ) {
-                    renderHeatmap(data);
+                    renderHeatmap(dataBuilt);
                 }
             });
         }
