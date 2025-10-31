@@ -1868,7 +1868,7 @@
         ],
         "title": "ICE Sighting 2025-10-24 - 10:25am",
         "date": "2025-10-24",
-        "time": "10:25m"
+        "time": "10:25am"
     },
     {
         "latlng": [
@@ -2542,5 +2542,24 @@
         "title": "ICE Activity 2025-10-30 - 9:30am",
         "date": "2025-10-30",
         "time": "9:30am"
+    },
+    {
+        "latlng": [
+            41.968461000988135,
+            -87.70611195648175
+        ],
+        "title": "ICE Activity between Central Park Ave and California Ave 2025-10-31 - 9:30am",
+        "date": "2025-10-31",
+        "time": "9:30am"
+    },
+    {
+        "latlng": [
+            41.928542512685055,
+            -87.70627504033187
+        ],
+        "title": "Heli circling Logan Square 2025-10-31 - 10:25am",
+        "date": "2025-10-31",
+        "time": "10:25am",
+        "type": "heli"
     }
 ]
