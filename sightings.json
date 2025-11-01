@@ -2635,5 +2635,33 @@
         "date": "2025-10-31",
         "time": "1:28pm",
         "type": "heli"
+    },
+    {
+        "latlng": [
+            42.02672484537637,
+            -87.6900720953964
+        ],
+        "title": "ICE Detention 2025-10-31 - 12:20pm",
+        "date": "2025-10-31",
+        "time": "12:20pm"
+    },
+    {
+        "latlng": [
+            42.026704921649404,
+            -87.6900738258018
+        ],
+        "title": "Protests against ICE after crash. 2025-10-31 - 12:20pm",
+        "date": "2025-10-31",
+        "time": "12:20pm",
+        "type": "protest"
+    },
+    {
+        "latlng": [
+            41.894012974810344,
+            -87.68191334006043
+        ],
+        "title": "ICE Detention of 3 workers 2025-10-31 - 1pm",
+        "date": "2025-10-31",
+        "time": "1pm"
     }
 ]
