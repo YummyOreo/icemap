@@ -2726,5 +2726,14 @@
         "title": "Two ICE detentions 2025-11-01 - 10:15am",
         "date": "2025-11-01",
         "time": "10:15am"
+    },
+    {
+        "latlng": [
+            42.057433578355834,
+            -88.25612706213744
+        ],
+        "title": "Multiple ICE Detentions 2025-11-01 - 12pm",
+        "date": "2025-11-01",
+        "time": "12pm"
     }
 ]
