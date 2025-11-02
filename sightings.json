@@ -2735,5 +2735,15 @@
         "title": "Multiple ICE Detentions 2025-11-01 - 12pm",
         "date": "2025-11-01",
         "time": "12pm"
+    },
+    {
+        "latlng": [
+            41.86882468399968,
+            -87.86457871155949
+        ],
+        "title": "CPB Heli circles over broadview as protests go on. 2025-11-01 - 1:26pm",
+        "date": "2025-11-01",
+        "time": "1:26pm",
+        "type": "heli"
     }
 ]
