@@ -1,113 +1,86 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!--Meta tags-->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="ICE Map" />
-        <meta name="robots" content="index, follow" />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/favicon/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon/favicon-16x16.png"
-        />
-        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-        <!--Open Graph Tags-->
-        <meta property="og:site_name" content="ICE Activity" />
-        <meta property="og:url" content="https://icemap.a-good.dev" />
-        <meta property="og:type" content="website" />
-        <!-- Style Tags -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./style.css" />
-        <link rel="stylesheet" href="./ice-activity.css" />
-        <!-- Other -->
 
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-            crossorigin=""
-        />
-        <script
-            src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-            crossorigin=""
-        ></script>
+<head>
+    <!--Meta tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ICE Map" />
+    <meta name="robots" content="index, follow" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <!--Open Graph Tags-->
+    <meta property="og:site_name" content="ICE Activity" />
+    <meta property="og:url" content="https://icemap.a-good.dev" />
+    <meta property="og:type" content="website" />
+    <!-- Style Tags -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./ice-activity.css" />
+    <!-- Other -->
 
-        <script src="./leaflet-heat.js"></script>
-        <script src="./moment.js"></script>
-        <script src="./ice-activity.js" defer></script>
-        <meta property="og:title" content="ICE Activity Chicago" />
-        <meta property="og:description" content="ICE Activity Chicago" />
-        <title>ICE Activity Chicago</title>
-    </head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <body class="homepage">
-        <main>
-            <section id="top">
-                <br />
-                <br />
-                <br />
-                <h1>ICE Activity - Chicago</h1>
-                <aside>
-                    <p>Last updated 2025-11-02</p>
-                    <p>
-                        <i>This will mostly be a list of <b>verified</b> activity by a rapid response team or credible source (i.e. news or city). Unverified/unconfirmed activity will be noted and marked in grey.</i>
-                        <i
-                            >I will try to keep this as up to date as possible,
-                            but it will be incomplete. Markers will go up as
-                            soon as I know about the sighting, but that may be
-                            hours after they have left.
-                            <b
-                                >Do not use this as a resource to know where ICE
-                                currently is.</b
-                            ></i
-                        >
-                    </p>
-                </aside>
-            </section>
-            <section id="main">
-                <h2>Map</h2>
-                <div class="filters larger">
-                    <button class="button button-subtle" id="heatmap">
-                        Heatmap
-                    </button>
-                    <div class="wrapper-filter">
-					<button id="filter-activate" class="button-subtle button">
-					<img
-							src="assets/chevron.svg" alt=""
-							class="icon">
-					<span>Filter</span></button>
-					<menu tabindex="-1">
-						<li><button class="button button-filter" id="protests"
-								tabindex="-1">Protests</button></li>
-						<li><button class="button button-filter" id="sightings"
-								tabindex="-1">Sightings</button></li>
-						<li><button class="button button-filter" id="helicopters"
-								tabindex="-1">Helicopters</button></li>
-					</menu>
-				</div>
-                    <input type="date" id="date" />
+    <script src="./leaflet-heat.js"></script>
+    <script src="./moment.js"></script>
+    <script src="./ice-activity.js" defer></script>
+    <meta property="og:title" content="ICE Activity Chicago" />
+    <meta property="og:description" content="ICE Activity Chicago" />
+    <title>ICE Activity Chicago</title>
+</head>
+
+<body class="homepage">
+    <main>
+        <section id="top">
+            <br />
+            <br />
+            <br />
+            <h1>ICE Activity - Chicago</h1>
+            <aside>
+                <p>Last updated 2025-11-02</p>
+                <p>
+                    <i>This will mostly be a list of <b>verified</b> activity by a rapid response team or credible
+                        source (i.e. news or city). Unverified/unconfirmed activity will be noted and marked in
+                        grey.</i>
+                    <i>I will try to keep this as up to date as possible,
+                        but it will be incomplete. Markers will go up as
+                        soon as I know about the sighting, but that may be
+                        hours after they have left.
+                        <b>Do not use this as a resource to know where ICE
+                            currently is.</b></i>
+                </p>
+            </aside>
+        </section>
+        <section id="main">
+            <h2>Map</h2>
+            <div class="filters larger">
+                <button class="button button-subtle" id="heatmap">
+                    Heatmap
+                </button>
+                <div class="wrapper-filter">
+                    <button id="filter-activate" class="button-subtle button">
+                        <img src="assets/chevron.svg" alt="" class="icon">
+                        <span>Filter</span></button>
+                    <menu tabindex="-1">
+                        <li><button class="button button-filter" id="protests" tabindex="-1">Protests</button></li>
+                        <li><button class="button button-filter" id="sightings" tabindex="-1">Sightings</button></li>
+                        <li><button class="button button-filter" id="helicopters" tabindex="-1">Helicopters</button>
+                        </li>
+                    </menu>
                 </div>
-                <div id="map"></div>
-                <!--<br>
+                <input type="date" id="date" />
+            </div>
+            <div id="map"></div>
+            <!--<br>
                 <div class="timeline-wrapper">
                     <div id="cursor"></div>
                     <div id="line"></div>
@@ -124,1511 +97,1313 @@
                         </div>
                     </div>
                 </div>-->
-                <br>
-                <h3>Key</h3>
-                <p class="key">
-                    <img
-                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png"
-                        alt="Blue marker"
-                    />: Protest/tear gas (or other less lethal munitions) deployment
-                </p>
-                <p class="key">
-                    <img
-                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png"
-                        alt="red marker"
-                    />: ICE sighting and/or arrest <i>today</i>
-                </p>
-                <p class="key">
-                    <img
-                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png"
-                        style="opacity: 0.5"
-                        alt="Small red marker"
-                    />: ICE sighting and/or arrest
-                    <i>not today</i>
-                </p>
-                <p class="key">
-                    <img
-                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png"
-                        alt="red marker"
-                    />: <b>Unconfirmed</b> ICE sighting and/or arrest
-                </p>
-                <p class="key">
-                    <img
-                        src="./assets/heli.svg"
-                        alt="helicopter"
-                    />: ICE Helicopter sighting
-                </p>
-                <p class="key">
-                    <img
-                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png"
-                        alt="orange marker"
-                    />: National Gaurd related
-                </p>
-                <p class="key">
-                    <img
-                        src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png"
-                        alt="orange marker"
-                    />: ICE facility
-                </p>
-                <br />
-                <h2>List</h2>
-                <h3>2025-11-02</h3>
-                <aside><p>I have not had enough information to get exact locations and/or times for many sightings today. Sorry</p></aside>
-                <ol>
-                    <li class="larger">
-                        <span><b>10:30am: </b> Montana Charlie's Flea Market. One detained. (<a href="https://www.instagram.com/p/DQj6kWvDXZ3/">Source</a>)</span>
-                    </li>
-                </ol>
-                <h3>2025-11-01</h3>
-                <ol>
-                    <li class="larger">
-                        <span><b>7:45am: </b> West Park and Iowa Ave, Aurora, IL. (<a href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>8:30am: </b> Trask and New York, Aurora, IL. One detained. (<a href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:10am: </b> Elmwood and Sullivan. One detained. (<a href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:45am: </b> Fourth and East. Three detained. (<a href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>10am: </b> Black Oak and Fallen Oak. Two detained. (<a href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>10am: </b> Santori Library Downtown. One detained. (<a href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>10:15am: </b> Dollar General, Hill Ave, Aurora, IL. One detained. (<a href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>10:15am: </b> Durango Auto Group, Aurora, IL. Two detained. (<a href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>12pm: </b> Blackhawk Apartments in Congdon. Multiple detained. (<a href="https://www.facebook.com/ElginCoImmigrantRights/posts/pfbid0XTUd4hqWe53FB5RnYSWZr6D7G2mmcEzgzd67xGiDMEhPwMZtHDhQYqaMBYkU561Al">Source</a>)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>1:26pm: </b> CPB Heli circling over Broadview ice facility as protests ther go on. (Eyes on the Skies)</span>
-                    </li>
-                </ol>
-                <h3>2025-10-31</h3>
-                <ol>
-                    <li class="larger">
-                        <span><b>Morning: </b> Custer and Mulford. Two landscapers detained. (<a href="https://bsky.app/profile/mulchy.bsky.social/post/3m4iwc2jzwc22">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>Morning: </b> Petsmart parking lot on Oakton in Evanston. (<a href="https://bsky.app/profile/mulchy.bsky.social/post/3m4iypicifc22">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:30am: </b> Lawrence between Central Park & California. (<a href="https://www.instagram.com/p/DQeji9CkVNO/?img_index=2">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:45am: </b> Lawrence & Kedzie. One detained. (<a href="https://bsky.app/profile/mulchy.bsky.social/post/3m4itixvch22k">Source</a>)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>10:25am: </b> Heli circling Logan Square (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>11:43am: </b> Heli circling McCormick & Oakton (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>12pm: </b> Avers & Lawrence. (<a href="https://bsky.app/profile/mulchy.bsky.social/post/3m4j2x2f6c227">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>12:20pm: </b> Oakton Street & Asbury Avenue. Confrontation between ICE and Peaceful protesters after ICE crash. At least on arrested. ICE pulled a gun on a protester. (<a href=" https://bsky.app/profile/alexhairysun.bsky.social/post/3m4j554xslk2n">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>1pm: </b> Huron & Leavitt. 3 workers detained. (<a href="https://www.instagram.com/p/DQfD2kTESOq/?img_index=2">Source</a>)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>1:13pm: </b> Heli circling southeast Evanston near Trader Joe’s (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>1:19pm: </b> Heli circling between Dempster and Main near the railroad (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>1:28pm: </b> Heli circling West Howard and North Lehigh Ave (Eyes on the Skies)</span>
-                    </li>
-                </ol>
-                <h3>2025-10-30</h3>
-                <ol>
-                    <li class="larger">
-                        <span><b>5:30am: </b> International Parkway and Morey Dr. One detained (<a href="https://www.instagram.com/p/DQcqEHPE0b0/">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>6am: </b> 173rd & Torrence (<a href="https://www.instagram.com/p/DQcBxy7DT0_/">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>6am: </b> Bernice & Burnham (<a href="https://www.instagram.com/p/DQcBxy7DT0_/">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>7am: </b> Dunham Street and 75th Street (<a href="https://www.instagram.com/p/DQcqEHPE0b0/">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:20am: </b> 83rd and Adbeth Ave (<a href="https://www.instagram.com/p/DQcqEHPE0b0/">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:30am: </b> 83rd Street & Woodward Avenue (<a href="https://www.instagram.com/p/DQcqEHPE0b0/">Source</a>)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>10am: </b> Heli over Belmont Craigin (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>10am: </b> Heli over Hermosa (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>11:30am: </b> Rockstar Fades, 4307 Archer Ave. One detained (<a href="https://www.instagram.com/p/DQcRaCPDjmF/?img_index=1">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>12:45am: </b> 100 N Humphrey (Oak Park Rapid Response)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>12:45am: </b> Austin (Oak Park Rapid Response)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>1:15pm: </b> 4100 N Long. One detention. (<a href="https://www.instagram.com/p/DQcbGCZEb2N/?img_index=2">Source</a>)</span>
-                    </li>
-                </ol>
-                <h3>2025-10-29</h3>
-                <ol>
-                    <li class="larger">
-                        <span><b>7am: </b> Fullerton & Hamlin. (<a href="https://www.instagram.com/p/DQZXjErkVJV/?img_index=1" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>7:15am: </b> Phillips Park, Aurora, IL. (<a href="https://www.instagram.com/p/DQZLmn8jktj/?img_index=1" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>8:10am: </b> Union & Spring St. (<a href="https://www.instagram.com/p/DQZLmn8jktj/?img_index=1" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:15am: </b> Route 53 and Lee Ln. (<a href="https://www.instagram.com/p/DQZXjErkVJV/?img_index=1" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:30am: </b> "The Range at 355" on Murphy Road. (<a href="https://www.instagram.com/p/DQZXjErkVJV/?img_index=1" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>9:20am: </b> Fullerton & Hamlin. (<a href="https://www.instagram.com/p/DQZXjErkVJV/?img_index=1" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>10:30am: </b> Lawrence & Pulaski. One detained (<a href="https://www.instagram.com/p/DQZhZcqEfOL/?img_index=1" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>10:30am: </b> 5553 N Washtenaw Ave. Three landscapers detained. (<a href="https://www.instagram.com/p/DQZmp8_kYRP/" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>10:35am: </b> Heli: Foster and Damen. (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>11am: </b> Heli: over Edgewater, Rodgers Park & Albany Park. (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>11:30am: </b> Heli: Broadway + Hollywood heading North East. (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>11:30am: </b> Lincoln Ave & Foster ave. (<a href="https://www.instagram.com/p/DQZpKETkQzX/" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>12:04pm: </b> Foster & Christiana. (<a href="https://www.instagram.com/p/DQZrUMlEUY-/" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>12:15pm: </b> 5901 w fullerton. Three detained. (<a href="https://www.instagram.com/p/DQZsaKuEUrq/?img_index=2" target="_blank">Source</a>)</span>
-                    </li>
-                    <li class="larger heli">
-                        <span><b>12:24pm: </b> Heli: Landing. (Eyes on the Skies)</span>
-                    </li>
-                    <li class="larger">
-                        <span><b>12:30pm: </b> 2112 W Peterson. One landscaper detained. (<a href="https://www.instagram.com/p/DQZxCp5EeNh/" target="_blank">Source</a>)</span>
-                    </li>
-                </ol>
-                <h3>2025-10-28</h3>
-                <aside><p>ICE was active unusually late today. This could be due to the questioning of Bovino earlier today (where multiple CPB agents were present to protect him on his way in and out of the court house). We will see how this progresses tomorrow. Going forward, it is important to note that Bovino will have to go before a judge every weekday at 6pm—which might affect their operations later in the day.</p></aside>
-                <ol>
-                    <li class="larger">
-                        <b>8–9am: </b> 143rd & Greenbay. One Detained. (<a href="https://www.instagram.com/p/DQWzIx2Dtmg/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>1pm: </b> Division & Hamlin. (<a href="https://www.instagram.com/p/DQXOQXykaMt/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>1pm: </b> 3807 W Division. ICE Detention. (<a href="https://www.instagram.com/p/DQXOQXykaMt/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>1pm: </b> 31st and Kedzie. (<a href="https://www.facebook.com/LaVillitaSeDefiende/posts/pfbid0325FxQEiSKzju7MerftcNNr1v85TbejKMghLgrepcon9RXxPMQTfu9k9EfyLgjVWl" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>1:30pm: </b> Pershing and Archer. (<a href="https://www.instagram.com/p/DQXQfPoiV04/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>2pm: </b> North & Kostner. (<a href="https://www.instagram.com/p/DQXUF2hkZKu/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>2pm: </b> Menards in Cicero. One detained. (<a href="https://www.instagram.com/p/DQXUF2hkZKu/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>2pm: </b> Hawthorn Plaza. (<a href="https://www.instagram.com/p/DQXUF2hkZKu/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>2pm: </b> 35th & Aberdeen. (<a href="https://www.instagram.com/p/DQXW1XXjPy3/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>2pm: </b> 31st & Halsted. (<a href="https://www.instagram.com/p/DQXW1XXjPy3/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>2:30pm: </b> Halsted & Archer. (South West Rapid Response)
-                    </li>
-                    <li class="larger">
-                        <b>2:45pm: </b> Springfield & Hirsch. One delivery driver detained. (<a href="https://www.instagram.com/p/DQXcrtwkedA/?img_index=2" targe="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>3pm: </b> 19th & Ashland. (<a href="https://bsky.app/profile/ckubzansky.bsky.social/post/3m4bqkakvuc2a" targe="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>4:50pm: </b> 25th & Lawndale. (<a href="https://www.instagram.com/p/DQXmZEGCcG-/" targe="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>4:50pm: </b> 25th and Central Park. 5 people detained. (<a href="https://www.instagram.com/p/DQXmZEGCcG-/" targe="_blank">Source</a>, ICIRR Eyes on ICE)
-                    </li>
-                    <li class="larger">
-                        <b>Time Unknown: </b> 16th & Euclid. (<a href="https://bsky.app/profile/djbyrnes1.bsky.social/post/3m4bu4xbars2n" targe="_blank">Source</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-27</h3>
-                <ol>
-                    <li class="larger">
-                        <b>7:50am: </b> 600 block N Cuyler. One detention. (<a href="https://www.instagram.com/p/DQUJ4ebDTvT/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> McDonalds on 95th & Jeffery. One detained. (<a href="https://www.instagram.com/p/DQURyhTjnPc/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> 105th & Ewing. (<a href="https://www.instagram.com/p/DQURyhTjnPc/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>~10:30am: </b> 105th & Ave G. (<a href="https://bsky.app/profile/unraveledpress.com/post/3m46u6q7hgk2n" target="_blank">Source</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-26</h3>
-                <ol>
-                    <li class="larger">
-                        <b>10:15am: </b> Diehl and Naperville Rd. (<a href="https://www.instagram.com/p/DQSCjMLk6DE/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-25</h3>
-                <ol>
-                    <li class="larger">
-                        <b>9am: </b> Belmont & Milwaukee. (<a href="https://www.instagram.com/p/DQPEgcSEWDl/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> Cornelia & Avers. (<a href="https://www.instagram.com/p/DQPEgcSEWDl/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> Around Koz Park. (<a href="https://www.instagram.com/p/DQPEgcSEWDl/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:50am: </b> 3700 N Kildare (behind Schurz High School). Two detained (including one US citizen). Agents deployed tear gas against rapid responders. (<a href="https://www.instagram.com/p/DQPKhmDEd4W/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10–10:30am: </b> Roscoe & Pulaski. Agents deployed tear gas against rapid responders. (<a href="https://www.instagram.com/p/DQPOP9dke71/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10:45am: </b> Allen Elementary, Aurora, IL. One arrest, one hospitalized. (<a href="https://www.instagram.com/p/DQPReQLj2r9/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-24</h3>
-                <ol>
-                    <li class="larger">
-                        <b>Morning: </b> Grand Ave and I294 bridge. (<a href="https://www.instagram.com/p/DQMlZVJjbsX/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> 1701 Superior. Arrests. (<a href="https://www.instagram.com/p/DQMjkYDEaio/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> 2233 Ohio. Arrests. (<a href="https://www.instagram.com/p/DQMjkYDEaio/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> Damen & Division. Arrests. (<a href="https://www.instagram.com/p/DQMjkYDEaio/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> Chicago & Oakley. Arrests. (<a href="https://www.instagram.com/p/DQMjkYDEaio/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:20am: </b> Broadway & Belmont. Two detained. (<a href="https://www.instagram.com/p/DQMjnCdESMQ/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:45am: </b> 1647 La Salle Dr. Two detained. (<a href="https://www.instagram.com/p/DQMk_LKESy0/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10:10–10:30am: </b> Sawyer & Wilson. Three detained. (<a href="https://www.instagram.com/p/DQMryyPEXEF/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10:25am: </b> Austin Ave & Tulsa Ave. (<a href="https://www.facebook.com/ElginCoImmigrantRights/posts/pfbid02KbtEELbKv8pkrshUFasGLVEe3idAQ4yqmTiDaWRxrLaMZFV7yWwEhJ5wEWPtGXo2l" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11am: </b> Dickens & Mohawk. Attempted ICE Detention. (<a href="https://www.instagram.com/p/DQMtiWcEfmt/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11:28am: </b> Dayton & Wrightwood. (<a href="https://www.instagram.com/p/DQMwFk1ER9x/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11:40am: </b> Diversey & Orchard. Attepted Detention. (<a href="https://www.instagram.com/p/DQMx4kzEYgX/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11:45am: </b> 433 W Diversey Pkwy. Two Detention. (<a href="https://www.instagram.com/p/DQM1B40kU8i/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>12:05pm: </b> Sheridan & Winona. One Detention. (<a href="https://www.instagram.com/p/DQMzBxHkQVN/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>12:10pm: </b> Broadway & Foster. One detained. (<a href="https://www.instagram.com/p/DQM1w7PkYE6/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>12:15pm: </b> Lakewood inbetween Roscoe and Henderson. One detention. Peaceful protests formed. Agent deployed tear gas against protesters (for second time in past two days). (<a href="https://www.instagram.com/p/DQM319CkXkL/" target="_blank">Source 1</a> <a href="https://www.instagram.com/p/DQM5iT1gU75/" target="_blank">Source 2</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-23</h3>
-                <ol>
-                    <li class="larger">
-                        <b>9am: </b> Back of the Yards. (<a href="https://www.instagram.com/p/DQJ89w5DviH/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:15am: </b> Home Depot in Cicero. (<a href="https://www.instagram.com/p/DQJ6kPZDRtY/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:15am: </b> Cicro & 50th. (<a href="https://www.instagram.com/p/DQJ6kPZDRtY/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:30am: </b> 26th Street in Little Village. (<a href="https://www.instagram.com/p/DQJ-JtuDrbl/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:30am: </b> 26th & Kildare. One detained. (<a href="https://bsky.app/profile/djbyrnes1.bsky.social/post/3m3uwjwbmls2u" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:50am: </b> 26th & Pulaski. One possible detention. (<a href="https://bsky.app/profile/mulchy.bsky.social/post/3m3umoj62vc2z" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10:27am: </b> Encore Village, Schaumburg. Staging (<a href="https://www.facebook.com/ElginCoImmigrantRights/posts/pfbid02TEBf9udTyHf6kFJsMzUeqQfzCVHdFLQzvDXBPDpJ8Xhr2pcGEiWwTjH7UtoMFA4El" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10–11am: </b> Discount Mall, Little Village. Protests against ICE/standoff. Tear gas deployed. (<a href="https://bsky.app/profile/mulchy.bsky.social/post/3m3up7vjyt22l" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10–11am: </b> Discount Mall, Little Village. Two teenagers detained during protests. (<a href="https://chicago.suntimes.com/immigration/2025/10/23/feds-make-arrests-deploy-tear-gas-during-face-off-with-protesters-near-little-village-discount-mall" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10–11am: </b> Discount Mall, Little Village. Three adults detained during protests. (<a href="https://chicago.suntimes.com/immigration/2025/10/23/feds-make-arrests-deploy-tear-gas-during-face-off-with-protesters-near-little-village-discount-mall" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>12pm: </b> Bridgeport. (<a href="https://www.instagram.com/p/DQKO7XmjsUI/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>12pm: </b> Mckinley Park. (<a href="https://www.instagram.com/p/DQKO7XmjsUI/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>1pm: </b> O'Hare. (<a href="https://bsky.app/profile/djbyrnes1.bsky.social/post/3m3v2f7d26k2x" target="_blank">Source</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-22</h3>
-                <ol>
-                    <li class="larger">
-                        <b>8:20am: </b> Trout Park, Elgin. (<a href="https://www.facebook.com/ElginCoImmigrantRights/posts/pfbid02r8Q1PX5NxkVRJ1NbdD2cRQodGrkpRQN5YWP1P7dTapPArYWiZB86BXmrULv6esYWl" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> North & Mozart. Multiple detained. (<a href="https://www.instagram.com/p/DQHlijXgPQw/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:30am: </b> Armitage & Pulaski. One detained. (<a href="https://www.instagram.com/p/DQHdj-8APd4/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:35am: </b> Cuyler & Adams. Driving a Suburban gery SUV and black Lincoln SUV. (Oak Park Rapid Response)
-                    </li>
-                    <li class="larger">
-                        <b>9:52am: </b> 100 block of Williamsburg Ln, Bolingbrook. ICE called police after the people they were trying to detain "attacked" them. The people got away. No arrests were made by police or ICE. (<a href="https://www.facebook.com/BolingbrookEvents/posts/pfbid02fRu7tck49FuPaZVy4NWgRpuQcppkW9seRFA3Bi5x3PCFXzAKWs2htXrZg9mANwkl" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10am: </b> Walmart in Cicero. (<a href="https://www.instagram.com/p/DQHbiQFEwS6/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10am: </b> Home Depot in Cicero. (<a href="https://www.instagram.com/p/DQHbiQFEwS6/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10am: </b> 35th & California. One detained. (<a href="https://www.instagram.com/p/DQHeHH9DkI1/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10am: </b> 31st and Pulaski. (<a href="https://www.facebook.com/LaVillitaSeDefiende/posts/pfbid02uNM9CJyWgqDTLY4TsQHSskCppu1N3oPHF3JXpE6TRWJNBin6tfhqNhSSc5zsnhFvl" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10:10am: </b> Lawndale & Thomas. One detained and later released. (<a href="https://www.instagram.com/p/DQHsYLZgOkh/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10:55am: </b> West 26th Street and South Kostner Avenue. Two citiy officials detained. (<a href="https://blockclubchicago.org/2025/10/22/border-patrol-agents-descend-on-little-village-sparking-fury-fear-in-neighborhood/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>~12pm: </b> 26th Street and Cicero Avenue. Face off between protesters and agents. Agents used peper spray against protesters. (<a href="https://blockclubchicago.org/2025/10/22/border-patrol-agents-descend-on-little-village-sparking-fury-fear-in-neighborhood/" target="_blank">Source</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-21</h3>
-                <ol>
-                    <li class="larger">
-                        <b>Morning: </b> Devon & Western. (<a href="https://www.instagram.com/p/DQE9RsjDRUa/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Morning: </b> Target near Andersonville & Rodgers Park. (<a href="https://www.instagram.com/p/DQE9RsjDRUa/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Morning: </b> Weber Rd. exit on I-55 near Romeoville. Two people detained. (<a href="https://www.instagram.com/p/DQFK0doE3qo/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>8:15–8:40am: </b> The Promenade Apartments, Bolingbrook. (<a href="https://www.instagram.com/p/DQEu2tYD3De/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:10am: </b> Kenmore & Glenlake. One detained. (<a href="https://www.instagram.com/p/DQE0pTegNBw/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:15am: </b> Montrose & California. Targeting landscapers. (<a href="https://www.instagram.com/p/DQE033IgJZP/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:15–10:40am: </b> Albany Park. (<a href="https://www.instagram.com/p/DQE67vSgCpC/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9:45–10am: </b> Montgomery and Hill Ave, Aurora, IL. One detained (<a href="https://www.instagram.com/p/DQFAPeNjwE7/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>10:20am: </b> Carmen & Ravenswood (<a href="https://www.instagram.com/p/DQE6zaQgGmg/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11:05am: </b> Lawrence Ave & Sheridan Road. (<a href="https://www.instagram.com/p/DQE-64okYYZ/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11:15am: </b> Balmoral & N Clark St. One detained. (<a href="https://www.instagram.com/p/DQE_6vvEfyN/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11:30am: </b> Foster Ave & Magnolia. (<a href="https://www.instagram.com/p/DQFBpvFEfoH/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11:30am: </b> Hoyne Ave & Leavitt St. (<a href="https://www.instagram.com/p/DQFCvufEYMP/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11:37am: </b> Albion Ave & Rockwell St. At least one detained. (<a href="https://www.instagram.com/p/DQFW1KBAYg3/" target="_blank">Source 1</a> <a href="https://bsky.app/profile/unraveledpress.com/post/3m3pzm6uhz225" target="_blank">Source 2</a>)
-                    </li>
-                    <li class="larger">
-                        <b>12:05pm: </b> W Montrose Ave and N Kimball Ave. (<a href="https://www.instagram.com/p/DQFHNh9kfx6/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>12:45pm: </b> Whipple & Montrose. Two detained. (<a href="https://www.instagram.com/p/DQFM0uQkQw9/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>12:45pm: </b> Little Caesars Pizza, on Route 53 and Lily Cache Lane. (<a href="https://www.instagram.com/p/DQFK0doE3qo/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>1:45pm: </b> 2950 W Rascher. Two people detained. (<a href="https://www.instagram.com/p/DQFQfNjEZox/" target="_blank">Source</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-20</h3>
-                <ol>
-                    <li class="larger">
-                        <b>Morning: </b> 23rd & Laramie. At least 3 detained. (<a href="https://www.instagram.com/p/DQCcoIrE0LD/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Morning: </b> 13th & 51st ct. At least 1 detained. (<a href="https://www.instagram.com/p/DQCcoIrE0LD/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Morning: </b> 23rd & 53rd Ave. At least two detained. (<a href="https://www.instagram.com/p/DQCcoIrE0LD/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Morning: </b> 59th Ave & 24th St. At least 1 detained. (<a href="https://www.instagram.com/p/DQCcoIrE0LD/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>7:30am: </b> Columbia & May St. One detained. (<a href="https://www.instagram.com/p/DQCYFs3DEIK/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>7:30am: </b> Calumet & Michigan St. One detained. (<a href="https://www.instagram.com/p/DQCYFs3DEIK/?img_index=1" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>8:20am: </b> Pulaski & Geroge. One detained. (<a href="https://www.instagram.com/p/DQCKe5RAGrG/?img_index=2" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> Frankiln Ave in Forest Park. 3 people detained. (<a href="https://www.instagram.com/p/DQCh74QjYnE" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11am: </b> Abraham Lincoln Elementary School, Oak Park. ICE detention of US Citizen. (<a href="https://www.chicagotribune.com/2025/10/23/oak-park-attorney-arrested-near-school-says-federal-agents-pointed-gun-at-him-had-chiraq-team-2-group-chat/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>11am–12pm: </b> Briarcliff & Schmidt, Bolingbrook. (<a href="https://www.instagram.com/p/DQCyPCHjzgU/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>2:10pm: </b> 26th and Pulaski. (<a href="https://www.facebook.com/LaVillitaSeDefiende/posts/pfbid02vqkRgKu4zcq3R1bsJE9pCsQBL9EtLtfxLvB72eg2x3keQQEtufTXFTPMUHmb5WiNl" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Time Unknown: </b> 500 & 600 blocks of Franklin Avenue. Agents targeted lanscapers. (<a href="https://www.vrf.us/news/item/2860" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Time Unknown: </b> O'Hare. Targeting ride share drivers. (<a href="https://www.instagram.com/p/DQCuOdWDxQE/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Time Unknown: </b> Menards in Melrose Park. (<a href="https://www.instagram.com/p/DQCXy29jZJA/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Time Unknown: </b> Thomas & 19th. (<a href="https://www.instagram.com/p/DQCXy29jZJA/" target="_blank">Source</a>)
-                    </li>
-                    <li class="larger">
-                        <b>Time Unknown: </b> 19th & Division. (<a href="https://www.instagram.com/p/DQCXy29jZJA/" target="_blank">Source</a>)
-                    </li>
-                </ol>
-                <h3>2025-10-19</h3>
-                <ol>
-                    <li class="larger">
-                        <b>Morning: </b> Bolingbrook. (<a
-                            href="https://www.instagram.com/p/DP_0sVNCdTn/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>11:15am: </b> Between Fourth and Fifth Sts, Aurora,
-                        IL. One arrest. (<a
-                            href="https://www.instagram.com/p/DQAC9t3D-bv/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>11:45am: </b> Bank Of America parking lot in Little
-                        Village. (<a
-                            href="https://www.instagram.com/p/DP_5FRrkX4c/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:45pm: </b> El Güero, Root St, Aurora, IL. One
-                        arrest. (<a
-                            href="https://www.instagram.com/p/DQAC9t3D-bv/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-18</h3>
-                <ol>
-                    <li class="larger">
-                        <b>9:45am: </b> ICE Activity in Calument Park. (<a
-                            href="https://www.instagram.com/p/DP9LCqIjD63/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:45–10:30am: </b> ICE Activity in the East Side. (<a
-                            href="https://www.instagram.com/p/DP9NrJoDIwU/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:45–10:30am: </b> ICE Activity in the South Chicago.
-                        (<a
-                            href="https://www.instagram.com/p/DP9NrJoDIwU/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12pm: </b> Wendy's on Lake St, Aurora (<a
-                            href="https://www.instagram.com/p/DP9jOLFj_5e/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:10pm: </b> 61st & Greenwood. One detained. (<a
-                            href="https://www.instagram.com/p/DP9iPaKiXrW/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1:10pm: </b> 58th & Trumbull. Black SUV, Black pick
-                        up, and Grey GMC. (<a
-                            href="https://www.instagram.com/p/DP9eIFJjioV/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1:10pm: </b> 59th & Homan. Black SUV, Black pick up,
-                        and Grey GMC. (<a
-                            href="https://www.instagram.com/p/DP9eIFJjioV/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>All Day: </b> O'Hare. Targeting ride share drivers
-                        (again). (<a
-                            href="https://www.instagram.com/p/DP9IhEZjmHA/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-18</h3>
-                <aside>
-                    <p>
-                        I am working on getting specifics for ICE activity in
-                        Lake County.
-                    </p>
-                </aside>
-                <ol>
-                    <li class="larger">
-                        <b>7:30am: </b> Woodward & 103rd. At least two people
-                        were detained (SSIPChicago)
-                    </li>
-                    <li class="larger">
-                        <b>1:45pm: </b> 25th Police District building on Grand &
-                        Central. Two agents attempted to detain someone. Left in
-                        a Ford Fusion NC RHE9788. (<a
-                            href="https://www.instagram.com/p/DP7KKVdEfz8/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger"><b>Time Unknown: </b>Dodge and Oakton. One detained. (<a href="https://www.instagram.com/p/DP6-68Oj_WN/" target="_blank">Source</a>)</li>
-                </ol>
-                <h3>2025-10-16</h3>
-                <ol>
-                    <li class="larger">
-                        <b>8:38am: </b> Golfview Elementary, Carpentersville. 10
-                        ICE Vehicles spotted (<a
-                            href="https://www.facebook.com/story.php?story_fbid=1222918356534826&id=100064500200464"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8:45am: </b> Home Depot, 3500 N Kimball. ICE Agents
-                        detained one indivitual. (<a
-                            href="https://www.instagram.com/p/DP32VRMgH94/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:00am: </b> Archder & Kedzie (Southwest Rapid
-                        Response team)
-                    </li>
-                    <li class="larger">
-                        <b>9:00am: </b> 36th & Winchester. One detained
-                        (Southwest Rapid Response team)
-                    </li>
-                    <li class="larger">
-                        <b>9:15am: </b> 47th & Fairfield. One detained
-                        (Southwest Rapid Response team)
-                    </li>
-                    <li class="larger">
-                        <b>9:15am: </b> 47th & Fairfield. One detained
-                        (Southwest Rapid Response team)
-                    </li>
-                    <li class="larger">
-                        <b>10:30am: </b> Elgin City Hall. One detained. (<a
-                            href="https://www.facebook.com/story.php?story_fbid=1222918356534826&id=100064500200464"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>Morning: </b> Shop-o-rama on 43rd & Ashland. Around
-                        15 people detained. (<a
-                            href="https://www.instagram.com/p/DP4tQVTkq8F/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>Morning: </b> Archer & 47th. (<a
-                            href="https://www.instagram.com/p/DP39Vr_jWtM/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>4:35pm: </b> Ashland & Lawrance. (<a
-                            href="https://www.instagram.com/p/DP4sOvtEfzV/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>All Day: </b> Calument Park Beach. ICE Staging. (<a
-                            href="https://bsky.app/profile/unraveledpress.com/post/3m3dua536q22o"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-15</h3>
-                <ol>
-                    <li class="larger">
-                        <b>7:40am: </b> 25th & Hamlin. ICE detention. Agents
-                        left in a black SUV, black Jeep and silver pickup. (<a
-                            href="https://www.instagram.com/p/DP1PrpEjjY1/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:45am: </b> 47th & Western. (<a
-                            href="https://www.instagram.com/p/DP1YzerjroZ/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am: </b> 70th and Washtenaw. One detained in a red
-                        minivan. (<a
-                            href="https://bsky.app/profile/unraveledpress.com/post/3m3am7mgmgs2b"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10:20am: </b> Fox Park, East Dundee. Multiple
-                        detained. (<a
-                            href="https://bsky.app/profile/unraveledpress.com/post/3m3amusmgh22b"
-                            target="_blank"
-                            >Source</a
-                        >) Even though the source says Carpentersville, it seems
-                        like it is in a park just outside of Carpentersville.
-                    </li>
-                    <li class="larger">
-                        <b>11:15am: </b> Meijer near Liberty St and Rt. 59,
-                        Aurora, IL. At least one arrest. (<a
-                            href="https://www.instagram.com/p/DP13sQ4j1jI/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12pm: </b> Steelworkers Park in a white Chevy Tahoe,
-                        a gray Chevy Tahoe, a gray Jeep Wagoneer, a dark gray
-                        Ford Expedition, a white Chevy Trax, and a white Ford
-                        Transit. (<a
-                            href="https://www.instagram.com/p/DP1u-fPAUN1/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:05pm: </b> 47th & Wolcott. (<a
-                            href="https://www.instagram.com/p/DP1oU6XjeLW/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:30pm: </b> 44th & Honore. (<a
-                            href="https://www.instagram.com/p/DP1slw6Dmpz/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:45pm: </b> Carpentersville City Hall. (<a
-                            href="https://www.facebook.com/story.php?story_fbid=1221840419975953&id=100064500200464&rdid=MSfNaosOc5whU3gZ"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1:30pm: </b> 85th & Buffalo. 4 ICE agents in military
-                        gear detained one US citizen, they were later released.
-                        (<a
-                            href="https://www.instagram.com/p/DP16-eakutb/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1:30pm: </b> Steelworkers Park (again). Mostly
-                        staging. See source for more information. (<a
-                            href="https://www.instagram.com/p/DP16-eakutb/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1:30pm: </b> 52nd between Kimbark & Kenwood. One detained. (<a
-                            href="https://www.instagram.com/p/DP_vmW3DaFW/?img_index=5"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1:30pm: </b> 53rd & Greenwood. Two detained. (<a
-                            href="https://www.instagram.com/p/DP_vmW3DaFW/?img_index=5"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-14</h3>
-                <ol>
-                    <li class="larger">
-                        <b>7:45am: </b> Quadrangle and Remington. Four masked
-                        agents kidnapped an individual. Left in a black Dodge
-                        Charger, a gray Ford pickup truck, and a black Ford
-                        Explorer. (<a
-                            href="https://www.instagram.com/p/DPy3v_AjVuj/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8:10am: </b> Bolingbrook Municipal Building on
-                        Briarcliff Road. ICE Activity. (<a
-                            href="https://www.instagram.com/p/DPy3v_AjVuj/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–1pm: </b> 91st & Commerical. At least 3 officers
-                        in full green and yellow vests with POLICE in yellow.
-                        Two people were detained. (<a
-                            href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–1pm: </b> 106th & Ewing. 4 military officers,
-                        one armed, were present. Four people were detained. (<a
-                            href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–1pm: </b> 105th & Ave N. At least 45 military
-                        officers, some armed, surrounded multiple vehicles at
-                        the intersection, including one that had crashed into a
-                        red car. Around 11 cans of tear gas were deployed
-                        against peaceful protesters and CPD. At least 3 people
-                        were taken (<a
-                            href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
-                            target="_blank"
-                            >Source 1</a
-                        >
-                        <a
-                            href="https://www.instagram.com/reels/DPzWnGCklvl/"
-                            target="_blank"
-                            >Source 2</a
-                        >
-                        <a
-                            href="https://www.instagram.com/p/DPzAvXiDXMq/"
-                            target="_blank"
-                            >Source 3</a
-                        >
-                        <a
-                            href="https://www.youtube.com/live/755n1slnSeg"
-                            target="_blank"
-                            >Source 4</a
-                        >
-                        <a
-                            href="https://bsky.app/profile/peternickeas.bsky.social/post/3m36hm55chs2q"
-                            target="_blank"
-                            >Source 5</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–1pm: </b> 105th & Ave O. A least two agents in
-                        plain clothes with military vests pulled over a vehicle.
-                        (<a
-                            href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–1pm: </b> 99th & Ave H. (<a
-                            href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–1pm: </b> 114th & Ave O. (<a
-                            href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–1pm: </b> 103rd & Ewing. (<a
-                            href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–2pm: </b> Walmart on Dotly Avenue. ICE
-                        detention. (<a
-                            href="https://www.instagram.com/p/DPzqDgNAY9k/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am–2pm: </b> Ally near Kensington & Indiana. ICE
-                        detention. (<a
-                            href="https://www.instagram.com/p/DPzqDgNAY9k/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1pm: </b> Walgreens on the 3600 block of E. 106th
-                        Street. ICE detention. (<a
-                            href="https://www.instagram.com/p/DPzksFSD9jd/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1:30pm: </b> Hyde Park Blvd between Blackstone & Dorcherester. (<a
-                            href="https://www.instagram.com/p/DP_vmW3DaFW/?img_index=3"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-13</h3>
-                <ol>
-                    <li class="larger">
-                        <b>9am: </b> 45th & Western. Black Jeep Cherokee with
-                        Illinois plates, Black Ford Explorer, and a White Doge
-                        Durango. (<a
-                            href="https://www.instagram.com/p/DPwK6lTDucQ/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> 47th & Rockwell. Black Jeep Cherokee with
-                        Illinois plates, Black Ford Explorer, and a White Doge
-                        Durango. (<a
-                            href="https://www.instagram.com/p/DPwK6lTDucQ/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> Home Depot in Back of the Yards. Black Jeep
-                        Cherokee with Illinois plates, Black Ford Explorer, and
-                        a White Doge Durango. (<a
-                            href="https://www.instagram.com/p/DPwK6lTDucQ/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> 58th & Paulina. Two people detained. Black
-                        Jeep Cherokee and a White Doge Durango. (<a
-                            href="https://www.instagram.com/p/DPwcgldDtXN/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger"><b>9:30am: </b> 47th & Western.</li>
-                    <li class="larger">
-                        <b>11:30am: </b> 51st & Rancine. Two people detained.
-                        Black Jeep Cherokee and a White Doge Durango. (<a
-                            href="https://www.instagram.com/p/DPwcgldDtXN/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12pm: </b> 47th & Damen. Agents driving a White Dodge
-                        Durango (<a
-                            href="https://www.instagram.com/p/DPwlyL1jm1l/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12pm: </b> 43rd & Artesian. Agents driving a White
-                        Dodge Durango (<a
-                            href="https://www.instagram.com/p/DPwlyL1jm1l/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-12</h3>
-                <aside>
-                    <p>
-                        Note: There were a lot of sightings in Rodgers Park that
-                        I could not verify the exact location so they are not on
-                        the map. Notably this sighting:
-                        <a
-                            href="https://bsky.app/profile/royalpratt.bsky.social/post/3m2zq7peudk2q"
-                            target="_blank"
-                            >Bsky Sighting</a
-                        >
-                        <i
-                            >If you have any info on these, don't hesitate to
-                            contact me at
-                            <a href="mailto:quinnyatesv1@gmail.com"
-                                >quinnyatesv1@gmail.com</a
-                            >.</i
-                        >
-                    </p>
-                    <p>
-                        There were also widespread protests in Rodgers Park. I
-                        am still working on a good way to represent the sighting
-                        in Rodgers Park that I cannot get the location of, the
-                        protests in Rodgers Park, and reports that mention ice
-                        activity not in a specific place, but a general area.
-                    </p>
-                </aside>
-                <ol>
-                    <li class="larger">
-                        <b>All morning: </b> Large scale operations in Rodgers
-                        Park. Multiple detained. (<a
-                            href="https://www.instagram.com/p/DPtmeFTDQon/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>7am: </b> Farnsworth and Kane St. One detained. (<a
-                            href="https://www.instagram.com/p/DPtmeFTDQon/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:40am: </b> 55th & California. ICE Present. (<a
-                            href="https://bsky.app/profile/unraveledpress.com/post/3m2z3ks4xac2v"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9–10am: </b> ICE was confirmed on Weber between Romeo
-                        Road and Taylor Drive. (<a
-                            href="https://www.instagram.com/p/DPt3BnkD9Nu/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9-11am: </b> ICE Activity along Pulaski Road in West
-                        Lawn and West Edison. (<a
-                            href="https://www.instagram.com/p/DPtwEY7DhTy/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9-11am: </b> ICE Activity along Cicero Ave in West
-                        Lawn and West Edison. (<a
-                            href="https://www.instagram.com/p/DPtwEY7DhTy/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9-11am: </b> ICE Activity at Pulaski Orange Line
-                        station. (<a
-                            href="https://www.instagram.com/p/DPtwEY7DhTy/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10:30–11am: </b> Touhy & Western. Multiple ICE
-                        Arrests. (<a
-                            href="https://www.instagram.com/p/DPt4cWbkT16/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>11:10am: </b> Sheridan & Albion. Four agents detained
-                        one individual. (<a
-                            href="https://www.instagram.com/p/DPt3z67EZYC/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>11:10am: </b> Clark & Devon. Six agents attempted to
-                        detained one individual but failed! (<a
-                            href="https://www.instagram.com/p/DPt6zwqkU1A/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>Miday: </b> ICE Activity in Burbank, Oak Lawn, and
-                        Bridgeview. (<a
-                            href="https://www.instagram.com/p/DPuEsWuDy88/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12pm: </b> N Clark St & N Ridge Ave. ICE Sighting,
-                        thretens cyclist w/ arrest. (<a
-                            href="https://bsky.app/profile/royalpratt.bsky.social/post/3m2z6fathyk2a"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12pm: </b> Ally east of Clark & Albion. Agents detain
-                        one individual while aiming a gun at them. Rapid
-                        Responders arrive and protest. (<a
-                            href="https://www.instagram.com/p/DPuBLOrEUqH/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:20am: </b> 6518 N Mozart St. Five federal agents
-                        detained one individual. They left in a white explorer
-                        and a black expedition. (<a
-                            href="https://www.instagram.com/p/DPuHTPUEfEl/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:30pm: </b> Sawyer & Wilson. 20 agents deployed
-                        tear gas against protesters as agents detained one
-                        individual. Licence plates include #S913460 (<a
-                            href="https://www.instagram.com/p/DPt-ZpiEeX9/?img_index=2"
-                            target="_blank"
-                            >Source 1</a
-                        >
-                        <a
-                            href="https://bsky.app/profile/thesidewalkschool.bsky.social/post/3m2zcizy5g22l"
-                            target="_blank"
-                            >Source 2</a
-                        >)
-                    </li>
-                    <!-- GO BACK TO ONE ABOVE FOR PROTESTS -->
-                    <li class="larger">
-                        <b>12:30pm: </b> Kedzie & Wilson. ICE Activity. Vehicles
-                        include: Ford Expidition IL plate YS1948; Chevrolet
-                        Silverado IL plate FP182243. (<a
-                            href="https://www.instagram.com/p/DPt-ZpiEeX9/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-11</h3>
-                <ol>
-                    <li class="larger">
-                        <b>8:30am-8:45am: </b> Central Park & Grand. One person
-                        detained. Agents continued North in a Tan Tahoe with
-                        plates starting with <i>FH3</i>. (<a
-                            href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9am: </b> Armitage & Cicero. One person detained in a
-                        red minivan (<a
-                            href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:15am: </b> 2601 S Cicero, Cicero IL. Two people
-                        detained. 5 agents in black and blue SUVs (<a
-                            href="https://www.instagram.com/p/DPrMcSzjtRI/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:45am: </b> Archer & Laramie. One person was
-                        detained. (<a
-                            href="https://www.instagram.com/p/DPrFa57jgEC/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am: </b> Archer & Laramie. Another person was
-                        detained. (<a
-                            href="https://www.instagram.com/p/DPrIQQGDsj7/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am: </b> 49th & Lamon. One person was detained. (<a
-                            href="https://www.instagram.com/p/DPrIQQGDsj7/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10am: </b> 48th & Latrobe. One person was detained.
-                        (<a
-                            href="https://www.instagram.com/p/DPrIQQGDsj7/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>11:15am: </b> Cortland & Springfield to Harding. A
-                        Ford Escape, Grey Toyta Sequoia with CA plates, and a
-                        White Tahoe pickup with grill chased someone. Person is
-                        safe (<a
-                            href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>11:20am: </b> North & Central Park. TX VTH6680 &
-                        Tahoe LT TX FP250216 (<a
-                            href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>11:40am: </b> North & Tripp and Grand & Kostner.
-                        White Tahoe SUV (<a
-                            href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-10</h3>
-                <ol>
-                    <li class="larger">
-                        <b>8:20am: </b> W Lawrence & Cicero. (<a
-                            href="https://www.instagram.com/p/DPocdkaACLP/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8:20am: </b> W Lawrence & Foster. Arrest of Immigrant
-                        & WGN reporter, and hit & run. (<a
-                            href="https://www.chicagotribune.com/2025/10/10/wgn-tv-producer-detained-ice-enforcement/"
-                            target="_blank"
-                            >Source</a
-                        >
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8:40am: </b> Western & Foster. 6 detained. (<a
-                            href="https://www.instagram.com/p/DPohsy_gEAt/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:25am: </b> One detention at 5445 N Sheridan (<a
-                            href="https://www.instagram.com/p/DPol536Edgf/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:30am: </b> One detention near Sheridan & Catalpa
-                        (<a
-                            href="https://bsky.app/profile/leniann.bsky.social/post/3m2unekpi7k2u"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:40am: </b> Outside Ravenswoord Elementary.
-                        Attempted kidnapping but failed. (<a
-                            href="https://www.instagram.com/p/DPoyV5pkajV/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10:30am: </b> W Lawrence & Saint Louis. (<a
-                            href="https://www.instagram.com/p/DPopUIokVSR/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10:55am: </b> Cermak and Troy. One streetvendor
-                        kidnapped. (<a
-                            href="https://bsky.app/profile/lyndab08.bsky.social/post/3m2u4ksh3hs2n"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10:55am: </b> Damen and Cermak. Another streetvendor
-                        kidnapped. (<a
-                            href="https://bsky.app/profile/lyndab08.bsky.social/post/3m2u4ksh3hs2n"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>10:56am: </b> One attempted dention at Leland &
-                        Magnolia. (<a
-                            href="https://www.instagram.com/p/DPo2IBYEb55/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        Rideshare drivers at O'Hare targeted todat. (<a
-                            href="https://www.illinoisdriversalliance.org/in-the-news-1/illinois-drivers-alliance-statement-on-ice-raid-targeting-rideshare-drivers-at-ohare"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-                <h3>2025-10-09</h3>
-                <ol>
-                    <li class="larger">
-                        <b>7:30am: </b> 44th & Hermitage. One detained. Agents
-                        heading north on Ashland. (<a
-                            href="https://www.instagram.com/p/DPlsHGoDvek/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>7:58am: </b> Route 53 and Lily Cache. One detained.
-                        (<a
-                            href="https://www.instagram.com/p/DPmBHHkgOFO/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8am: </b> Yards Plaza in the Back of the Yards. (<a
-                            href="https://www.instagram.com/p/DPlvDFDDizM/"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8am: </b> Sheffer Road & Farnsworth, Aurora. (<a
-                            href="https://www.instagram.com/p/DPl0oCkEqGZ/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8-9am: </b> Orchard & Indian Trail @ Home Depot,
-                        Aurora. (<a
-                            href="https://www.instagram.com/p/DPl0oCkEqGZ/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8:20am: </b> 33rd & Cicero, Cicero IL. (<a
-                            href="https://www.instagram.com/p/DPl4leEjupA/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>8:30am: </b> Lincoln & McCormick at Home Depot in
-                        West Ridge. One detained. (<a
-                            href="https://bsky.app/profile/unraveledpress.com/post/3m2rf2x74cs24"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>9:00am: </b> 53rd & Loomis. One detained. (<a
-                            href="https://www.instagram.com/p/DPl6tssDjIZ/"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>11:00am: </b> 66th & Marshfield knocking on homes.
-                        (<a
-                            href="https://www.instagram.com/p/DPmNuKGjq-5/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:30pm: </b> 4500 block of West Armitage. 2 women
-                        detained. (<a
-                            href="https://www.instagram.com/p/DPmSOaGkT3u/?img_index=2"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>12:50pm: </b> 53rd & Ashland at O'Reilly's Autoparts.
-                        (<a
-                            href="https://www.instagram.com/p/DPmPeWfDia4/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1pm: </b> 48th & Wolcott. One detained. (<a
-                            href="https://www.instagram.com/p/DPmRMdkDonP/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                    <li class="larger">
-                        <b>1pm: </b> 101st & Ave L. (<a
-                            href="https://www.instagram.com/p/DPm-J-_jGS9/?img_index=1"
-                            target="_blank"
-                            >Source</a
-                        >)
-                    </li>
-                </ol>
-            </section>
+            <br>
+            <h3>Key</h3>
+            <p class="key">
+                <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png"
+                    alt="Blue marker" />: Protest/tear gas (or other less lethal munitions) deployment
+            </p>
+            <p class="key">
+                <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png"
+                    alt="red marker" />: ICE sighting and/or arrest <i>today</i>
+            </p>
+            <p class="key">
+                <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png"
+                    style="opacity: 0.5" alt="Small red marker" />: ICE sighting and/or arrest
+                <i>not today</i>
+            </p>
+            <p class="key">
+                <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png"
+                    alt="red marker" />: <b>Unconfirmed</b> ICE sighting and/or arrest
+            </p>
+            <p class="key">
+                <img src="./assets/heli.svg" alt="helicopter" />: ICE Helicopter sighting
+            </p>
+            <p class="key">
+                <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png"
+                    alt="orange marker" />: National Gaurd related
+            </p>
+            <p class="key">
+                <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png"
+                    alt="orange marker" />: ICE facility
+            </p>
             <br />
-        </main>
-        <footer>
-            <div class="footer-wrapper">
-                <a href="https://github.com/yummyoreo" target="_blank"
-                    >Github</a
-                >
-                <a
-                    href="https://bsky.app/profile/quinn-is.a-good.dev"
-                    target="_blank"
-                    rel="me"
-                    >Blue Sky</a
-                >
-                <a
-                    href="https://hachyderm.io/@YummyOreo"
-                    target="_blank"
-                    rel="me"
-                    >Mastodon</a
-                >
-                <span
-                    >Get in touch:
-                    <a href="mailto:quinnyatesv1@gmail.com"
-                        >quinnyatesv1@gmail.com</a
-                    ></span
-                >
-            </div>
-        </footer>
-    </body>
+            <h2>List</h2>
+            <h3>2025-11-02</h3>
+            <aside>
+                <p>I have not had enough information to get exact locations and/or times for many sightings today. Sorry
+                </p>
+            </aside>
+            <ol>
+                <li class="larger">
+                    <span><b>10:30am: </b> Montana Charlie's Flea Market. One detained. (<a
+                            href="https://www.instagram.com/p/DQj6kWvDXZ3/">Source</a>)</span>
+                </li>
+            </ol>
+            <h3>2025-11-01</h3>
+            <ol>
+                <li class="larger">
+                    <span><b>7:45am: </b> West Park and Iowa Ave, Aurora, IL. (<a
+                            href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>8:30am: </b> Trask and New York, Aurora, IL. One detained. (<a
+                            href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:10am: </b> Elmwood and Sullivan. One detained. (<a
+                            href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:45am: </b> Fourth and East. Three detained. (<a
+                            href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>10am: </b> Black Oak and Fallen Oak. Two detained. (<a
+                            href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>10am: </b> Santori Library Downtown. One detained. (<a
+                            href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>10:15am: </b> Dollar General, Hill Ave, Aurora, IL. One detained. (<a
+                            href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>10:15am: </b> Durango Auto Group, Aurora, IL. Two detained. (<a
+                            href="https://www.instagram.com/p/DQhDcR6DvAM/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>12pm: </b> Blackhawk Apartments in Congdon. Multiple detained. (<a
+                            href="https://www.facebook.com/ElginCoImmigrantRights/posts/pfbid0XTUd4hqWe53FB5RnYSWZr6D7G2mmcEzgzd67xGiDMEhPwMZtHDhQYqaMBYkU561Al">Source</a>)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>1:26pm: </b> CPB Heli circling over Broadview ice facility as protests ther go on. (Eyes on
+                        the Skies)</span>
+                </li>
+            </ol>
+            <h3>2025-10-31</h3>
+            <ol>
+                <li class="larger">
+                    <span><b>Morning: </b> Custer and Mulford. Two landscapers detained. (<a
+                            href="https://bsky.app/profile/mulchy.bsky.social/post/3m4iwc2jzwc22">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>Morning: </b> Petsmart parking lot on Oakton in Evanston. (<a
+                            href="https://bsky.app/profile/mulchy.bsky.social/post/3m4iypicifc22">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:30am: </b> Lawrence between Central Park & California. (<a
+                            href="https://www.instagram.com/p/DQeji9CkVNO/?img_index=2">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:45am: </b> Lawrence & Kedzie. One detained. (<a
+                            href="https://bsky.app/profile/mulchy.bsky.social/post/3m4itixvch22k">Source</a>)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>10:25am: </b> Heli circling Logan Square (Eyes on the Skies)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>11:43am: </b> Heli circling McCormick & Oakton (Eyes on the Skies)</span>
+                </li>
+                <li class="larger">
+                    <span><b>12pm: </b> Avers & Lawrence. (<a
+                            href="https://bsky.app/profile/mulchy.bsky.social/post/3m4j2x2f6c227">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>12:20pm: </b> Oakton Street & Asbury Avenue. Confrontation between ICE and Peaceful
+                        protesters after ICE crash. At least on arrested. ICE pulled a gun on a protester. (<a
+                            href=" https://bsky.app/profile/alexhairysun.bsky.social/post/3m4j554xslk2n">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>1pm: </b> Huron & Leavitt. 3 workers detained. (<a
+                            href="https://www.instagram.com/p/DQfD2kTESOq/?img_index=2">Source</a>)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>1:13pm: </b> Heli circling southeast Evanston near Trader Joe’s (Eyes on the Skies)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>1:19pm: </b> Heli circling between Dempster and Main near the railroad (Eyes on the
+                        Skies)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>1:28pm: </b> Heli circling West Howard and North Lehigh Ave (Eyes on the Skies)</span>
+                </li>
+            </ol>
+            <h3>2025-10-30</h3>
+            <ol>
+                <li class="larger">
+                    <span><b>5:30am: </b> International Parkway and Morey Dr. One detained (<a
+                            href="https://www.instagram.com/p/DQcqEHPE0b0/">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>6am: </b> 173rd & Torrence (<a
+                            href="https://www.instagram.com/p/DQcBxy7DT0_/">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>6am: </b> Bernice & Burnham (<a
+                            href="https://www.instagram.com/p/DQcBxy7DT0_/">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>7am: </b> Dunham Street and 75th Street (<a
+                            href="https://www.instagram.com/p/DQcqEHPE0b0/">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:20am: </b> 83rd and Adbeth Ave (<a
+                            href="https://www.instagram.com/p/DQcqEHPE0b0/">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:30am: </b> 83rd Street & Woodward Avenue (<a
+                            href="https://www.instagram.com/p/DQcqEHPE0b0/">Source</a>)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>10am: </b> Heli over Belmont Craigin (Eyes on the Skies)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>10am: </b> Heli over Hermosa (Eyes on the Skies)</span>
+                </li>
+                <li class="larger">
+                    <span><b>11:30am: </b> Rockstar Fades, 4307 Archer Ave. One detained (<a
+                            href="https://www.instagram.com/p/DQcRaCPDjmF/?img_index=1">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>12:45am: </b> 100 N Humphrey (Oak Park Rapid Response)</span>
+                </li>
+                <li class="larger">
+                    <span><b>12:45am: </b> Austin (Oak Park Rapid Response)</span>
+                </li>
+                <li class="larger">
+                    <span><b>1:15pm: </b> 4100 N Long. One detention. (<a
+                            href="https://www.instagram.com/p/DQcbGCZEb2N/?img_index=2">Source</a>)</span>
+                </li>
+            </ol>
+            <h3>2025-10-29</h3>
+            <ol>
+                <li class="larger">
+                    <span><b>7am: </b> Fullerton & Hamlin. (<a
+                            href="https://www.instagram.com/p/DQZXjErkVJV/?img_index=1"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>7:15am: </b> Phillips Park, Aurora, IL. (<a
+                            href="https://www.instagram.com/p/DQZLmn8jktj/?img_index=1"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>8:10am: </b> Union & Spring St. (<a
+                            href="https://www.instagram.com/p/DQZLmn8jktj/?img_index=1"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:15am: </b> Route 53 and Lee Ln. (<a
+                            href="https://www.instagram.com/p/DQZXjErkVJV/?img_index=1"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:30am: </b> "The Range at 355" on Murphy Road. (<a
+                            href="https://www.instagram.com/p/DQZXjErkVJV/?img_index=1"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>9:20am: </b> Fullerton & Hamlin. (<a
+                            href="https://www.instagram.com/p/DQZXjErkVJV/?img_index=1"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>10:30am: </b> Lawrence & Pulaski. One detained (<a
+                            href="https://www.instagram.com/p/DQZhZcqEfOL/?img_index=1"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>10:30am: </b> 5553 N Washtenaw Ave. Three landscapers detained. (<a
+                            href="https://www.instagram.com/p/DQZmp8_kYRP/" target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>10:35am: </b> Heli: Foster and Damen. (Eyes on the Skies)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>11am: </b> Heli: over Edgewater, Rodgers Park & Albany Park. (Eyes on the Skies)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>11:30am: </b> Heli: Broadway + Hollywood heading North East. (Eyes on the Skies)</span>
+                </li>
+                <li class="larger">
+                    <span><b>11:30am: </b> Lincoln Ave & Foster ave. (<a href="https://www.instagram.com/p/DQZpKETkQzX/"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>12:04pm: </b> Foster & Christiana. (<a href="https://www.instagram.com/p/DQZrUMlEUY-/"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger">
+                    <span><b>12:15pm: </b> 5901 w fullerton. Three detained. (<a
+                            href="https://www.instagram.com/p/DQZsaKuEUrq/?img_index=2"
+                            target="_blank">Source</a>)</span>
+                </li>
+                <li class="larger heli">
+                    <span><b>12:24pm: </b> Heli: Landing. (Eyes on the Skies)</span>
+                </li>
+                <li class="larger">
+                    <span><b>12:30pm: </b> 2112 W Peterson. One landscaper detained. (<a
+                            href="https://www.instagram.com/p/DQZxCp5EeNh/" target="_blank">Source</a>)</span>
+                </li>
+            </ol>
+            <h3>2025-10-28</h3>
+            <aside>
+                <p>ICE was active unusually late today. This could be due to the questioning of Bovino earlier today
+                    (where multiple CPB agents were present to protect him on his way in and out of the court house). We
+                    will see how this progresses tomorrow. Going forward, it is important to note that Bovino will have
+                    to go before a judge every weekday at 6pm—which might affect their operations later in the day.</p>
+            </aside>
+            <ol>
+                <li class="larger">
+                    <b>8–9am: </b> 143rd & Greenbay. One Detained. (<a
+                        href="https://www.instagram.com/p/DQWzIx2Dtmg/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1pm: </b> Division & Hamlin. (<a href="https://www.instagram.com/p/DQXOQXykaMt/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1pm: </b> 3807 W Division. ICE Detention. (<a
+                        href="https://www.instagram.com/p/DQXOQXykaMt/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1pm: </b> 31st and Kedzie. (<a
+                        href="https://www.facebook.com/LaVillitaSeDefiende/posts/pfbid0325FxQEiSKzju7MerftcNNr1v85TbejKMghLgrepcon9RXxPMQTfu9k9EfyLgjVWl"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:30pm: </b> Pershing and Archer. (<a href="https://www.instagram.com/p/DQXQfPoiV04/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>2pm: </b> North & Kostner. (<a href="https://www.instagram.com/p/DQXUF2hkZKu/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>2pm: </b> Menards in Cicero. One detained. (<a
+                        href="https://www.instagram.com/p/DQXUF2hkZKu/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>2pm: </b> Hawthorn Plaza. (<a href="https://www.instagram.com/p/DQXUF2hkZKu/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>2pm: </b> 35th & Aberdeen. (<a href="https://www.instagram.com/p/DQXW1XXjPy3/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>2pm: </b> 31st & Halsted. (<a href="https://www.instagram.com/p/DQXW1XXjPy3/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>2:30pm: </b> Halsted & Archer. (South West Rapid Response)
+                </li>
+                <li class="larger">
+                    <b>2:45pm: </b> Springfield & Hirsch. One delivery driver detained. (<a
+                        href="https://www.instagram.com/p/DQXcrtwkedA/?img_index=2" targe="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>3pm: </b> 19th & Ashland. (<a
+                        href="https://bsky.app/profile/ckubzansky.bsky.social/post/3m4bqkakvuc2a"
+                        targe="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>4:50pm: </b> 25th & Lawndale. (<a href="https://www.instagram.com/p/DQXmZEGCcG-/"
+                        targe="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>4:50pm: </b> 25th and Central Park. 5 people detained. (<a
+                        href="https://www.instagram.com/p/DQXmZEGCcG-/" targe="_blank">Source</a>, ICIRR Eyes on ICE)
+                </li>
+                <li class="larger">
+                    <b>Time Unknown: </b> 16th & Euclid. (<a
+                        href="https://bsky.app/profile/djbyrnes1.bsky.social/post/3m4bu4xbars2n"
+                        targe="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-27</h3>
+            <ol>
+                <li class="larger">
+                    <b>7:50am: </b> 600 block N Cuyler. One detention. (<a
+                        href="https://www.instagram.com/p/DQUJ4ebDTvT/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> McDonalds on 95th & Jeffery. One detained. (<a
+                        href="https://www.instagram.com/p/DQURyhTjnPc/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> 105th & Ewing. (<a href="https://www.instagram.com/p/DQURyhTjnPc/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>~10:30am: </b> 105th & Ave G. (<a
+                        href="https://bsky.app/profile/unraveledpress.com/post/3m46u6q7hgk2n"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-26</h3>
+            <ol>
+                <li class="larger">
+                    <b>10:15am: </b> Diehl and Naperville Rd. (<a
+                        href="https://www.instagram.com/p/DQSCjMLk6DE/?img_index=2" target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-25</h3>
+            <ol>
+                <li class="larger">
+                    <b>9am: </b> Belmont & Milwaukee. (<a href="https://www.instagram.com/p/DQPEgcSEWDl/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> Cornelia & Avers. (<a href="https://www.instagram.com/p/DQPEgcSEWDl/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> Around Koz Park. (<a href="https://www.instagram.com/p/DQPEgcSEWDl/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:50am: </b> 3700 N Kildare (behind Schurz High School). Two detained (including one US citizen).
+                    Agents deployed tear gas against rapid responders. (<a
+                        href="https://www.instagram.com/p/DQPKhmDEd4W/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10–10:30am: </b> Roscoe & Pulaski. Agents deployed tear gas against rapid responders. (<a
+                        href="https://www.instagram.com/p/DQPOP9dke71/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:45am: </b> Allen Elementary, Aurora, IL. One arrest, one hospitalized. (<a
+                        href="https://www.instagram.com/p/DQPReQLj2r9/?img_index=2" target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-24</h3>
+            <ol>
+                <li class="larger">
+                    <b>Morning: </b> Grand Ave and I294 bridge. (<a href="https://www.instagram.com/p/DQMlZVJjbsX/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> 1701 Superior. Arrests. (<a href="https://www.instagram.com/p/DQMjkYDEaio/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> 2233 Ohio. Arrests. (<a href="https://www.instagram.com/p/DQMjkYDEaio/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> Damen & Division. Arrests. (<a
+                        href="https://www.instagram.com/p/DQMjkYDEaio/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> Chicago & Oakley. Arrests. (<a
+                        href="https://www.instagram.com/p/DQMjkYDEaio/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:20am: </b> Broadway & Belmont. Two detained. (<a
+                        href="https://www.instagram.com/p/DQMjnCdESMQ/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:45am: </b> 1647 La Salle Dr. Two detained. (<a href="https://www.instagram.com/p/DQMk_LKESy0/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:10–10:30am: </b> Sawyer & Wilson. Three detained. (<a
+                        href="https://www.instagram.com/p/DQMryyPEXEF/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:25am: </b> Austin Ave & Tulsa Ave. (<a
+                        href="https://www.facebook.com/ElginCoImmigrantRights/posts/pfbid02KbtEELbKv8pkrshUFasGLVEe3idAQ4yqmTiDaWRxrLaMZFV7yWwEhJ5wEWPtGXo2l"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11am: </b> Dickens & Mohawk. Attempted ICE Detention. (<a
+                        href="https://www.instagram.com/p/DQMtiWcEfmt/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:28am: </b> Dayton & Wrightwood. (<a href="https://www.instagram.com/p/DQMwFk1ER9x/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:40am: </b> Diversey & Orchard. Attepted Detention. (<a
+                        href="https://www.instagram.com/p/DQMx4kzEYgX/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:45am: </b> 433 W Diversey Pkwy. Two Detention. (<a
+                        href="https://www.instagram.com/p/DQM1B40kU8i/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:05pm: </b> Sheridan & Winona. One Detention. (<a
+                        href="https://www.instagram.com/p/DQMzBxHkQVN/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:10pm: </b> Broadway & Foster. One detained. (<a
+                        href="https://www.instagram.com/p/DQM1w7PkYE6/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:15pm: </b> Lakewood inbetween Roscoe and Henderson. One detention. Peaceful protests formed.
+                    Agent deployed tear gas against protesters (for second time in past two days). (<a
+                        href="https://www.instagram.com/p/DQM319CkXkL/" target="_blank">Source 1</a> <a
+                        href="https://www.instagram.com/p/DQM5iT1gU75/" target="_blank">Source 2</a>)
+                </li>
+            </ol>
+            <h3>2025-10-23</h3>
+            <ol>
+                <li class="larger">
+                    <b>9am: </b> Back of the Yards. (<a href="https://www.instagram.com/p/DQJ89w5DviH/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:15am: </b> Home Depot in Cicero. (<a href="https://www.instagram.com/p/DQJ6kPZDRtY/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:15am: </b> Cicro & 50th. (<a href="https://www.instagram.com/p/DQJ6kPZDRtY/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:30am: </b> 26th Street in Little Village. (<a
+                        href="https://www.instagram.com/p/DQJ-JtuDrbl/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:30am: </b> 26th & Kildare. One detained. (<a
+                        href="https://bsky.app/profile/djbyrnes1.bsky.social/post/3m3uwjwbmls2u"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:50am: </b> 26th & Pulaski. One possible detention. (<a
+                        href="https://bsky.app/profile/mulchy.bsky.social/post/3m3umoj62vc2z"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:27am: </b> Encore Village, Schaumburg. Staging (<a
+                        href="https://www.facebook.com/ElginCoImmigrantRights/posts/pfbid02TEBf9udTyHf6kFJsMzUeqQfzCVHdFLQzvDXBPDpJ8Xhr2pcGEiWwTjH7UtoMFA4El"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10–11am: </b> Discount Mall, Little Village. Protests against ICE/standoff. Tear gas deployed.
+                    (<a href="https://bsky.app/profile/mulchy.bsky.social/post/3m3up7vjyt22l"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10–11am: </b> Discount Mall, Little Village. Two teenagers detained during protests. (<a
+                        href="https://chicago.suntimes.com/immigration/2025/10/23/feds-make-arrests-deploy-tear-gas-during-face-off-with-protesters-near-little-village-discount-mall"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10–11am: </b> Discount Mall, Little Village. Three adults detained during protests. (<a
+                        href="https://chicago.suntimes.com/immigration/2025/10/23/feds-make-arrests-deploy-tear-gas-during-face-off-with-protesters-near-little-village-discount-mall"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12pm: </b> Bridgeport. (<a href="https://www.instagram.com/p/DQKO7XmjsUI/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12pm: </b> Mckinley Park. (<a href="https://www.instagram.com/p/DQKO7XmjsUI/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1pm: </b> O'Hare. (<a href="https://bsky.app/profile/djbyrnes1.bsky.social/post/3m3v2f7d26k2x"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-22</h3>
+            <ol>
+                <li class="larger">
+                    <b>8:20am: </b> Trout Park, Elgin. (<a
+                        href="https://www.facebook.com/ElginCoImmigrantRights/posts/pfbid02r8Q1PX5NxkVRJ1NbdD2cRQodGrkpRQN5YWP1P7dTapPArYWiZB86BXmrULv6esYWl"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> North & Mozart. Multiple detained. (<a
+                        href="https://www.instagram.com/p/DQHlijXgPQw/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:30am: </b> Armitage & Pulaski. One detained. (<a
+                        href="https://www.instagram.com/p/DQHdj-8APd4/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:35am: </b> Cuyler & Adams. Driving a Suburban gery SUV and black Lincoln SUV. (Oak Park Rapid
+                    Response)
+                </li>
+                <li class="larger">
+                    <b>9:52am: </b> 100 block of Williamsburg Ln, Bolingbrook. ICE called police after the people they
+                    were trying to detain "attacked" them. The people got away. No arrests were made by police or ICE.
+                    (<a href="https://www.facebook.com/BolingbrookEvents/posts/pfbid02fRu7tck49FuPaZVy4NWgRpuQcppkW9seRFA3Bi5x3PCFXzAKWs2htXrZg9mANwkl"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am: </b> Walmart in Cicero. (<a href="https://www.instagram.com/p/DQHbiQFEwS6/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am: </b> Home Depot in Cicero. (<a href="https://www.instagram.com/p/DQHbiQFEwS6/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am: </b> 35th & California. One detained. (<a
+                        href="https://www.instagram.com/p/DQHeHH9DkI1/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am: </b> 31st and Pulaski. (<a
+                        href="https://www.facebook.com/LaVillitaSeDefiende/posts/pfbid02uNM9CJyWgqDTLY4TsQHSskCppu1N3oPHF3JXpE6TRWJNBin6tfhqNhSSc5zsnhFvl"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:10am: </b> Lawndale & Thomas. One detained and later released. (<a
+                        href="https://www.instagram.com/p/DQHsYLZgOkh/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:55am: </b> West 26th Street and South Kostner Avenue. Two citiy officials detained. (<a
+                        href="https://blockclubchicago.org/2025/10/22/border-patrol-agents-descend-on-little-village-sparking-fury-fear-in-neighborhood/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>~12pm: </b> 26th Street and Cicero Avenue. Face off between protesters and agents. Agents used
+                    peper spray against protesters. (<a
+                        href="https://blockclubchicago.org/2025/10/22/border-patrol-agents-descend-on-little-village-sparking-fury-fear-in-neighborhood/"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-21</h3>
+            <ol>
+                <li class="larger">
+                    <b>Morning: </b> Devon & Western. (<a href="https://www.instagram.com/p/DQE9RsjDRUa/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Morning: </b> Target near Andersonville & Rodgers Park. (<a
+                        href="https://www.instagram.com/p/DQE9RsjDRUa/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Morning: </b> Weber Rd. exit on I-55 near Romeoville. Two people detained. (<a
+                        href="https://www.instagram.com/p/DQFK0doE3qo/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8:15–8:40am: </b> The Promenade Apartments, Bolingbrook. (<a
+                        href="https://www.instagram.com/p/DQEu2tYD3De/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:10am: </b> Kenmore & Glenlake. One detained. (<a
+                        href="https://www.instagram.com/p/DQE0pTegNBw/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:15am: </b> Montrose & California. Targeting landscapers. (<a
+                        href="https://www.instagram.com/p/DQE033IgJZP/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:15–10:40am: </b> Albany Park. (<a href="https://www.instagram.com/p/DQE67vSgCpC/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:45–10am: </b> Montgomery and Hill Ave, Aurora, IL. One detained (<a
+                        href="https://www.instagram.com/p/DQFAPeNjwE7/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:20am: </b> Carmen & Ravenswood (<a href="https://www.instagram.com/p/DQE6zaQgGmg/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:05am: </b> Lawrence Ave & Sheridan Road. (<a href="https://www.instagram.com/p/DQE-64okYYZ/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:15am: </b> Balmoral & N Clark St. One detained. (<a
+                        href="https://www.instagram.com/p/DQE_6vvEfyN/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:30am: </b> Foster Ave & Magnolia. (<a href="https://www.instagram.com/p/DQFBpvFEfoH/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:30am: </b> Hoyne Ave & Leavitt St. (<a href="https://www.instagram.com/p/DQFCvufEYMP/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:37am: </b> Albion Ave & Rockwell St. At least one detained. (<a
+                        href="https://www.instagram.com/p/DQFW1KBAYg3/" target="_blank">Source 1</a> <a
+                        href="https://bsky.app/profile/unraveledpress.com/post/3m3pzm6uhz225" target="_blank">Source
+                        2</a>)
+                </li>
+                <li class="larger">
+                    <b>12:05pm: </b> W Montrose Ave and N Kimball Ave. (<a
+                        href="https://www.instagram.com/p/DQFHNh9kfx6/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:45pm: </b> Whipple & Montrose. Two detained. (<a
+                        href="https://www.instagram.com/p/DQFM0uQkQw9/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:45pm: </b> Little Caesars Pizza, on Route 53 and Lily Cache Lane. (<a
+                        href="https://www.instagram.com/p/DQFK0doE3qo/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:45pm: </b> 2950 W Rascher. Two people detained. (<a
+                        href="https://www.instagram.com/p/DQFQfNjEZox/" target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-20</h3>
+            <ol>
+                <li class="larger">
+                    <b>Morning: </b> 23rd & Laramie. At least 3 detained. (<a
+                        href="https://www.instagram.com/p/DQCcoIrE0LD/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Morning: </b> 13th & 51st ct. At least 1 detained. (<a
+                        href="https://www.instagram.com/p/DQCcoIrE0LD/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Morning: </b> 23rd & 53rd Ave. At least two detained. (<a
+                        href="https://www.instagram.com/p/DQCcoIrE0LD/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Morning: </b> 59th Ave & 24th St. At least 1 detained. (<a
+                        href="https://www.instagram.com/p/DQCcoIrE0LD/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>7:30am: </b> Columbia & May St. One detained. (<a
+                        href="https://www.instagram.com/p/DQCYFs3DEIK/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>7:30am: </b> Calumet & Michigan St. One detained. (<a
+                        href="https://www.instagram.com/p/DQCYFs3DEIK/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8:20am: </b> Pulaski & Geroge. One detained. (<a
+                        href="https://www.instagram.com/p/DQCKe5RAGrG/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> Frankiln Ave in Forest Park. 3 people detained. (<a
+                        href="https://www.instagram.com/p/DQCh74QjYnE" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11am: </b> Abraham Lincoln Elementary School, Oak Park. ICE detention of US Citizen. (<a
+                        href="https://www.chicagotribune.com/2025/10/23/oak-park-attorney-arrested-near-school-says-federal-agents-pointed-gun-at-him-had-chiraq-team-2-group-chat/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11am–12pm: </b> Briarcliff & Schmidt, Bolingbrook. (<a
+                        href="https://www.instagram.com/p/DQCyPCHjzgU/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>2:10pm: </b> 26th and Pulaski. (<a
+                        href="https://www.facebook.com/LaVillitaSeDefiende/posts/pfbid02vqkRgKu4zcq3R1bsJE9pCsQBL9EtLtfxLvB72eg2x3keQQEtufTXFTPMUHmb5WiNl"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Time Unknown: </b> 500 & 600 blocks of Franklin Avenue. Agents targeted lanscapers. (<a
+                        href="https://www.vrf.us/news/item/2860" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Time Unknown: </b> O'Hare. Targeting ride share drivers. (<a
+                        href="https://www.instagram.com/p/DQCuOdWDxQE/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Time Unknown: </b> Menards in Melrose Park. (<a href="https://www.instagram.com/p/DQCXy29jZJA/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Time Unknown: </b> Thomas & 19th. (<a href="https://www.instagram.com/p/DQCXy29jZJA/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Time Unknown: </b> 19th & Division. (<a href="https://www.instagram.com/p/DQCXy29jZJA/"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-19</h3>
+            <ol>
+                <li class="larger">
+                    <b>Morning: </b> Bolingbrook. (<a href="https://www.instagram.com/p/DP_0sVNCdTn/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:15am: </b> Between Fourth and Fifth Sts, Aurora,
+                    IL. One arrest. (<a href="https://www.instagram.com/p/DQAC9t3D-bv/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:45am: </b> Bank Of America parking lot in Little
+                    Village. (<a href="https://www.instagram.com/p/DP_5FRrkX4c/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:45pm: </b> El Güero, Root St, Aurora, IL. One
+                    arrest. (<a href="https://www.instagram.com/p/DQAC9t3D-bv/?img_index=2" target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-18</h3>
+            <ol>
+                <li class="larger">
+                    <b>9:45am: </b> ICE Activity in Calument Park. (<a
+                        href="https://www.instagram.com/p/DP9LCqIjD63/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:45–10:30am: </b> ICE Activity in the East Side. (<a
+                        href="https://www.instagram.com/p/DP9NrJoDIwU/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:45–10:30am: </b> ICE Activity in the South Chicago.
+                    (<a href="https://www.instagram.com/p/DP9NrJoDIwU/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12pm: </b> Wendy's on Lake St, Aurora (<a
+                        href="https://www.instagram.com/p/DP9jOLFj_5e/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:10pm: </b> 61st & Greenwood. One detained. (<a
+                        href="https://www.instagram.com/p/DP9iPaKiXrW/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:10pm: </b> 58th & Trumbull. Black SUV, Black pick
+                    up, and Grey GMC. (<a href="https://www.instagram.com/p/DP9eIFJjioV/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:10pm: </b> 59th & Homan. Black SUV, Black pick up,
+                    and Grey GMC. (<a href="https://www.instagram.com/p/DP9eIFJjioV/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>All Day: </b> O'Hare. Targeting ride share drivers
+                    (again). (<a href="https://www.instagram.com/p/DP9IhEZjmHA/" target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-18</h3>
+            <aside>
+                <p>
+                    I am working on getting specifics for ICE activity in
+                    Lake County.
+                </p>
+            </aside>
+            <ol>
+                <li class="larger">
+                    <b>7:30am: </b> Woodward & 103rd. At least two people
+                    were detained (SSIPChicago)
+                </li>
+                <li class="larger">
+                    <b>1:45pm: </b> 25th Police District building on Grand &
+                    Central. Two agents attempted to detain someone. Left in
+                    a Ford Fusion NC RHE9788. (<a href="https://www.instagram.com/p/DP7KKVdEfz8/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger"><b>Time Unknown: </b>Dodge and Oakton. One detained. (<a
+                        href="https://www.instagram.com/p/DP6-68Oj_WN/" target="_blank">Source</a>)</li>
+            </ol>
+            <h3>2025-10-16</h3>
+            <ol>
+                <li class="larger">
+                    <b>8:38am: </b> Golfview Elementary, Carpentersville. 10
+                    ICE Vehicles spotted (<a
+                        href="https://www.facebook.com/story.php?story_fbid=1222918356534826&id=100064500200464"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8:45am: </b> Home Depot, 3500 N Kimball. ICE Agents
+                    detained one indivitual. (<a href="https://www.instagram.com/p/DP32VRMgH94/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:00am: </b> Archder & Kedzie (Southwest Rapid
+                    Response team)
+                </li>
+                <li class="larger">
+                    <b>9:00am: </b> 36th & Winchester. One detained
+                    (Southwest Rapid Response team)
+                </li>
+                <li class="larger">
+                    <b>9:15am: </b> 47th & Fairfield. One detained
+                    (Southwest Rapid Response team)
+                </li>
+                <li class="larger">
+                    <b>9:15am: </b> 47th & Fairfield. One detained
+                    (Southwest Rapid Response team)
+                </li>
+                <li class="larger">
+                    <b>10:30am: </b> Elgin City Hall. One detained. (<a
+                        href="https://www.facebook.com/story.php?story_fbid=1222918356534826&id=100064500200464"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Morning: </b> Shop-o-rama on 43rd & Ashland. Around
+                    15 people detained. (<a href="https://www.instagram.com/p/DP4tQVTkq8F/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Morning: </b> Archer & 47th. (<a href="https://www.instagram.com/p/DP39Vr_jWtM/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>4:35pm: </b> Ashland & Lawrance. (<a href="https://www.instagram.com/p/DP4sOvtEfzV/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>All Day: </b> Calument Park Beach. ICE Staging. (<a
+                        href="https://bsky.app/profile/unraveledpress.com/post/3m3dua536q22o"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-15</h3>
+            <ol>
+                <li class="larger">
+                    <b>7:40am: </b> 25th & Hamlin. ICE detention. Agents
+                    left in a black SUV, black Jeep and silver pickup. (<a
+                        href="https://www.instagram.com/p/DP1PrpEjjY1/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:45am: </b> 47th & Western. (<a href="https://www.instagram.com/p/DP1YzerjroZ/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am: </b> 70th and Washtenaw. One detained in a red
+                    minivan. (<a href="https://bsky.app/profile/unraveledpress.com/post/3m3am7mgmgs2b"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:20am: </b> Fox Park, East Dundee. Multiple
+                    detained. (<a href="https://bsky.app/profile/unraveledpress.com/post/3m3amusmgh22b"
+                        target="_blank">Source</a>) Even though the source says Carpentersville, it seems
+                    like it is in a park just outside of Carpentersville.
+                </li>
+                <li class="larger">
+                    <b>11:15am: </b> Meijer near Liberty St and Rt. 59,
+                    Aurora, IL. At least one arrest. (<a href="https://www.instagram.com/p/DP13sQ4j1jI/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12pm: </b> Steelworkers Park in a white Chevy Tahoe,
+                    a gray Chevy Tahoe, a gray Jeep Wagoneer, a dark gray
+                    Ford Expedition, a white Chevy Trax, and a white Ford
+                    Transit. (<a href="https://www.instagram.com/p/DP1u-fPAUN1/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:05pm: </b> 47th & Wolcott. (<a href="https://www.instagram.com/p/DP1oU6XjeLW/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:30pm: </b> 44th & Honore. (<a href="https://www.instagram.com/p/DP1slw6Dmpz/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:45pm: </b> Carpentersville City Hall. (<a
+                        href="https://www.facebook.com/story.php?story_fbid=1221840419975953&id=100064500200464&rdid=MSfNaosOc5whU3gZ"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:30pm: </b> 85th & Buffalo. 4 ICE agents in military
+                    gear detained one US citizen, they were later released.
+                    (<a href="https://www.instagram.com/p/DP16-eakutb/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:30pm: </b> Steelworkers Park (again). Mostly
+                    staging. See source for more information. (<a href="https://www.instagram.com/p/DP16-eakutb/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:30pm: </b> 52nd between Kimbark & Kenwood. One detained. (<a
+                        href="https://www.instagram.com/p/DP_vmW3DaFW/?img_index=5" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:30pm: </b> 53rd & Greenwood. Two detained. (<a
+                        href="https://www.instagram.com/p/DP_vmW3DaFW/?img_index=5" target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-14</h3>
+            <ol>
+                <li class="larger">
+                    <b>7:45am: </b> Quadrangle and Remington. Four masked
+                    agents kidnapped an individual. Left in a black Dodge
+                    Charger, a gray Ford pickup truck, and a black Ford
+                    Explorer. (<a href="https://www.instagram.com/p/DPy3v_AjVuj/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8:10am: </b> Bolingbrook Municipal Building on
+                    Briarcliff Road. ICE Activity. (<a href="https://www.instagram.com/p/DPy3v_AjVuj/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–1pm: </b> 91st & Commerical. At least 3 officers
+                    in full green and yellow vests with POLICE in yellow.
+                    Two people were detained. (<a href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–1pm: </b> 106th & Ewing. 4 military officers,
+                    one armed, were present. Four people were detained. (<a
+                        href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–1pm: </b> 105th & Ave N. At least 45 military
+                    officers, some armed, surrounded multiple vehicles at
+                    the intersection, including one that had crashed into a
+                    red car. Around 11 cans of tear gas were deployed
+                    against peaceful protesters and CPD. At least 3 people
+                    were taken (<a href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2" target="_blank">Source
+                        1</a>
+                    <a href="https://www.instagram.com/reels/DPzWnGCklvl/" target="_blank">Source 2</a>
+                    <a href="https://www.instagram.com/p/DPzAvXiDXMq/" target="_blank">Source 3</a>
+                    <a href="https://www.youtube.com/live/755n1slnSeg" target="_blank">Source 4</a>
+                    <a href="https://bsky.app/profile/peternickeas.bsky.social/post/3m36hm55chs2q"
+                        target="_blank">Source 5</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–1pm: </b> 105th & Ave O. A least two agents in
+                    plain clothes with military vests pulled over a vehicle.
+                    (<a href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–1pm: </b> 99th & Ave H. (<a href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–1pm: </b> 114th & Ave O. (<a href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–1pm: </b> 103rd & Ewing. (<a href="https://www.instagram.com/p/DPzKRhNieBF/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–2pm: </b> Walmart on Dotly Avenue. ICE
+                    detention. (<a href="https://www.instagram.com/p/DPzqDgNAY9k/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am–2pm: </b> Ally near Kensington & Indiana. ICE
+                    detention. (<a href="https://www.instagram.com/p/DPzqDgNAY9k/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1pm: </b> Walgreens on the 3600 block of E. 106th
+                    Street. ICE detention. (<a href="https://www.instagram.com/p/DPzksFSD9jd/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1:30pm: </b> Hyde Park Blvd between Blackstone & Dorcherester. (<a
+                        href="https://www.instagram.com/p/DP_vmW3DaFW/?img_index=3" target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-13</h3>
+            <ol>
+                <li class="larger">
+                    <b>9am: </b> 45th & Western. Black Jeep Cherokee with
+                    Illinois plates, Black Ford Explorer, and a White Doge
+                    Durango. (<a href="https://www.instagram.com/p/DPwK6lTDucQ/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> 47th & Rockwell. Black Jeep Cherokee with
+                    Illinois plates, Black Ford Explorer, and a White Doge
+                    Durango. (<a href="https://www.instagram.com/p/DPwK6lTDucQ/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> Home Depot in Back of the Yards. Black Jeep
+                    Cherokee with Illinois plates, Black Ford Explorer, and
+                    a White Doge Durango. (<a href="https://www.instagram.com/p/DPwK6lTDucQ/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> 58th & Paulina. Two people detained. Black
+                    Jeep Cherokee and a White Doge Durango. (<a
+                        href="https://www.instagram.com/p/DPwcgldDtXN/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger"><b>9:30am: </b> 47th & Western.</li>
+                <li class="larger">
+                    <b>11:30am: </b> 51st & Rancine. Two people detained.
+                    Black Jeep Cherokee and a White Doge Durango. (<a
+                        href="https://www.instagram.com/p/DPwcgldDtXN/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12pm: </b> 47th & Damen. Agents driving a White Dodge
+                    Durango (<a href="https://www.instagram.com/p/DPwlyL1jm1l/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12pm: </b> 43rd & Artesian. Agents driving a White
+                    Dodge Durango (<a href="https://www.instagram.com/p/DPwlyL1jm1l/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-12</h3>
+            <aside>
+                <p>
+                    Note: There were a lot of sightings in Rodgers Park that
+                    I could not verify the exact location so they are not on
+                    the map. Notably this sighting:
+                    <a href="https://bsky.app/profile/royalpratt.bsky.social/post/3m2zq7peudk2q" target="_blank">Bsky
+                        Sighting</a>
+                    <i>If you have any info on these, don't hesitate to
+                        contact me at
+                        <a href="mailto:quinnyatesv1@gmail.com">quinnyatesv1@gmail.com</a>.</i>
+                </p>
+                <p>
+                    There were also widespread protests in Rodgers Park. I
+                    am still working on a good way to represent the sighting
+                    in Rodgers Park that I cannot get the location of, the
+                    protests in Rodgers Park, and reports that mention ice
+                    activity not in a specific place, but a general area.
+                </p>
+            </aside>
+            <ol>
+                <li class="larger">
+                    <b>All morning: </b> Large scale operations in Rodgers
+                    Park. Multiple detained. (<a href="https://www.instagram.com/p/DPtmeFTDQon/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>7am: </b> Farnsworth and Kane St. One detained. (<a
+                        href="https://www.instagram.com/p/DPtmeFTDQon/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:40am: </b> 55th & California. ICE Present. (<a
+                        href="https://bsky.app/profile/unraveledpress.com/post/3m2z3ks4xac2v"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9–10am: </b> ICE was confirmed on Weber between Romeo
+                    Road and Taylor Drive. (<a href="https://www.instagram.com/p/DPt3BnkD9Nu/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9-11am: </b> ICE Activity along Pulaski Road in West
+                    Lawn and West Edison. (<a href="https://www.instagram.com/p/DPtwEY7DhTy/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9-11am: </b> ICE Activity along Cicero Ave in West
+                    Lawn and West Edison. (<a href="https://www.instagram.com/p/DPtwEY7DhTy/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9-11am: </b> ICE Activity at Pulaski Orange Line
+                    station. (<a href="https://www.instagram.com/p/DPtwEY7DhTy/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:30–11am: </b> Touhy & Western. Multiple ICE
+                    Arrests. (<a href="https://www.instagram.com/p/DPt4cWbkT16/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:10am: </b> Sheridan & Albion. Four agents detained
+                    one individual. (<a href="https://www.instagram.com/p/DPt3z67EZYC/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:10am: </b> Clark & Devon. Six agents attempted to
+                    detained one individual but failed! (<a href="https://www.instagram.com/p/DPt6zwqkU1A/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>Miday: </b> ICE Activity in Burbank, Oak Lawn, and
+                    Bridgeview. (<a href="https://www.instagram.com/p/DPuEsWuDy88/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12pm: </b> N Clark St & N Ridge Ave. ICE Sighting,
+                    thretens cyclist w/ arrest. (<a
+                        href="https://bsky.app/profile/royalpratt.bsky.social/post/3m2z6fathyk2a"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12pm: </b> Ally east of Clark & Albion. Agents detain
+                    one individual while aiming a gun at them. Rapid
+                    Responders arrive and protest. (<a href="https://www.instagram.com/p/DPuBLOrEUqH/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:20am: </b> 6518 N Mozart St. Five federal agents
+                    detained one individual. They left in a white explorer
+                    and a black expedition. (<a href="https://www.instagram.com/p/DPuHTPUEfEl/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:30pm: </b> Sawyer & Wilson. 20 agents deployed
+                    tear gas against protesters as agents detained one
+                    individual. Licence plates include #S913460 (<a
+                        href="https://www.instagram.com/p/DPt-ZpiEeX9/?img_index=2" target="_blank">Source 1</a>
+                    <a href="https://bsky.app/profile/thesidewalkschool.bsky.social/post/3m2zcizy5g22l"
+                        target="_blank">Source 2</a>)
+                </li>
+                <!-- GO BACK TO ONE ABOVE FOR PROTESTS -->
+                <li class="larger">
+                    <b>12:30pm: </b> Kedzie & Wilson. ICE Activity. Vehicles
+                    include: Ford Expidition IL plate YS1948; Chevrolet
+                    Silverado IL plate FP182243. (<a href="https://www.instagram.com/p/DPt-ZpiEeX9/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-11</h3>
+            <ol>
+                <li class="larger">
+                    <b>8:30am-8:45am: </b> Central Park & Grand. One person
+                    detained. Agents continued North in a Tan Tahoe with
+                    plates starting with <i>FH3</i>. (<a href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9am: </b> Armitage & Cicero. One person detained in a
+                    red minivan (<a href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:15am: </b> 2601 S Cicero, Cicero IL. Two people
+                    detained. 5 agents in black and blue SUVs (<a href="https://www.instagram.com/p/DPrMcSzjtRI/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:45am: </b> Archer & Laramie. One person was
+                    detained. (<a href="https://www.instagram.com/p/DPrFa57jgEC/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am: </b> Archer & Laramie. Another person was
+                    detained. (<a href="https://www.instagram.com/p/DPrIQQGDsj7/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am: </b> 49th & Lamon. One person was detained. (<a
+                        href="https://www.instagram.com/p/DPrIQQGDsj7/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10am: </b> 48th & Latrobe. One person was detained.
+                    (<a href="https://www.instagram.com/p/DPrIQQGDsj7/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:15am: </b> Cortland & Springfield to Harding. A
+                    Ford Escape, Grey Toyta Sequoia with CA plates, and a
+                    White Tahoe pickup with grill chased someone. Person is
+                    safe (<a href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:20am: </b> North & Central Park. TX VTH6680 &
+                    Tahoe LT TX FP250216 (<a href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:40am: </b> North & Tripp and Grand & Kostner.
+                    White Tahoe SUV (<a href="https://www.instagram.com/p/DPrUD7nkbfC/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-10</h3>
+            <ol>
+                <li class="larger">
+                    <b>8:20am: </b> W Lawrence & Cicero. (<a href="https://www.instagram.com/p/DPocdkaACLP/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8:20am: </b> W Lawrence & Foster. Arrest of Immigrant
+                    & WGN reporter, and hit & run. (<a
+                        href="https://www.chicagotribune.com/2025/10/10/wgn-tv-producer-detained-ice-enforcement/"
+                        target="_blank">Source</a>
+                    >)
+                </li>
+                <li class="larger">
+                    <b>8:40am: </b> Western & Foster. 6 detained. (<a href="https://www.instagram.com/p/DPohsy_gEAt/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:25am: </b> One detention at 5445 N Sheridan (<a href="https://www.instagram.com/p/DPol536Edgf/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:30am: </b> One detention near Sheridan & Catalpa
+                    (<a href="https://bsky.app/profile/leniann.bsky.social/post/3m2unekpi7k2u"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:40am: </b> Outside Ravenswoord Elementary.
+                    Attempted kidnapping but failed. (<a href="https://www.instagram.com/p/DPoyV5pkajV/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:30am: </b> W Lawrence & Saint Louis. (<a href="https://www.instagram.com/p/DPopUIokVSR/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:55am: </b> Cermak and Troy. One streetvendor
+                    kidnapped. (<a href="https://bsky.app/profile/lyndab08.bsky.social/post/3m2u4ksh3hs2n"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:55am: </b> Damen and Cermak. Another streetvendor
+                    kidnapped. (<a href="https://bsky.app/profile/lyndab08.bsky.social/post/3m2u4ksh3hs2n"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>10:56am: </b> One attempted dention at Leland &
+                    Magnolia. (<a href="https://www.instagram.com/p/DPo2IBYEb55/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    Rideshare drivers at O'Hare targeted todat. (<a
+                        href="https://www.illinoisdriversalliance.org/in-the-news-1/illinois-drivers-alliance-statement-on-ice-raid-targeting-rideshare-drivers-at-ohare"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+            <h3>2025-10-09</h3>
+            <ol>
+                <li class="larger">
+                    <b>7:30am: </b> 44th & Hermitage. One detained. Agents
+                    heading north on Ashland. (<a href="https://www.instagram.com/p/DPlsHGoDvek/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>7:58am: </b> Route 53 and Lily Cache. One detained.
+                    (<a href="https://www.instagram.com/p/DPmBHHkgOFO/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8am: </b> Yards Plaza in the Back of the Yards. (<a
+                        href="https://www.instagram.com/p/DPlvDFDDizM/">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8am: </b> Sheffer Road & Farnsworth, Aurora. (<a href="https://www.instagram.com/p/DPl0oCkEqGZ/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8-9am: </b> Orchard & Indian Trail @ Home Depot,
+                    Aurora. (<a href="https://www.instagram.com/p/DPl0oCkEqGZ/" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8:20am: </b> 33rd & Cicero, Cicero IL. (<a href="https://www.instagram.com/p/DPl4leEjupA/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>8:30am: </b> Lincoln & McCormick at Home Depot in
+                    West Ridge. One detained. (<a href="https://bsky.app/profile/unraveledpress.com/post/3m2rf2x74cs24"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>9:00am: </b> 53rd & Loomis. One detained. (<a href="https://www.instagram.com/p/DPl6tssDjIZ/"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>11:00am: </b> 66th & Marshfield knocking on homes.
+                    (<a href="https://www.instagram.com/p/DPmNuKGjq-5/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:30pm: </b> 4500 block of West Armitage. 2 women
+                    detained. (<a href="https://www.instagram.com/p/DPmSOaGkT3u/?img_index=2"
+                        target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>12:50pm: </b> 53rd & Ashland at O'Reilly's Autoparts.
+                    (<a href="https://www.instagram.com/p/DPmPeWfDia4/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1pm: </b> 48th & Wolcott. One detained. (<a
+                        href="https://www.instagram.com/p/DPmRMdkDonP/?img_index=1" target="_blank">Source</a>)
+                </li>
+                <li class="larger">
+                    <b>1pm: </b> 101st & Ave L. (<a href="https://www.instagram.com/p/DPm-J-_jGS9/?img_index=1"
+                        target="_blank">Source</a>)
+                </li>
+            </ol>
+        </section>
+        <br />
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+            <a href="https://github.com/yummyoreo" target="_blank">Github</a>
+            <a href="https://bsky.app/profile/quinn-is.a-good.dev" target="_blank" rel="me">Blue Sky</a>
+            <a href="https://hachyderm.io/@YummyOreo" target="_blank" rel="me">Mastodon</a>
+            <span>Get in touch:
+                <a href="mailto:quinnyatesv1@gmail.com">quinnyatesv1@gmail.com</a></span>
+        </div>
+    </footer>
+</body>
+
 </html>
