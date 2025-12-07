@@ -3365,8 +3365,8 @@
     },
     {
     "latlng": [41.98002278283691, -87.65650741788562],
-    "title": "Detention 2025-11-23 - 7:35am",
-    "date": "2025-11-23",
+    "title": "Detention 2025-11-22 - 7:35am",
+    "date": "2025-11-22",
     "time": "7:35am"
     },
     {
@@ -3386,5 +3386,93 @@
     "title": "One detained 2025-11-25 - 9:40am",
     "date": "2025-11-25",
     "time": "9:40am"
+    },
+    {
+    "latlng": [41.96365831977301, -87.73361126954343],
+    "title": "ICE Sighting 2025-11-23 - 11am",
+    "date": "2025-11-23",
+    "time": "11am"
+    },
+    {
+    "latlng": [41.96364249014588, -87.73356443438568],
+    "title": "Possible detention 2025-11-23 - 12:45pm",
+    "date": "2025-11-23",
+    "time": "12:45pm"
+    },
+    {
+    "latlng": [41.966601416916525, -87.65645273594633],
+    "title": "One detained 2025-11-25 - 7:30am",
+    "date": "2025-11-25",
+    "time": "7:30am"
+    },
+    {
+    "latlng": [41.90139010711924, -88.3568028853702],
+    "title": "Three detained 2025-11-26 - 12pm",
+    "date": "2025-11-26",
+    "time": "12pm"
+    },
+    {
+    "latlng": [41.66787134796241, -87.79548101244306],
+    "title": "CPB Heli going North West over Palos Heights 2025-12-01 - 10:45am",
+    "date": "2025-12-01",
+    "time": "10:45am",
+    "type": "heli"
+    },
+    {
+    "latlng": [41.90093180425082, -87.72017461418373],
+    "title": "One detained 2025-12-04 - 6am",
+    "date": "2025-12-04",
+    "time": "6am"
+    },
+    {
+    "latlng": [42.042649923364486, -87.71881404707771],
+    "title": "Traffic stop 2025-12-04 - 8am",
+    "date": "2025-12-04",
+    "time": "8am"
+    },
+    {
+    "latlng": [41.91025898472448, -87.6970186783475],
+    "title": "Heli heading North West 2025-12-04 - 8:13pm",
+    "date": "2025-12-04",
+    "time": "8:13pm",
+    "type": "heli"
+    },
+    {
+    "latlng": [42.04999573882039, -87.691729028798],
+    "title": "Heli cirlcing over Evanston 2025-12-04 - 7:15pm",
+    "date": "2025-12-04",
+    "time": "7:15pm",
+    "type": "heli"
+    },
+    {
+    "latlng": [41.82907011873253, -87.76328152614695],
+    "title": "ICE sighting 2025-12-05 - 9:15am",
+    "date": "2025-12-05",
+    "time": "9:15am"
+    },
+    {
+    "latlng": [41.84874203512106, -87.7664122655708],
+    "title": "ICE Sighting 2025-12-05 - 9:15am",
+    "date": "2025-12-05",
+    "time": "9:15am"
+    },
+    {
+    "latlng": [41.841332841699895, -87.74094867068328],
+    "title": "ICE Sighting 2025-12-05 - 10:15am",
+    "date": "2025-12-05",
+    "time": "10:15am"
+    },
+    {
+    "latlng": [42.03685509633527, -88.31856413819729],
+    "title": "ICE Detention 2025-12-06 - 3pm",
+    "date": "2025-12-06",
+    "time": "3pm"
+    },
+    {
+    "latlng": [42.036691862778916, -88.31845575379941],
+    "title": "Protests against ICE after chasing (and later detaining the same person). Tear gas deployed. 2025-12-06 - 10am–3pm",
+    "date": "2025-12-06",
+    "time": "10am",
+    "type": "protest"
     }
 ]

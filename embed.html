@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--Meta tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ICE Map" />
+    <meta name="robots" content="index, follow" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <!--Open Graph Tags-->
+    <meta property="og:site_name" content="ICE Activity" />
+    <meta property="og:url" content="https://icemap.a-good.dev" />
+    <meta property="og:type" content="website" />
+    <!-- Style Tags -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./ice-activity.css" />
+    <!-- Other -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="./leaflet-heat.js"></script>
+    <script src="./moment.js"></script>
+    <script src="./ice-activity.js" defer></script>
+    <meta property="og:title" content="ICE Activity Chicago" />
+    <meta property="og:description" content="ICE Activity Chicago" />
+    <title>ICE Activity Chicago</title>
+</head>
+
+<body class="homepage">
+    <main>
+            <div id="map"></div>
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+            <a href="https://github.com/yummyoreo" target="_blank">Github</a>
+            <a href="https://bsky.app/profile/quinn-is.a-good.dev" target="_blank" rel="me">Blue Sky</a>
+            <a href="https://hachyderm.io/@YummyOreo" target="_blank" rel="me">Mastodon</a>
+            <span>Get in touch:
+                <a href="mailto:quinnyatesv1@gmail.com">quinnyatesv1@gmail.com</a></span>
+        </div>
+    </footer>
+</body>
+
+</html>
