@@ -12,7 +12,7 @@ var heat;
 //     },
 // ).addTo(map);
 
-function makeMap(latlng, y, maxZoom, scrollOnControl = false) {
+function makeMap(latlng, y, maxZoom) {
     map = L.map("map").setView(latlng, y);
     googleHybrid = L.tileLayer(
         "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
@@ -24,7 +24,7 @@ function makeMap(latlng, y, maxZoom, scrollOnControl = false) {
 
     try {
         map.gestureHandling.enable()
-    }
+    } catch {}
 
     sightingsLayer = L.layerGroup().addTo(map);
 
