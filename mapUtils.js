@@ -19,37 +19,42 @@ function makeMap(latlng, y, maxZoom, scrollOnControl = false) {
         {
             maxZoom: maxZoom,
             subdomains: ["mt0", "mt1", "mt2", "mt3"],
-            scrollWheelZoom: !scrollOnControl
         },
     ).addTo(map);
+
+    try {
+        map.gestureHandling.enable()
+    }
 
     sightingsLayer = L.layerGroup().addTo(map);
 
     heat = L.heatLayer([], { radius: 30, blur: 25, maxZoom: 13 }).addTo(map);
 
-    let mapEl = document.getElementById("map")
-    if (scrollOnControl) {
-        mapEl.addEventListener("wheel", (event) => {
-            event.stopPropagation()
-            if (event.ctrlKey == true) {
-                event.preventDefault();
-                map.scrollWheelZoom.enable();
-                mapEl.classList.remove('map-scroll');
-                setTimeout(function() {
-                    map.scrollWheelZoom.disable();
-                }, 1000);
-            } else {
-                map.scrollWheelZoom.disable();
-                mapEl.classList.add('map-scroll');
-            }
-        });
-        window.addEventListener("scroll", (event) => {
-            mapEl.classList.remove("map-scroll")
-        })
-        mapEl.addEventListener("mouseout", (event) => {
-            mapEl.classList.remove("map-scroll")
-        })
-    }
+    // let mapEl = document.getElementById("map")
+    // if (scrollOnControl) {
+    //     mapEl.addEventListener("wheel", (event) => {
+    //         console.log("wheeeel")
+    //         event.stopPropagation()
+    //         if (event.ctrlKey == true) {
+    //             event.preventDefault();
+    //             map.scrollWheelZoom.enable();
+    //             mapEl.classList.remove('map-scroll');
+    //             setTimeout(function() {
+    //                 map.scrollWheelZoom.disable();
+    //             }, 1000);
+    //         } else {
+    //             console.log("stop")
+    //             map.scrollWheelZoom.disable();
+    //             mapEl.classList.add('map-scroll');
+    //         }
+    //     });
+    //     window.addEventListener("scroll", (event) => {
+    //         mapEl.classList.remove("map-scroll")
+    //     })
+    //     mapEl.addEventListener("mouseout", (event) => {
+    //         mapEl.classList.remove("map-scroll")
+    //     })
+    // }
 }
 
 // var popup = L.popup();
