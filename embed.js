@@ -10,7 +10,7 @@ let focused = loc.searchParams.get("focused")
 focused = focused == "true" ? true : false;
 
 // makeMap([41.848, -87.665], 10, 20)
-makeMap(latlng, y, 20)
+makeMap(latlng, y, 20, true)
 
 if (enabledFeatures.includes("default")) {
 	renderDefaultFeatures();

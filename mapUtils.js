@@ -12,19 +12,41 @@ var heat;
 //     },
 // ).addTo(map);
 
-function makeMap(latlng, y, maxZoom) {
+function makeMap(latlng, y, maxZoom, scrollOnControl = false) {
     map = L.map("map").setView(latlng, y);
     googleHybrid = L.tileLayer(
         "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
         {
             maxZoom: maxZoom,
             subdomains: ["mt0", "mt1", "mt2", "mt3"],
+            scrollWheelZoom: !scrollOnControl
         },
     ).addTo(map);
 
     sightingsLayer = L.layerGroup().addTo(map);
 
     heat = L.heatLayer([], { radius: 30, blur: 25, maxZoom: 13 }).addTo(map);
+
+    let mapEl = document.getElementById("map")
+    if (scrollOnControl) {
+        mapEl.addEventListener("wheel", (event) => {
+            event.stopPropagation()
+            if (event.ctrlKey == true) {
+                event.preventDefault();
+                map.scrollWheelZoom.enable();
+                mapEl.classList.remove('map-scroll');
+                setTimeout(function() {
+                    map.scrollWheelZoom.disable();
+                }, 1000);
+            } else {
+                map.scrollWheelZoom.disable();
+                mapEl.classList.add('map-scroll');
+            }
+        });
+        window.addEventListener("wheel", (event) => {
+            mapEl.classList.remove("map-scroll")
+        })
+    }
 }
 
 // var popup = L.popup();
