@@ -1,3 +1,10 @@
+let y = 11;
+
+if (mobile) {
+    y = 10;
+}
+makeMap([41.848, -87.665], y, 20)
+
 /* filters */
 
 let activateButton = document.getElementById("filter-activate");
@@ -86,6 +93,69 @@ if (filterDate.toString() == "Invalid Date") {
 renderDefaultFeatures();
 
 let heatmapButton = document.getElementById("heatmap");
+
+function renderFeatures(data) {
+    if (filterDate != null) {
+        if (activeFilter == "all" || activeFilter == "sightings") {
+            renderFeaturesDay(data, filterDate, "sightings");
+        }
+        if (activeFilter == "all" || activeFilter == "protests") {
+            renderFeaturesDay(data, filterDate, "protests");
+        }
+        if (activeFilter == "all" || activeFilter == "helicopters") {
+            renderFeaturesDay(data, filterDate, "helis");
+        }
+        if (activeFilter == "all") {
+            renderFeaturesDay(data, filterDate, "other");
+        }
+    } else {
+        if (activeFilter == "all" || activeFilter == "sightings") {
+            renderFeaturesAll(data, "sightings");
+        }
+        if (activeFilter == "all" || activeFilter == "protests") {
+            renderFeaturesAll(data, "protests");
+        }
+        if (activeFilter == "all" || activeFilter == "helicopters") {
+            renderFeaturesAll(data, "helis");
+        }
+        if (activeFilter == "all") {
+            renderFeaturesAll(data, "other");
+        }
+    }
+}
+
+function renderHeatmap(data) {
+    if (filterDate != null) {
+        if (activeFilter == "all") {
+            renderHeatmapDay(data, filterDate, "sightings");
+        } else {
+            if (activeFilter == "sightings") {
+                renderHeatmapDay(data, filterDate, "sightings");
+            }
+            if (activeFilter == "protests") {
+                renderHeatmapDay(data, filterDate, "protests");
+            }
+            if (activeFilter == "helicopters") {
+                renderHeatmapDay(data, filterDate, "helis");
+            }
+        }
+    } else {
+        if (activeFilter == "all") {
+            renderHeatmapAll(data, "sightings");
+        } else {
+            if (activeFilter == "sightings") {
+                renderHeatmapAll(data, "sightings");
+            }
+            if (activeFilter == "protests") {
+                renderHeatmapAll(data, "protests");
+            }
+            if (activeFilter == "helicopters") {
+                renderHeatmapAll(data, "helis");
+            }
+        }
+    }
+
+}
 
 fetch("sightings.json")
     .then((response) => response.json()) // Parse JSON

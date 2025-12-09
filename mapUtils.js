@@ -1,17 +1,31 @@
-let y = 11;
 
-if (mobile) {
-    y = 10;
+var map
+var sightingsLayer;
+var heat;
+
+// var map = L.map("map").setView([41.848, -87.665], y);
+// googleHybrid = L.tileLayer(
+//     "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
+//     {
+//         maxZoom: 20,
+//         subdomains: ["mt0", "mt1", "mt2", "mt3"],
+//     },
+// ).addTo(map);
+
+function makeMap(latlng, y, maxZoom) {
+    map = L.map("map").setView(latlng, y);
+    googleHybrid = L.tileLayer(
+        "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
+        {
+            maxZoom: maxZoom,
+            subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        },
+    ).addTo(map);
+
+    sightingsLayer = L.layerGroup().addTo(map);
+
+    heat = L.heatLayer([], { radius: 30, blur: 25, maxZoom: 13 }).addTo(map);
 }
-
-var map = L.map("map").setView([41.848, -87.665], y);
-googleHybrid = L.tileLayer(
-    "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
-    {
-        maxZoom: 20,
-        subdomains: ["mt0", "mt1", "mt2", "mt3"],
-    },
-).addTo(map);
 
 // var popup = L.popup();
 //
@@ -142,7 +156,6 @@ function renderDefaultFeatures() {
     }
 }
 
-var sightingsLayer = L.layerGroup().addTo(map);
 
 var markers = [];
 
@@ -210,36 +223,6 @@ function renderFeaturesAll(data, feature) {
     }
 }
 
-function renderFeatures(data) {
-    if (filterDate != null) {
-        if (activeFilter == "all" || activeFilter == "sightings") {
-            renderFeaturesDay(data, filterDate, "sightings");
-        }
-        if (activeFilter == "all" || activeFilter == "protests") {
-            renderFeaturesDay(data, filterDate, "protests");
-        }
-        if (activeFilter == "all" || activeFilter == "helicopters") {
-            renderFeaturesDay(data, filterDate, "helis");
-        }
-        if (activeFilter == "all") {
-            renderFeaturesDay(data, filterDate, "other");
-        }
-    } else {
-        if (activeFilter == "all" || activeFilter == "sightings") {
-            renderFeaturesAll(data, "sightings");
-        }
-        if (activeFilter == "all" || activeFilter == "protests") {
-            renderFeaturesAll(data, "protests");
-        }
-        if (activeFilter == "all" || activeFilter == "helicopters") {
-            renderFeaturesAll(data, "helis");
-        }
-        if (activeFilter == "all") {
-            renderFeaturesAll(data, "other");
-        }
-    }
-}
-
 function resetSightings() {
     for (let i = 0; i < markers.length; i++) {
         map.removeLayer(markers[i]);
@@ -247,7 +230,6 @@ function resetSightings() {
     markers = [];
 }
 
-var heat = L.heatLayer([], { radius: 30, blur: 25, maxZoom: 13 }).addTo(map);
 
 function renderHeatmapDay(data, day, feature) {
     day = day.toISOString().split("T")[0]
@@ -277,39 +259,6 @@ function renderHeatmapAll(data, feature) {
             heat.addLatLng([feature.latlng[0], feature.latlng[1], 1]);
         }
     }
-}
-
-function renderHeatmap(data) {
-    if (filterDate != null) {
-        if (activeFilter == "all") {
-            renderHeatmapDay(data, filterDate, "sightings");
-        } else {
-            if (activeFilter == "sightings") {
-                renderHeatmapDay(data, filterDate, "sightings");
-            }
-            if (activeFilter == "protests") {
-                renderHeatmapDay(data, filterDate, "protests");
-            }
-            if (activeFilter == "helicopters") {
-                renderHeatmapDay(data, filterDate, "helis");
-            }
-        }
-    } else {
-        if (activeFilter == "all") {
-            renderHeatmapAll(data, "sightings");
-        } else {
-            if (activeFilter == "sightings") {
-                renderHeatmapAll(data, "sightings");
-            }
-            if (activeFilter == "protests") {
-                renderHeatmapAll(data, "protests");
-            }
-            if (activeFilter == "helicopters") {
-                renderHeatmapAll(data, "helis");
-            }
-        }
-    }
-
 }
 
 function resetHeatmap() {
