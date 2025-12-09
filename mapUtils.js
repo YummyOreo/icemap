@@ -43,7 +43,7 @@ function makeMap(latlng, y, maxZoom, scrollOnControl = false) {
                 mapEl.classList.add('map-scroll');
             }
         });
-        window.addEventListener("wheel", (event) => {
+        window.addEventListener("scroll", (event) => {
             mapEl.classList.remove("map-scroll")
         })
     }
