@@ -46,6 +46,9 @@ function makeMap(latlng, y, maxZoom, scrollOnControl = false) {
         window.addEventListener("scroll", (event) => {
             mapEl.classList.remove("map-scroll")
         })
+        mapEl.addEventListener("mouseout", (event) => {
+            mapEl.classList.remove("map-scroll")
+        })
     }
 }
 
