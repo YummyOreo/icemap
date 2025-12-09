@@ -5,6 +5,9 @@ let heatmap = loc.searchParams.get("heatmap")
 let latlng = [loc.searchParams.get("lat"), loc.searchParams.get("lng")]
 let y = loc.searchParams.get('y')
 let date = loc.searchParams.get('date')
+let focused = loc.searchParams.get("focused")
+
+focused = focused == "true" ? true : false;
 
 // makeMap([41.848, -87.665], 10, 20)
 makeMap(latlng, y, 20)
@@ -28,28 +31,28 @@ fetch("sightings.json")
 			if (date) {
 				renderFeaturesDay(builtData, new Date(date), "sightings")
 			} else {
-				renderFeaturesAll(builtData, "sightings")
+				renderFeaturesAll(builtData, "sightings", focused)
 			}
 		}
 		if (enabledFeatures.includes("protests")) {
 			if (date) {
 				renderFeaturesDay(builtData, new Date(date), "protests")
 			} else {
-				renderFeaturesAll(builtData, "protests")
+				renderFeaturesAll(builtData, "protests", focused)
 			}
 		}
 		if (enabledFeatures.includes("helis")) {
 			if (date) {
 				renderFeaturesDay(builtData, new Date(date), "helis")
 			} else {
-				renderFeaturesAll(builtData, "helis")
+				renderFeaturesAll(builtData, "helis", focused)
 			}
 		}
 		if (enabledFeatures.includes("other")) {
 			if (date) {
 				renderFeaturesDay(builtData, new Date(date), "other")
 			} else {
-				renderFeaturesAll(builtData, "other")
+				renderFeaturesAll(builtData, "other", focused)
 			}
 		}
 	}) // Work with JSON data

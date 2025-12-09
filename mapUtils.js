@@ -205,7 +205,7 @@ function renderFeaturesDay(data, day, feature) {
     }
 }
 
-function renderFeaturesAll(data, feature) {
+function renderFeaturesAll(data, feature, focusAll) {
     let features = data[feature];
     let today = new Date();
     for (let d = 0; d < Object.keys(features).length; d++) {
@@ -213,7 +213,7 @@ function renderFeaturesAll(data, feature) {
         let day = new Date(key + "T12:00:00");
 
         let size = "small";
-        if (isSameDay(day, today)) {
+        if (isSameDay(day, today) || focusAll) {
             size = "large"
         }
         for (let i = 0; i < features[key].length; i++) {
