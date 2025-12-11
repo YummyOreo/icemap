@@ -10,16 +10,27 @@ function buildPiece(entry, builtData) {
     entryBuilt.title = entry.title;
     let date = new Date(entry.date);
     if (entry.time != null) {
-        if (!entry.time.includes(":")) {
-            if (entry.time.endsWith("pm")) {
-                let halfs = entry.time.split("p");
-                entry.time = `${halfs[0]}:00pm`;
+        let hours;
+        let minutes = 0;
+        if (entry.time.endsWith("am")) {
+            if (entry.time.includes(":")) {
+                [hours, minutes] = entry.time.split(":")
+                minutes = minutes.replace("am", "")
             } else {
-                let halfs = entry.time.split("a");
-                entry.time = `${halfs[0]}:00am`;
+                hours = entry.time.split("a")[0];
+            }
+        } else {
+            if (entry.time.includes(":")) {
+                [hours, minutes] = entry.time.split(":")
+                minutes = minutes.replace("pm", "")
+                hours += 12;
+            } else {
+                hours = entry.time.split("p")[0];
             }
         }
-        date = new Date(`${entry.date}, ${entry.time}`)
+        hours = hours.toString().padStart(2, "0")
+        minutes = minutes.toString().padStart(2, "0")
+        date = new Date(`${entry.date}T${hours}:${minutes}:00.000-05:00 `)
         entryBuilt.date = date;
         entryBuilt.time = true;
     } else {
