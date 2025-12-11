@@ -28,6 +28,9 @@ function buildPiece(entry, builtData) {
                 }
             } else {
                 hours = entry.time.split("p")[0];
+                if (hours != 12) {
+                    hours = parseInt(hours) + 12;
+                }
             }
         }
         hours = hours.toString().padStart(2, "0")
