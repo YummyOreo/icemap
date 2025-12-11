@@ -23,7 +23,7 @@ function buildPiece(entry, builtData) {
             if (entry.time.includes(":")) {
                 [hours, minutes] = entry.time.split(":")
                 minutes = minutes.replace("pm", "")
-                hours += 12;
+                hours = parseInt(hours) + 12;
             } else {
                 hours = entry.time.split("p")[0];
             }
