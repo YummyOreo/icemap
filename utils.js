@@ -30,7 +30,7 @@ function buildPiece(entry, builtData) {
         }
         hours = hours.toString().padStart(2, "0")
         minutes = minutes.toString().padStart(2, "0")
-        date = new Date(`${entry.date}T${hours}:${minutes}:00.000-05:00 `)
+        date = new Date(`${entry.date}T${hours}:${minutes}:00-05:00`)
         entryBuilt.date = date;
         entryBuilt.time = true;
     } else {
