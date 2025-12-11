@@ -1,6 +1,6 @@
 let mobile = window.screen.width <= 992;
 
-Array.prototype.insert = function (index, ...items) {
+Array.prototype.insert = function(index, ...items) {
     this.splice(index, 0, ...items);
 };
 
@@ -23,7 +23,9 @@ function buildPiece(entry, builtData) {
             if (entry.time.includes(":")) {
                 [hours, minutes] = entry.time.split(":")
                 minutes = minutes.replace("pm", "")
-                hours = parseInt(hours) + 12;
+                if (hours > 12) {
+                    hours = parseInt(hours) + 12;
+                }
             } else {
                 hours = entry.time.split("p")[0];
             }
@@ -31,6 +33,9 @@ function buildPiece(entry, builtData) {
         hours = hours.toString().padStart(2, "0")
         minutes = minutes.toString().padStart(2, "0")
         date = new Date(`${entry.date}T${hours}:${minutes}:00-05:00`)
+        if (date.toString() == "Invalid Date") {
+            console.log(entry.time, `${entry.date}T${hours}:${minutes}:00-05:00`)
+        }
         entryBuilt.date = date;
         entryBuilt.time = true;
     } else {
