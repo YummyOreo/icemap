@@ -3630,5 +3630,59 @@
     "title": "Three detained 2025-12-17 - 12:38pm",
     "date": "2025-12-17",
     "time": "12:38pm"
+    },
+    {
+        "latlng": [41.917356692891744, -87.7161450022905],
+        "title": "ICE deployed tear gas. 2025-10-03",
+        "date": "2025-10-03",
+        "type": "protest"
+    },
+    {
+        "latlng": [41.90054190370827, -87.69970389425299],
+        "title": "ICE deployed tear gas. 2025-10-03",
+        "date": "2025-10-03",
+        "type": "protest"
+    },
+    {
+        "latlng": [41.85198020207884, -87.69053538312927],
+        "title": "ICE tear gassed protester. 2025-10-04",
+        "date": "2025-10-04",
+        "type": "protest"
+    },
+    {
+        "latlng": [41.878310417002545, -87.82375473407627],
+        "title": "ICE deployed pepper spray and pepper balls at cemetary workers. 2025-10-07",
+        "date": "2025-10-07",
+        "type": "protest"
+    },
+    {
+        "latlng": [41.75449022594044, -88.30193565616001],
+        "title": "Agents deployed pepper balls at drivers 2025-10-29",
+        "date": "2025-10-29",
+        "type": "protest"
+    },
+    {
+    "latlng": [41.96837669504145, -87.70905302953088],
+    "title": "Pepper balls deployed at protesters 2025-10-31",
+    "date": "2025-10-31",
+    "type": "protest"
+    },
+    {
+    "latlng": [42.02730086857775, -87.69011459692727],
+    "title": "One person pepper sprayed by agents 2025-10-31",
+    "date": "2025-10-31",
+    "type": "protest"
+    },
+    {
+    "latlng": [41.844226753183804, -87.74164266785832],
+    "title": "ICE pepper sprayes passing car with 1 year old in it. 2025-11-08",
+    "date": "2025-11-08",
+    "type": "protest"
+    },
+    {
+    "latlng": [41.87276232593571, -87.67646314385627],
+    "title": "ICE pepper sprayes passing car. 2025-11-08",
+    "date": "2025-11-08",
+    "type": "protest"
     }
 ]

@@ -85,7 +85,7 @@ window.addEventListener("click", (event) => {
 let dateSelector = document.getElementById("date");
 let filterDate = new Date(dateSelector.value + "T12:00:00");
 dateSelector.setAttribute("max", new Date().toISOString().split("T")[0]);
-dateSelector.setAttribute("min", "2025-10-06");
+dateSelector.setAttribute("min", "2025-10-03");
 if (filterDate.toString() == "Invalid Date") {
     filterDate = null;
 }
